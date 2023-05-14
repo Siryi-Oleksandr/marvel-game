@@ -6,20 +6,19 @@ import { useState } from 'react';
 export const SharedLayout = () => {
   const [homePage, setHomePage] = useState(true);
   return (
-    <Box h="100vh" w="100vw">
+    <Box h="100vh" w="100vw" overflow="hidden">
       {homePage ? (
         <Home setHomePage={setHomePage} />
       ) : (
         <Tabs>
           <TabList display="flex" justifyContent="space-evenly">
             <Tab w="50%">
-              <NavLink>Pick your own team</NavLink>
+              <NavLink path="/play">Pick your own team</NavLink>
             </Tab>
             <Tab w="50%">
-              <NavLink>Choose your team</NavLink>
+              <NavLink path="/teamplay">Choose your team</NavLink>
             </Tab>
           </TabList>
-
           <TabPanels>
             <TabPanel>
               <PlayGame />
