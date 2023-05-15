@@ -67,7 +67,8 @@ export const CardInfoWrapper = styled.div`
 `;
 
 export const SkillQuantity = styled.span`
-  font-size: 35px;
+  font-size: 30px;
+  font-family: 'PT Serif';
   font-weight: 700;
   color: rgb(255, 69, 0);
 `;
@@ -114,6 +115,7 @@ export const SkillIconFight = styled(SkillIcon)`
 
 export const HeroName = styled.h2`
   font-size: 2.5em;
+  font-family: 'PT Serif';
   font-weight: bold;
   text-align: center;
   color: red;
@@ -122,12 +124,15 @@ export const HeroName = styled.h2`
 
 export const HeroSkills = styled.h3`
   font-size: 20px;
+  font-family: 'PT Serif';
   font-weight: bold;
   color: red;
 `;
 
 export const HeroDescription = styled.h4`
+  margin-top: 15px;
   font-size: 14px;
-  font-weight: bold;
+  font-family: 'PT Serif';
+  font-weight: 400;
   color: red;
 `;
