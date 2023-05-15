@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 import cardBgImg from '../../images/card-bg.png';
-import intelligenceImg from '../../images/intelligence.png';
-import fightImg from '../../images/fight.png';
-import forceImg from '../../images/force.png';
-import speedImg from '../../images/speed.png';
+// import intelligenceImg from '../../images/intelligence.png';
+// import fightImg from '../../images/fight.png';
+// import forceImg from '../../images/force.png';
+// import speedImg from '../../images/speed.png';
 
-export const CardItemWrapper = styled.li`
+export const CardItemWrapper = styled.div`
+  width: 280px;
+  height: 400px;
+
+  perspective: 1000px;
+`;
+
+export const Card = styled.li`
   position: relative;
   padding: 30px;
   width: 280px;
@@ -15,20 +22,36 @@ export const CardItemWrapper = styled.li`
   background-position: center;
   border-radius: 20px;
 
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &:hover .overley,
-  &:focus .overley {
-    transform: translatex(0);
-  }
-
-  &:hover,
-  &:focus {
-    cursor: pointer;
-  }
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform: ${props => (props.flipped ? 'rotateY(180deg)' : 'rotateY(0)')};
 `;
 
-export const CardOverlay = styled.div`
+export const CardFront = styled.div`
+  position: absolute;
+  /* padding-bottom: 10px; */
+  width: 220px;
+  height: 340px;
+
+  /* width: 100%;
+  height: 100%; */
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  background-image: url(${props => props.imgUrl});
+  background-size: cover;
+  background-position: center;
+
+  backface-visibility: hidden;
+`;
+
+export const CardBack = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -45,80 +68,78 @@ export const CardOverlay = styled.div`
   letter-spacing: 0.03em;
 
   color: red;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(-45deg, #0a2c66 0%, #010817 100%);
 
-  transform: translatex(100%);
-  transition: transform 250ms ease-in-out;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
 `;
 
-export const CardInfoWrapper = styled.div`
-  position: relative;
-  padding-bottom: 25px;
-  width: 100%;
-  height: 100%;
+// TODO
 
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-
-  background-image: url(${props => props.imgUrl});
-  background-size: cover;
-  background-position: center;
-`;
-
-export const SkillQuantity = styled.span`
-  font-size: 30px;
-  font-family: 'PT Serif';
-  font-weight: 700;
-  color: rgb(255, 69, 0);
-`;
-
-export const SkillIcon = styled.div`
+export const CardButton = styled.button`
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 45px;
+  height: 45px;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  box-shadow: rgba(255, 81, 0, 0.821) 0px 22px 70px 4px;
-  border: 5px solid orangered;
+  border-radius: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  transition: all 250ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    box-shadow: rgba(29, 77, 132, 0.4) 0px 0px 0px 2px,
+      rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+      rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  }
 `;
 
-export const SkillIconIntelligence = styled(SkillIcon)`
+export const BackButton = styled.button`
+  position: absolute;
+  top: -10px;
+  right: 0;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+`;
+
+export const AddButton = styled(CardButton)`
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
-  background-image: url(${intelligenceImg});
+  background-color: #002350;
 `;
-export const SkillIconForce = styled(SkillIcon)`
+export const InfoButton = styled(CardButton)`
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
-  background-image: url(${forceImg});
-`;
-export const SkillIconSpeed = styled(SkillIcon)`
-  bottom: 0;
-  right: 0;
-  transform: translate(50%, 50%);
-  background-image: url(${speedImg});
-`;
-export const SkillIconFight = styled(SkillIcon)`
-  bottom: 0;
-  left: 0;
-  transform: translate(-50%, 50%);
-  background-image: url(${fightImg});
+  background-color: #c61818;
 `;
 
 export const HeroName = styled.h2`
-  font-size: 2.5em;
+  padding: 0;
+  font-size: 35px;
+  line-height: 1.2;
   font-family: 'PT Serif';
   font-weight: bold;
   text-align: center;
   color: red;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  text-shadow: 6px 6px 0px rgba(246, 10, 10, 0.2);
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
   transform: perspective(400px) rotateX(40deg);
 `;
 
@@ -130,9 +151,33 @@ export const HeroSkills = styled.h3`
 `;
 
 export const HeroDescription = styled.h4`
-  margin-top: 15px;
   font-size: 14px;
   font-family: 'PT Serif';
   font-weight: 400;
+  color: red;
+  max-height: 160px;
+  overflow-y: scroll;
+
+  // scroll-bar styles
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: red;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 20px;
+    border: 3px solid red;
+  }
+`;
+
+export const HeroDescriptionTitle = styled.span`
+  font-size: 20px;
+  font-family: 'PT Serif';
+  font-weight: bold;
   color: red;
 `;

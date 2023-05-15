@@ -1,69 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  CardInfoWrapper,
   CardItemWrapper,
-  SkillIconIntelligence,
-  SkillQuantity,
-  SkillIconFight,
-  SkillIconSpeed,
-  SkillIconForce,
-  CardOverlay,
   HeroName,
   HeroSkills,
   HeroDescription,
+  CardBack,
+  CardFront,
+  Card,
+  AddButton,
+  InfoButton,
+  BackButton,
+  HeroDescriptionTitle,
 } from './CardItem.styled';
+import { GoPlus } from 'react-icons/go';
+import { BsInfoLg } from 'react-icons/bs';
+import { TbArrowBackUp } from 'react-icons/tb';
 
 function CardItem({ hero }) {
+  const [flipped, setFlipped] = useState(false);
+
+  const handleFlip = () => {
+    setFlipped(!flipped);
+  };
+
   return (
     <CardItemWrapper>
-      <CardInfoWrapper imgUrl={hero.imgUrl}>
-        <HeroName>{hero.name}</HeroName>
-        <SkillIconIntelligence>
-          <SkillQuantity>{hero.characteristics.intelligence}</SkillQuantity>
-        </SkillIconIntelligence>
-        <SkillIconForce>
-          <SkillQuantity>{hero.characteristics.force}</SkillQuantity>
-        </SkillIconForce>
-        <SkillIconSpeed>
-          <SkillQuantity>{hero.characteristics.speedAndAgility}</SkillQuantity>
-        </SkillIconSpeed>
-        <SkillIconFight>
-          <SkillQuantity>{hero.characteristics.fightingSkills}</SkillQuantity>
-        </SkillIconFight>
-      </CardInfoWrapper>
+      <Card flipped={flipped}>
+        <CardFront imgUrl={hero.imgUrl}>
+          <AddButton onClick={() => alert('added to team')}>
+            <GoPlus color="white" size="2em" />
+          </AddButton>
+          <InfoButton onClick={handleFlip}>
+            <BsInfoLg color="white" size="2em" />
+          </InfoButton>
+          <HeroName>{hero.name}</HeroName>
+        </CardFront>
 
-      <CardOverlay className="overley">
-        <HeroSkills>
-          {' '}
-          Intelligence: {hero.characteristics.intelligence}
-        </HeroSkills>
-        <HeroSkills> Force: {hero.characteristics.force}</HeroSkills>
-        <HeroSkills>
-          {' '}
-          Speed And Agility: {hero.characteristics.speedAndAgility}
-        </HeroSkills>
-        <HeroSkills>
-          {' '}
-          Fighting Skills: {hero.characteristics.fightingSkills}
-        </HeroSkills>
-        <HeroSkills>
-          {' '}
-          Special Skills: {hero.characteristics.specialSkills}
-        </HeroSkills>
+        <CardBack className="overley">
+          <BackButton onClick={handleFlip}>
+            <TbArrowBackUp color="white" size="2em" />
+          </BackButton>
+          <HeroSkills> Name: {hero.name}</HeroSkills>
+          <HeroSkills>
+            {' '}
+            Intelligence: {hero.characteristics.intelligence}
+          </HeroSkills>
+          <HeroSkills> Force: {hero.characteristics.force}</HeroSkills>
+          <HeroSkills>
+            {' '}
+            Speed And Agility: {hero.characteristics.speedAndAgility}
+          </HeroSkills>
+          <HeroSkills>
+            {' '}
+            Fighting Skills: {hero.characteristics.fightingSkills}
+          </HeroSkills>
+          <HeroSkills>
+            {' '}
+            Special Skills: {hero.characteristics.specialSkills}
+          </HeroSkills>
 
-        <HeroDescription>
-          Description:
-          {hero.description}
-        </HeroDescription>
-      </CardOverlay>
+          <HeroDescription>
+            <HeroDescriptionTitle>Description: </HeroDescriptionTitle>
+
+            {hero.description}
+          </HeroDescription>
+        </CardBack>
+      </Card>
     </CardItemWrapper>
   );
 }
 
 export default CardItem;
-
-// intelligence: 100,
-//   force: 100,
-//   speedAndAgility: 100,
-//   specialSkills: 100,
-//   fightingSkills: 100,
