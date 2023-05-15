@@ -61,6 +61,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: 'Avengeance' 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -78,6 +79,9 @@ section {
 }
 body {
   line-height: 1;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }
 ol,
 ul {
@@ -99,8 +103,7 @@ table {
   border-spacing: 0;
 }
 body {
-  font-family: 'PT Serif', BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Avengeance', 'PT Serif', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
