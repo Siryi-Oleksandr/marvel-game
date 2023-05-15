@@ -4,34 +4,66 @@ import {
   CardItemWrapper,
   SkillIconIntelligence,
   SkillQuantity,
+  SkillIconFight,
+  SkillIconSpeed,
+  SkillIconForce,
+  CardOverlay,
+  HeroName,
+  HeroSkills,
+  HeroDescription,
 } from './CardItem.styled';
-import heroes from 'db/heroes.json';
 
-const card = {
-  id: 1,
-  name: 'Captain America',
-  description:
-    'Bitten by a radioactive spider, high school student Peter Parker gained the speed, strength and powers of a spider. Adopting the name Spider-Man, Peter hoped to start a career using his new abilities. Taught that with great power comes great responsibility, Spidey has vowed to use his powers to help people.',
-  imgUrl: 'https://cdn.marvel.com/content/1x/003cap_com_crd_01.jpg',
-  characteristics: {
-    intelligence: 100,
-    force: 100,
-    speedAndAgility: 100,
-    specialSkills: 100,
-    fightingSkills: 100,
-  },
-};
-
-function CardItem() {
+function CardItem({ hero }) {
   return (
     <CardItemWrapper>
-      <CardInfoWrapper>
+      <CardInfoWrapper imgUrl={hero.imgUrl}>
+        <HeroName>{hero.name}</HeroName>
         <SkillIconIntelligence>
-          <SkillQuantity>100</SkillQuantity>
+          <SkillQuantity>{hero.characteristics.intelligence}</SkillQuantity>
         </SkillIconIntelligence>
+        <SkillIconForce>
+          <SkillQuantity>{hero.characteristics.force}</SkillQuantity>
+        </SkillIconForce>
+        <SkillIconSpeed>
+          <SkillQuantity>{hero.characteristics.speedAndAgility}</SkillQuantity>
+        </SkillIconSpeed>
+        <SkillIconFight>
+          <SkillQuantity>{hero.characteristics.fightingSkills}</SkillQuantity>
+        </SkillIconFight>
       </CardInfoWrapper>
+
+      <CardOverlay className="overley">
+        <HeroSkills>
+          {' '}
+          Intelligence: {hero.characteristics.intelligence}
+        </HeroSkills>
+        <HeroSkills> Force: {hero.characteristics.force}</HeroSkills>
+        <HeroSkills>
+          {' '}
+          Speed And Agility: {hero.characteristics.speedAndAgility}
+        </HeroSkills>
+        <HeroSkills>
+          {' '}
+          Fighting Skills: {hero.characteristics.fightingSkills}
+        </HeroSkills>
+        <HeroSkills>
+          {' '}
+          Special Skills: {hero.characteristics.specialSkills}
+        </HeroSkills>
+
+        <HeroDescription>
+          Description:
+          {hero.description}
+        </HeroDescription>
+      </CardOverlay>
     </CardItemWrapper>
   );
 }
 
 export default CardItem;
+
+// intelligence: 100,
+//   force: 100,
+//   speedAndAgility: 100,
+//   specialSkills: 100,
+//   fightingSkills: 100,
