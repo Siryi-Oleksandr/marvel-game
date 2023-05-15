@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 import cardBgImg from '../../images/card-bg.png';
-// import intelligenceImg from '../../images/intelligence.png';
-// import fightImg from '../../images/fight.png';
-// import forceImg from '../../images/force.png';
-// import speedImg from '../../images/speed.png';
 
 export const CardItemWrapper = styled.div`
   width: 280px;
@@ -33,12 +29,8 @@ export const Card = styled.li`
 
 export const CardFront = styled.div`
   position: absolute;
-  /* padding-bottom: 10px; */
   width: 220px;
   height: 340px;
-
-  /* width: 100%;
-  height: 100%; */
 
   display: flex;
   align-items: flex-end;
@@ -56,11 +48,12 @@ export const CardBack = styled.div`
   top: 0;
   left: 0;
 
+  margin: 0;
   display: block;
   width: 100%;
   height: 100%;
   padding: 20px;
-  margin: 0;
+  border-radius: 20px;
 
   font-weight: bold;
   font-size: 18px;
@@ -129,18 +122,16 @@ export const InfoButton = styled(CardButton)`
 `;
 
 export const HeroName = styled.h2`
-  padding: 0;
-  font-size: 35px;
-  line-height: 1.2;
-  font-family: 'PT Serif';
-  font-weight: bold;
-  text-align: center;
   color: red;
-  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
-  text-shadow: 6px 6px 0px rgba(246, 10, 10, 0.2);
-  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
-    0px -5px 35px rgba(255, 255, 255, 0.3);
-  transform: perspective(400px) rotateX(40deg);
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Luckiest Guy';
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0px -2px 0 #212121, 0px -2px 0 #212121, 0px 2px 0 #212121,
+    0px 2px 0 #212121, -2px 0px 0 #212121, 2px 0px 0 #212121, -2px 0px 0 #212121,
+    2px 0px 0 #212121, -2px -2px 0 #212121, 2px -2px 0 #212121;
 `;
 
 export const HeroSkills = styled.h3`
