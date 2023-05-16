@@ -134,18 +134,36 @@ export const HeroName = styled.h2`
     2px 0px 0 #212121, -2px -2px 0 #212121, 2px -2px 0 #212121;
 `;
 
+export const HeroNameBack = styled.h2`
+  padding-top: 10px;
+  margin-bottom: 20px;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'PT Serif';
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0px -2px 0 #212121, 0px -2px 0 #212121, 0px 2px 0 #212121,
+    0px 2px 0 #212121, -2px 0px 0 #212121, 2px 0px 0 #212121, -2px 0px 0 #212121,
+    2px 0px 0 #212121, -2px -2px 0 #212121, 2px -2px 0 #212121;
+`;
+
 export const HeroSkills = styled.h3`
-  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
   font-family: 'PT Serif';
   font-weight: bold;
-  color: red;
+  color: whitesmoke;
 `;
 
 export const HeroDescription = styled.h4`
+  margin-top: 10px;
   font-size: 14px;
   font-family: 'PT Serif';
   font-weight: 400;
-  color: red;
+  color: whitesmoke;
   max-height: 160px;
   overflow-y: scroll;
 
@@ -155,20 +173,20 @@ export const HeroDescription = styled.h4`
   }
 
   &::-webkit-scrollbar-track {
-    background: red;
+    background: whitesmoke;
     border-radius: 20px;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: blue;
     border-radius: 20px;
-    border: 3px solid red;
+    border: 3px solid whitesmoke;
   }
 `;
 
 export const HeroDescriptionTitle = styled.span`
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'PT Serif';
   font-weight: bold;
-  color: red;
+  color: whitesmoke;
 `;

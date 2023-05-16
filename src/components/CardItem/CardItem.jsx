@@ -11,6 +11,7 @@ import {
   InfoButton,
   BackButton,
   HeroDescriptionTitle,
+  HeroNameBack,
 } from './CardItem.styled';
 import { GoPlus } from 'react-icons/go';
 import { BsInfoLg } from 'react-icons/bs';
@@ -40,23 +41,26 @@ function CardItem({ hero }) {
           <BackButton onClick={handleFlip}>
             <TbArrowBackUp color="white" size="2em" />
           </BackButton>
-          <HeroSkills> Name: {hero.name}</HeroSkills>
+          <HeroNameBack>{hero.name}</HeroNameBack>
           <HeroSkills>
-            {' '}
-            Intelligence: {hero.characteristics.intelligence}
-          </HeroSkills>
-          <HeroSkills> Force: {hero.characteristics.force}</HeroSkills>
-          <HeroSkills>
-            {' '}
-            Speed And Agility: {hero.characteristics.speedAndAgility}
+            <span>Intelligence: </span>
+            <span>{hero.characteristics.intelligence}</span>
           </HeroSkills>
           <HeroSkills>
-            {' '}
-            Fighting Skills: {hero.characteristics.fightingSkills}
+            <span>Force: </span>
+            <span>{hero.characteristics.force}</span>
           </HeroSkills>
           <HeroSkills>
-            {' '}
-            Special Skills: {hero.characteristics.specialSkills}
+            <span>Speed And Agility: </span>
+            <span> {hero.characteristics.speedAndAgility}</span>
+          </HeroSkills>
+          <HeroSkills>
+            <span> Fighting Skills: </span>
+            <span> {hero.characteristics.fightingSkills}</span>
+          </HeroSkills>
+          <HeroSkills>
+            <span>Special Skills: </span>
+            <span>{hero.characteristics.specialSkills}</span>
           </HeroSkills>
 
           <HeroDescription>
