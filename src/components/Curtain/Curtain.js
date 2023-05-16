@@ -5,7 +5,7 @@ import { WelcomeBtn } from 'components';
 
 export const Curtain = ({ setHomePage }) => {
   return (
-    <Box class="curtainBody" overflow="hidden" w="100vw" h="100vh">
+    <Box className="curtainBody" overflow="hidden" w="100vw" h="100vh">
       <Box
         w="50vw"
         h="100vh"
@@ -16,18 +16,18 @@ export const Curtain = ({ setHomePage }) => {
         className="curtainContainer"
         scroll="no-scroll"
       >
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
       </Box>
       <Box
         h="100vh"
@@ -49,18 +49,18 @@ export const Curtain = ({ setHomePage }) => {
         className="curtainContainer"
         id="rightCurtain"
       >
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
-        <Box class="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
+        <Box className="unCurtain"></Box>
       </Box>
     </Box>
   );
