@@ -105,7 +105,8 @@ table {
   border-spacing: 0;
 }
 body {
-  font-family: 'Avengeance' 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Avengeance', 'PT Serif', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

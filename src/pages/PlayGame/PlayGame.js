@@ -1,5 +1,11 @@
 import React from 'react';
+import CardsList from 'components/CardsList/CardsList';
 
 export const PlayGame = () => {
-  return <div>PlayGame</div>;
+  return (
+    <div>
+      PlayGames
+      <CardsList />
+    </div>
+  );
 };
