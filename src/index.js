@@ -5,15 +5,22 @@ import './index.css';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { colors } from 'theme';
 import { BrowserRouter } from 'react-router-dom';
+import { store, persistor } from './redux/store';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const theme = extendTheme({ colors });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ChakraProvider theme={theme}>
-    <React.StrictMode>
-      <BrowserRouter basename="/itis-team-6">
-        <App />
-      </BrowserRouter>
-    </React.StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <React.StrictMode>
+          <BrowserRouter basename="/itis-team-6">
+            <App />
+          </BrowserRouter>
+        </React.StrictMode>
+      </PersistGate>
+    </Provider>
   </ChakraProvider>
 );
