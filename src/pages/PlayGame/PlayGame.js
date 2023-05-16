@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardsList from 'components/CardsList/CardsList';
-import TeamSelect from '../../components/TeamSelect/TeamSelect'
+import TeamSelect from '../../components/TeamSelect/TeamSelect';
+import { Button } from '@chakra-ui/react';
 
 export const PlayGame = () => {
-  return <div>
-    PlayGame
-    <TeamSelect/>
-    <CardsList />
-  </div>;
+  const [userTeam, setUserTeam] = useState([]);
+
+  const addToTeam = hero => {
+    setUserTeam(prev => [...prev, hero]);
+  };
+
+  console.log('userTeam', userTeam);
+
+  return (
+    <div>
+      PlayGame
+      <TeamSelect />
+      <CardsList addToTeam={addToTeam} />
+    </div>
+  );
 };

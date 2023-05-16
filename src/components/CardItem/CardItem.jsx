@@ -16,9 +16,11 @@ import {
 import { GoPlus } from 'react-icons/go';
 import { BsInfoLg } from 'react-icons/bs';
 import { TbArrowBackUp } from 'react-icons/tb';
+import { findAdvantages } from '../../services/calculatorService';
 
-function CardItem({ hero }) {
+function CardItem({ hero, addToTeam }) {
   const [flipped, setFlipped] = useState(false);
+  const [advantage, setAdvantage] = useState(() => findAdvantages(hero));
 
   const handleFlip = () => {
     setFlipped(!flipped);
@@ -28,7 +30,7 @@ function CardItem({ hero }) {
     <CardItemWrapper>
       <Card flipped={flipped}>
         <CardFront imgUrl={hero.imgUrl}>
-          <AddButton onClick={() => alert('added to team')}>
+          <AddButton onClick={() => addToTeam(hero)}>
             <GoPlus color="white" size="2em" />
           </AddButton>
           <InfoButton onClick={handleFlip}>
