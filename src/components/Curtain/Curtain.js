@@ -1,11 +1,10 @@
 import React from 'react';
 import './Curtain.scss';
 import { Box } from '@chakra-ui/react';
-import { WelcomeBtn } from 'components';
 
-export const Curtain = ({ setHomePage }) => {
+export const Curtain = ({ children }) => {
   return (
-    <Box className="curtainBody" overflow="hidden" w="100vw" h="100vh">
+    <Box className="curtainBody" overflowX="hidden" w="100vw" h="100vh">
       <Box
         w="50vw"
         h="100vh"
@@ -14,7 +13,6 @@ export const Curtain = ({ setHomePage }) => {
         left="-50vw"
         zIndex="10"
         className="curtainContainer"
-        scroll="no-scroll"
       >
         <Box className="unCurtain"></Box>
         <Box className="unCurtain"></Box>
@@ -29,17 +27,7 @@ export const Curtain = ({ setHomePage }) => {
         <Box className="unCurtain"></Box>
         <Box className="unCurtain"></Box>
       </Box>
-      <Box
-        h="100vh"
-        w="100vw"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        className="buttonContainer"
-        position="relative"
-      >
-        <WelcomeBtn setHomePage={setHomePage} />
-      </Box>
+      {children}
       <Box
         w="50vw"
         h="100vh"
