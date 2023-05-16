@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/itis-team-6/static/css/main.84370aad.css",
-    "main.js": "/itis-team-6/static/js/main.978c1f79.js",
+    "main.css": "/itis-team-6/static/css/main.cdaa035f.css",
+    "main.js": "/itis-team-6/static/js/main.0acd605a.js",
+    "static/media/card-bg.png": "/itis-team-6/static/media/card-bg.6bd64e4c7706ae2a95e9.png",
     "index.html": "/itis-team-6/index.html",
-    "main.84370aad.css.map": "/itis-team-6/static/css/main.84370aad.css.map",
-    "main.978c1f79.js.map": "/itis-team-6/static/js/main.978c1f79.js.map"
+    "main.cdaa035f.css.map": "/itis-team-6/static/css/main.cdaa035f.css.map",
+    "main.0acd605a.js.map": "/itis-team-6/static/js/main.0acd605a.js.map"
   },
   "entrypoints": [
-    "static/css/main.84370aad.css",
-    "static/js/main.978c1f79.js"
+    "static/css/main.cdaa035f.css",
+    "static/js/main.0acd605a.js"
   ]
 }
