@@ -1,9 +1,11 @@
 import React from 'react';
-import TeamSelect from '../../components/TeamSelect/TeamSelect'
+import CardsList from 'components/CardsList/CardsList';
 
 export const PlayGame = () => {
-  return <div>
-    PlayGame
-    <TeamSelect/>
-  </div>;
+  return (
+    <div>
+      PlayGames
+      <CardsList />
+    </div>
+  );
 };
