@@ -10,7 +10,7 @@ export const PlayGame = () => {
     setUserTeam(prev => [...prev, hero]);
   };
 
-  console.log('userTeam', userTeam);
+  const filterHeroes = () => {};
 
   return (
     <div>

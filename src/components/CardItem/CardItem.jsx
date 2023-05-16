@@ -16,7 +16,10 @@ import {
 import { GoPlus } from 'react-icons/go';
 import { BsInfoLg } from 'react-icons/bs';
 import { TbArrowBackUp } from 'react-icons/tb';
-import { findAdvantages } from '../../services/calculatorService';
+import {
+  findAdvantages,
+  calculateTotalPower,
+} from '../../services/calculatorService';
 
 function CardItem({ hero, addToTeam }) {
   const [flipped, setFlipped] = useState(false);

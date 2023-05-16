@@ -1,4 +1,4 @@
-const advantages = ['intelligence', 'force', 'fight'];
+const advantages = ['intelligence', 'force', 'fightingSkills'];
 
 export function findAdvantages(hero) {
   const { characteristics } = hero;
@@ -14,4 +14,14 @@ export function findAdvantages(hero) {
     }
   });
   return heroAdvantage;
+}
+
+export function calculateTotalPower(hero) {
+  const { characteristics } = hero;
+  let totalPower = 0;
+  const values = Object.values(characteristics);
+  for (const value of values) {
+    totalPower += value;
+  }
+  return totalPower;
 }
