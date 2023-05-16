@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/itis-team-6/static/css/main.e0d83338.css",
-    "main.js": "/itis-team-6/static/js/main.fab259bf.js",
+    "main.css": "/itis-team-6/static/css/main.84370aad.css",
+    "main.js": "/itis-team-6/static/js/main.1b629d37.js",
     "index.html": "/itis-team-6/index.html",
-    "main.e0d83338.css.map": "/itis-team-6/static/css/main.e0d83338.css.map",
-    "main.fab259bf.js.map": "/itis-team-6/static/js/main.fab259bf.js.map"
+    "main.84370aad.css.map": "/itis-team-6/static/css/main.84370aad.css.map",
+    "main.1b629d37.js.map": "/itis-team-6/static/js/main.1b629d37.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0d83338.css",
-    "static/js/main.fab259bf.js"
+    "static/css/main.84370aad.css",
+    "static/js/main.1b629d37.js"
   ]
 }
