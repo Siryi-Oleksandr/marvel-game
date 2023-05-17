@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/itis-team-6/static/css/main.76ad6bea.css",
-    "main.js": "/itis-team-6/static/js/main.3b1e85eb.js",
+    "main.js": "/itis-team-6/static/js/main.6450dfaf.js",
     "static/media/AvengeanceHeroicAvengerNormal-Bz7d.ttf": "/itis-team-6/static/media/AvengeanceHeroicAvengerNormal-Bz7d.2805e15e170e8f94a349.ttf",
     "static/media/card-bg.png": "/itis-team-6/static/media/card-bg.6bd64e4c7706ae2a95e9.png",
     "index.html": "/itis-team-6/index.html",
     "static/media/marvel.svg": "/itis-team-6/static/media/marvel.f64c057bbe349be7d601d4046d296c6c.svg",
     "main.76ad6bea.css.map": "/itis-team-6/static/css/main.76ad6bea.css.map",
-    "main.3b1e85eb.js.map": "/itis-team-6/static/js/main.3b1e85eb.js.map"
+    "main.6450dfaf.js.map": "/itis-team-6/static/js/main.6450dfaf.js.map"
   },
   "entrypoints": [
     "static/css/main.76ad6bea.css",
-    "static/js/main.3b1e85eb.js"
+    "static/js/main.6450dfaf.js"
   ]
 }
