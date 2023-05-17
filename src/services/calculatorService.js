@@ -16,7 +16,7 @@ export function findAdvantages(hero) {
   return heroAdvantage;
 }
 
-export function calculateTotalPower(hero) {
+export function calculateTotalPowerHero(hero) {
   const { characteristics } = hero;
   let totalPower = 0;
   const values = Object.values(characteristics);
@@ -24,4 +24,12 @@ export function calculateTotalPower(hero) {
     totalPower += value;
   }
   return totalPower;
+}
+
+export function calculateTotalPowerTeam(team) {
+  return team.reduce((totalPower, hero) => {
+    const heroTotalPower = calculateTotalPowerHero(hero);
+    totalPower += heroTotalPower;
+    return totalPower;
+  }, 0);
 }
