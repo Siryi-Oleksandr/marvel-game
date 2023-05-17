@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import CardsList from 'components/CardsList/CardsList';
 import TeamSelect from 'components/TeamSelect/TeamSelect';
 import { Button } from '@chakra-ui/react';
@@ -6,10 +6,7 @@ import TeamList from 'components/TeamList/TeamList';
 import { getRandomTeam } from 'services/ramdomTeam';
 import heroes from 'db/heroes.json';
 import FightRing from 'components/FightRing/FightRing';
-import {
-  calculateTotalPower,
-  calculateTotalPowerTeam,
-} from 'services/calculatorService';
+import { calculateTotalPowerTeam } from 'services/calculatorService';
 
 export const PlayGame = () => {
   const [userTeam, setUserTeam] = useState([]);
@@ -68,7 +65,7 @@ export const PlayGame = () => {
             <>
               <TeamList team={userTeam} deleteFromTeam={deleteFromTeam} />
               <Button
-                colorScheme="teal"
+                color="blue.400"
                 size="lg"
                 onClick={() => setIsFight(true)}
                 isDisabled={!isTeam} // todo

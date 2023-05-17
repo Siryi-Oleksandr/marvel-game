@@ -19,7 +19,6 @@ import { TbArrowBackUp } from 'react-icons/tb';
 
 function TeamItem({ hero, deleteFromTeam }) {
   const [flipped, setFlipped] = useState(false);
-  // const [advantage, setAdvantage] = useState(() => findAdvantages(hero));
 
   const handleFlip = () => {
     setFlipped(!flipped);
