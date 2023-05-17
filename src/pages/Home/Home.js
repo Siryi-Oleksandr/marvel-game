@@ -10,6 +10,7 @@ import {
 } from 'components';
 import { Box, Text } from '@chakra-ui/react';
 import { BsFillSuitHeartFill } from 'react-icons/bs';
+import { animateCurtains } from 'services/animateCurtains';
 
 export const Home = ({ setHomePage }) => {
   return (
@@ -32,7 +33,7 @@ export const Home = ({ setHomePage }) => {
             </Text>
           </Box>
           <Box
-            color="whitesmoke"
+            color="#ffd700"
             textAlign="center"
             fontWeight="bold"
             maxW="650px"
@@ -44,15 +45,6 @@ export const Home = ({ setHomePage }) => {
               the ultimate tool for assessing the strength of your superhero
               team!
             </Text>
-            <Text>
-              Are you ready to unleash the full potential of your favorite
-              Marvel characters?
-            </Text>
-            <Text>
-              Our state-of-the-art app is designed to analyze and quantify the
-              immense power levels of Marvel superheroes, ensuring that you
-              assemble the most formidable team.
-            </Text>
           </Box>
           <DescrGallery />
           <Box
@@ -61,7 +53,14 @@ export const Home = ({ setHomePage }) => {
             display="flex"
             className="buttonContainer"
           >
-            <WelcomeBtn setHomePage={setHomePage} />
+            <WelcomeBtn
+              onClick={() => {
+                animateCurtains();
+                setTimeout(() => setHomePage(false), 3000);
+              }}
+            >
+              Let's Play!
+            </WelcomeBtn>
           </Box>
         </Container>
       </Box>

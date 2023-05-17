@@ -1,10 +1,10 @@
 @import 'https://unpkg.com/open-props';
 
-.WelcomebButton {
+.WelcomeButton {
   font-weight: 600;
   font-size: 1.5rem;
-  color: gray;
-  background: #f8f9fa;
+  color: #0a2c66;
+  background: #ffd700;
   border: 0;
   padding: 0.75rem 2rem;
   transform: translateY(calc(var(--y, 0) * 1%)) scale(var(--scale));
@@ -12,23 +12,23 @@
   position: relative;
 }
 
-.WelcomebButton:hover {
+.WelcomeButton:hover {
   --y: -10;
   --scale: 1.1;
   --border-scale: 1;
 }
 
-.WelcomebButton:active {
+.WelcomeButton:active {
   --y: 5%;
   --scale: 0.9;
   --border-scale: 0.9, 0.8;
 }
 
-.WelcomebButton:before {
+.WelcomeButton:before {
   content: '';
   position: absolute;
   inset: calc(var(--size-3) * -1);
-  border: var(--size-2) solid var(--gray-0);
+  border: var(--size-2) solid #ffd700;
   transform: scale(var(--border-scale, 0));
   transition: transform 0.125s;
 
