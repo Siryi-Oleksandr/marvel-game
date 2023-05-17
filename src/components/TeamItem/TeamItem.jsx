@@ -7,19 +7,18 @@ import {
   CardBack,
   CardFront,
   Card,
-  AddButton,
+  DeleteButton,
   InfoButton,
   BackButton,
   HeroDescriptionTitle,
   HeroNameBack,
-} from './CardItem.styled';
-import { GoPlus } from 'react-icons/go';
+} from 'components/CardItem/CardItem.styled';
+import { RiDeleteBin2Line } from 'react-icons/ri';
 import { BsInfoLg } from 'react-icons/bs';
 import { TbArrowBackUp } from 'react-icons/tb';
 
-function CardItem({ hero, addToTeam }) {
+function TeamItem({ hero, deleteFromTeam }) {
   const [flipped, setFlipped] = useState(false);
-  // const [advantage, setAdvantage] = useState(() => findAdvantages(hero));
 
   const handleFlip = () => {
     setFlipped(!flipped);
@@ -29,9 +28,9 @@ function CardItem({ hero, addToTeam }) {
     <CardItemWrapper>
       <Card flipped={flipped}>
         <CardFront imgUrl={hero.imgUrl}>
-          <AddButton onClick={() => addToTeam(hero)}>
-            <GoPlus color="white" size="2em" />
-          </AddButton>
+          <DeleteButton onClick={() => deleteFromTeam(hero)}>
+            <RiDeleteBin2Line color="white" size="2em" />
+          </DeleteButton>
           <InfoButton onClick={handleFlip}>
             <BsInfoLg color="white" size="2em" />
           </InfoButton>
@@ -75,4 +74,4 @@ function CardItem({ hero, addToTeam }) {
   );
 }
 
-export default CardItem;
+export default TeamItem;
