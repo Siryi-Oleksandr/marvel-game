@@ -67,6 +67,8 @@ export const CardBack = styled.div`
   transform: rotateY(180deg);
 `;
 
+// TODO
+
 export const CardButton = styled.button`
   position: absolute;
   width: 45px;
@@ -107,14 +109,6 @@ export const BackButton = styled.button`
 `;
 
 export const AddButton = styled(CardButton)`
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  background-color: #002350;
-`;
-
-// TODO
-export const DeleteButton = styled(CardButton)`
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);

@@ -4,7 +4,8 @@
     "name": "Captain America",
     "description": "Vowing to serve his country any way he could, young Steve Rogers took the super soldier serum to become America's one-man army. Fighting for the red, white and blue for over 60 years, Captain America is the living, breathing symbol of freedom and liberty.",
     "imgUrl": "https://cdn.marvel.com/content/1x/003cap_com_crd_01.jpg",
-    "type": 3,
+    "type": "fightingSkills",
+    "team": "Illuminati",
     "characteristics": {
       "intelligence": 201,
       "force": 213,
@@ -14,73 +15,123 @@
     }
   },
   {
-    "id": 1009515,
-    "name": "Punisher",
-    "description": "While the Punisher has, at times, worked alongside super humans whose goals align with his, he is never restrained by the laws, codes, and moral obligations that so many Super Heroes must follow. His work pushes the boundaries of what might be deemed",
-    "imgUrl": "http://i.annihil.us/u/prod/marvel/i/mg/3/90/5261675f6b22f.jpg",
-    "type": 3,
+    "id": 1009282,
+    "name": "Doctor Strange",
+    "description": "Description coming soon...",
+    "imgUrl": "https://cdn.marvel.com/content/1x/009drs_com_crd_01.jpg",
+    "type": "intelligence",
+    "team": "Illuminati",
     "characteristics": {
-      "intelligence": 270,
-      "force": 253,
-      "speedAndAgility": 373,
-      "specialSkills": 157,
-      "fightingSkills": 489
+      "intelligence": 435,
+      "force": 136,
+      "speedAndAgility": 366,
+      "specialSkills": 429,
+      "fightingSkills": 215
+    }
+  },
+  {
+    "id": 1009187,
+    "name": "Black Panther",
+    "description": "T’Challa is the king of the secretive and highly advanced African nation of Wakanda - as well as the powerful warrior known as the Black Panther.",
+    "imgUrl": "https://cdn.marvel.com/content/1x/007blp_com_crd_01_0.jpg",
+    "type": "force",
+    "team": "Illuminati",
+    "characteristics": {
+      "intelligence": 366,
+      "force": 451,
+      "speedAndAgility": 368,
+      "specialSkills": 131,
+      "fightingSkills": 412
+    }
+  },
+  {
+    "id": 1009438,
+    "name": "Medusa",
+    "description": "Description coming soon...",
+    "imgUrl": "ttps://cdn.marvel.com/content/1x/064mds_com_crd_01.jpg",
+    "type": "intelligence",
+    "team": "A-FORCE",
+    "characteristics": {
+      "intelligence": 422,
+      "force": 124,
+      "speedAndAgility": 410,
+      "specialSkills": 130,
+      "fightingSkills": 271
+    }
+  },
+  {
+    "id": 1017111,
+    "name": "She-Hulk",
+    "description": "She-Hulk is the Hulk's action-loving cousin. She's unbelievably strong, pilots the group's heavily armed Jump Jet, and uses a pair of Gamma Gauntlets that give her fists an added energy wallop. As the most competitive member of the team, She-Hulk never backs down from a fight, arm-wrestling match, or burping contest!  ",
+    "imgUrl": "https://cdn.marvel.com/content/1x/123shh_com_crd_01.jpg",
+    "type": "force",
+    "team": "A-FORCE",
+    "characteristics": {
+      "intelligence": 180,
+      "force": 462,
+      "speedAndAgility": 243,
+      "specialSkills": 129,
+      "fightingSkills": 386
+    }
+  },
+  {
+    "id": 1010338,
+    "name": "Captain Marvel",
+    "description": "When head of NASA security Carol Danvers was exposed to a powerful alien device, she transformed into the mighty cosmic powered hero, Captain Marvel!",
+    "imgUrl": "https://cdn.marvel.com/content/1x/008cmv_com_crd_01.jpg",
+    "type": "fightingSkills",
+    "team": "A-FORCE",
+    "characteristics": {
+      "intelligence": 245,
+      "force": 362,
+      "speedAndAgility": 211,
+      "specialSkills": 354,
+      "fightingSkills": 451
+    }
+  },
+  {
+    "id": 1017853,
+    "name": "Wave",
+    "description": "Description coming soon...",
+    "imgUrl": "https://cdn.marvel.com/content/1x/wave-pearl-pangan-earth-616.png",
+    "type": "intelligence",
+    "team": "AGENTS OF ATLAS",
+    "characteristics": {
+      "intelligence": 449,
+      "force": 227,
+      "speedAndAgility": 315,
+      "specialSkills": 286,
+      "fightingSkills": 241
+    }
+  },
+  {
+    "id": 1009577,
+    "name": "Shang-Chi",
+    "description": "Shang-Chi is the son of an internationally-renowned and powerful criminal mastermind whose childhood was a lonely one, full of constant training in rigorous mental and martial arts, with only limited contact with his parents.",
+    "imgUrl": "https://cdn.marvel.com/content/1x/242shc_com_crd_01.jpg",
+    "type": "fightingSkills",
+    "team": "AGENTS OF ATLAS",
+    "characteristics": {
+      "intelligence": 198,
+      "force": 210,
+      "speedAndAgility": 244,
+      "specialSkills": 324,
+      "fightingSkills": 467
     }
   },
   {
     "id": 1009351,
-    "name": "Hulk",
-    "description": "Caught in a gamma bomb explosion while trying to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the stronger the Hulk gets.",
-    "imgUrl": "https://cdn.marvel.com/content/1x/006hbb_com_crd_01.jpg",
-    "type": 2,
+    "name": "Brawn",
+    "description": "One of the smartest people on Earth, teenager Amadeus Cho has embraced his new Hulk-like powers as the hero called Brawn.",
+    "imgUrl": "https://cdn.marvel.com/content/1x/046hac_com_crd_01.jpg",
+    "type": "force",
+    "team": "AGENTS OF ATLAS",
     "characteristics": {
-      "intelligence": 68,
-      "force": 498,
-      "speedAndAgility": 322,
-      "specialSkills": 122,
-      "fightingSkills": 266
-    }
-  },
-  {
-    "id": 1009382,
-    "name": "Juggernaut",
-    "description": "Description coming soon...",
-    "imgUrl": "http://i.annihil.us/u/prod/marvel/i/mg/5/c0/528d340442cca.jpg",
-    "type": 2,
-    "characteristics": {
-      "intelligence": 136,
-      "force": 495,
-      "speedAndAgility": 101,
-      "specialSkills": 185,
-      "fightingSkills": 212
-    }
-  },
-  {
-    "id": 1009697,
-    "name": "Vision",
-    "description": "The metal monstrosity called Ultron created the synthetic humanoid known as the Vision from the remains of the original android Human Torch of the 1940s to serve as a vehicle of vengeance against the Avengers.",
-    "imgUrl": "https://cdn.marvel.com/content/1x/013vis_com_crd_01.jpg",
-    "type": 1,
-    "characteristics": {
-      "intelligence": 497,
-      "force": 311,
-      "speedAndAgility": 337,
-      "specialSkills": 316,
-      "fightingSkills": 299
-    }
-  },
-  {
-    "id": 1009562,
-    "name": "Scarlet Witch",
-    "description": "Description coming soon...",
-    "imgUrl": "https://cdn.marvel.com/content/1x/013vis_com_crd_01.jpg",
-    "type": 1,
-    "characteristics": {
-      "intelligence": 420,
-      "force": 190,
-      "speedAndAgility": 187,
-      "specialSkills": 482,
-      "fightingSkills": 138
+      "intelligence": 116,
+      "force": 487,
+      "speedAndAgility": 288,
+      "specialSkills": 234,
+      "fightingSkills": 394
     }
   }
 ]
