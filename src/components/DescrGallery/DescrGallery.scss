@@ -1,0 +1,87 @@
+.GalleryItem {
+  width: calc((100% - 15px) / 5);
+  padding: 30px 50px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.GearRight {
+  margin-left: -15px;
+  transform: rotate(12deg);
+}
+
+.GalleryItem:hover .GearRight,
+.GalleryItem:focus .GearRight {
+  animation: rotating 2s linear infinite;
+}
+
+.GalleryItem:hover .GearLeft,
+.GalleryItem:focus .GearLeft {
+  animation: rotatingReverse 2s linear infinite;
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotatingReverse {
+  from {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+.ItemContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.GalleryItem:hover .Lightening,
+.GalleryItem:focus .Lightening {
+  animation: lighteningTranslate 1s linear infinite;
+}
+@keyframes lighteningTranslate {
+  from {
+    -ms-transform: translateY(-110px);
+    -moz-transform: translateY(-110px);
+    -webkit-transform: translateY(-110px);
+    -o-transform: translateY(-110px);
+    transform: translateY(-110px);
+  }
+  to {
+    -ms-transform: translateY(110px);
+    -moz-transform: translateY(110px);
+    -webkit-transform: translateY(110px);
+    -o-transform: translateY(110px);
+    transform: translateY(110px);
+  }
+}

@@ -36,8 +36,8 @@ export const colors = extendTheme({
     },
   },
   fonts: {
-    body: 'Lato, sans-serif',
-    heading: 'Lato, sans-serif',
+    body: 'PT Serif, serif',
+    heading: 'PT Serif, serif',
   },
   fontSizes: {
     xs: '0.75rem',

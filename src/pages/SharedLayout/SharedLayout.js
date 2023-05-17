@@ -6,7 +6,7 @@ import { useState } from 'react';
 export const SharedLayout = () => {
   const [homePage, setHomePage] = useState(true);
   return (
-    <Box h="100vh" w="100vw" overflow="hidden">
+    <Box h="100vh" w="100vw" overflowX="hidden">
       {homePage ? (
         <Home setHomePage={setHomePage} />
       ) : (
