@@ -1,17 +1,10 @@
 import React from 'react';
 import './WelcomeBtn.scss';
-import { animateCurtains } from 'services/animateCurtains';
 
-export const WelcomeBtn = ({ setHomePage }) => {
+export const WelcomeBtn = ({ onClick, children }) => {
   return (
-    <button
-      className="WelcomebButton"
-      onClick={() => {
-        animateCurtains();
-        setTimeout(() => setHomePage(false), 3000);
-      }}
-    >
-      Click Me!
+    <button className="WelcomeButton" onClick={onClick}>
+      {children}
     </button>
   );
 };
