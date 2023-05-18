@@ -7,7 +7,6 @@ import heroes from 'db/heroes.json';
 import FightRing from 'components/FightRing/FightRing';
 import { calculateTotalPowerTeam } from 'services/calculatorService';
 import { addCardToTeam, deleteCardFromTeam } from 'redux/cards/slice';
-// import { getUserTeam } from 'redux/cards/selectors';
 import { filterHeroes } from 'services/filterHeroes';
 import GoToRingBtn from 'components/Buttons/GoToRingBtn';
 import { useCardsState } from 'hooks/useCardsState';
@@ -66,7 +65,6 @@ export const PlayGame = () => {
       ) : (
         <div>
           {noTeam ? (
-            // <TeamSelect />
             <p>choose smth</p>
           ) : (
             <>
