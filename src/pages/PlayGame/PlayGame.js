@@ -10,6 +10,7 @@ import { addCardToTeam, deleteCardFromTeam } from 'redux/cards/slice';
 import { filterHeroes } from 'services/filterHeroes';
 import GoToRingBtn from 'components/Buttons/GoToRingBtn';
 import { useCardsState } from 'hooks/useCardsState';
+import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
 
 export const PlayGame = () => {
   const { userTeam } = useCardsState();
@@ -65,7 +66,7 @@ export const PlayGame = () => {
       ) : (
         <div>
           {noTeam ? (
-            <p>choose smth</p>
+            <TeamSceleton />
           ) : (
             <>
               <TeamList team={userTeam} deleteFromTeam={deleteFromTeam} />
