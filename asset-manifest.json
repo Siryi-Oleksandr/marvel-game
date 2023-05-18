@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/itis-team-6/static/css/main.0b26520f.css",
-    "main.js": "/itis-team-6/static/js/main.1a6ac924.js",
+    "main.css": "/itis-team-6/static/css/main.bcdd8c31.css",
+    "main.js": "/itis-team-6/static/js/main.69f2d546.js",
+    "static/media/metal-door.jpg": "/itis-team-6/static/media/metal-door.0f6f45f6e0bb7650f510.jpg",
     "static/media/AvengeanceHeroicAvengerNormal-Bz7d.ttf": "/itis-team-6/static/media/AvengeanceHeroicAvengerNormal-Bz7d.2805e15e170e8f94a349.ttf",
     "static/media/card-bg.png": "/itis-team-6/static/media/card-bg.6bd64e4c7706ae2a95e9.png",
     "index.html": "/itis-team-6/index.html",
     "static/media/marvel.svg": "/itis-team-6/static/media/marvel.f64c057bbe349be7d601d4046d296c6c.svg",
-    "main.0b26520f.css.map": "/itis-team-6/static/css/main.0b26520f.css.map",
-    "main.1a6ac924.js.map": "/itis-team-6/static/js/main.1a6ac924.js.map"
+    "main.bcdd8c31.css.map": "/itis-team-6/static/css/main.bcdd8c31.css.map",
+    "main.69f2d546.js.map": "/itis-team-6/static/js/main.69f2d546.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b26520f.css",
-    "static/js/main.1a6ac924.js"
+    "static/css/main.bcdd8c31.css",
+    "static/js/main.69f2d546.js"
   ]
 }
