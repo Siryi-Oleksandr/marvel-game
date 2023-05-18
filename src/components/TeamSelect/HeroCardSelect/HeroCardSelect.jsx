@@ -10,7 +10,7 @@ function HeroCardSelect({ category }) {
         <MdAdd/>
       </Box>
       <Text className="text">
-        Choose a hero from the category: <Text className="category">{category}</Text>
+        Choose a hero from the category: <span className="category">{category}</span>
       </Text>
     </Box>
   )

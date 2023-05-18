@@ -15,7 +15,7 @@ function TeamSelect() {
       <Flex className="card-container">
         {category.map((category) => {
           return (
-            <Box>
+            <Box key={category}>
               <HeroCardSelect category={category}/>
             </Box>
           )

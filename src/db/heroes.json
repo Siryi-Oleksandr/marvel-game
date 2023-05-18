@@ -48,7 +48,7 @@
     "id": 1009438,
     "name": "Medusa",
     "description": "Description coming soon...",
-    "imgUrl": "ttps://cdn.marvel.com/content/1x/064mds_com_crd_01.jpg",
+    "imgUrl": "https://cdn.marvel.com/content/1x/064mds_com_crd_01.jpg",
     "type": "intelligence",
     "team": "A-FORCE",
     "characteristics": {
