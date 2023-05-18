@@ -1,13 +1,13 @@
 import React from 'react';
 import { CardListWrapper } from './CardsList.styled';
 
-import heroes from 'db/heroes.json';
+// import heroes from 'db/heroes.json';
 import CardItem from 'components/CardItem/CardItem';
 
-function CardsList({ addToTeam }) {
+function CardsList({ filteredHeroes, addToTeam }) {
   return (
     <CardListWrapper>
-      {heroes.map(hero => (
+      {filteredHeroes.map(hero => (
         <CardItem key={hero.id} hero={hero} addToTeam={addToTeam} />
       ))}
     </CardListWrapper>

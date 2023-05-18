@@ -4,6 +4,7 @@ import { fetchCards } from './operations';
 const initialState = {
   cards: [],
   userTeam: [],
+  filter: [],
   isRefreshing: false,
 };
 export const cardsSlice = createSlice({
@@ -15,10 +16,7 @@ export const cardsSlice = createSlice({
     },
     deleteCardFromTeam(state, action) {
       const index = state.userTeam.findIndex(card => card.id === action.id);
-      console.log('index', index);
       state.userTeam.splice(index, 1);
-
-      // return state.userTeam.filter(card => card.id !== action.payload);
     },
   },
   extraReducers: {

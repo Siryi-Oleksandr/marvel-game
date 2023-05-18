@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import CardsList from 'components/CardsList/CardsList';
-import TeamSelect from 'components/TeamSelect/TeamSelect';
-import { Button } from '@chakra-ui/react';
 import TeamList from 'components/TeamList/TeamList';
 import { getRandomTeam } from 'services/ramdomTeam';
 import heroes from 'db/heroes.json';
 import FightRing from 'components/FightRing/FightRing';
 import { calculateTotalPowerTeam } from 'services/calculatorService';
 import { addCardToTeam, deleteCardFromTeam } from 'redux/cards/slice';
-import { getUserTeam } from 'redux/cards/selectors';
+// import { getUserTeam } from 'redux/cards/selectors';
+import { filterHeroes } from 'services/filterHeroes';
+import GoToRingBtn from 'components/Buttons/GoToRingBtn';
+import { useCardsState } from 'hooks/useCardsState';
 
 export const PlayGame = () => {
-  const userTeam = useSelector(getUserTeam);
+  const { userTeam } = useCardsState();
   const [isFight, setIsFight] = useState(false);
-
-  console.log('userTeam', userTeam);
 
   const dispatch = useDispatch();
 
   const noTeam = !userTeam.length;
   const isTeam = userTeam.length === 3;
   const enemyTeam = getRandomTeam(heroes);
+
+  const filteredHeroes = filterHeroes(heroes, userTeam);
 
   const addToTeam = hero => {
     dispatch(addCardToTeam(hero));
@@ -70,18 +71,15 @@ export const PlayGame = () => {
           ) : (
             <>
               <TeamList team={userTeam} deleteFromTeam={deleteFromTeam} />
-              <Button
-                color="blue.400"
-                size="lg"
-                onClick={() => setIsFight(true)}
-                isDisabled={!isTeam} // todo
-              >
-                Go to ring
-              </Button>
             </>
           )}
-          {/*  */}
-          <CardsList addToTeam={addToTeam} />
+          {!isTeam ? (
+            <CardsList filteredHeroes={filteredHeroes} addToTeam={addToTeam} />
+          ) : (
+            <GoToRingBtn openRing={() => setIsFight(true)}>
+              Go to ring
+            </GoToRingBtn>
+          )}
         </div>
       )}
     </>
