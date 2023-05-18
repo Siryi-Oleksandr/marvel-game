@@ -1,30 +1,37 @@
 import './Home.scss';
 import React from 'react';
-import { WelcomeBtn, Logo, Container, Title, DescrGallery } from 'components';
+import {
+  Curtain,
+  WelcomeBtn,
+  Logo,
+  Container,
+  Title,
+  DescrGallery,
+} from 'components';
 import { Box, Text } from '@chakra-ui/react';
 import { BsFillSuitHeartFill } from 'react-icons/bs';
-import { closeCurtains, openCurtains } from 'services/animateCurtains';
+import { animateCurtains } from 'services/animateCurtains';
 
-export const Home = ({ setHomePage, setSharedLay }) => {
+export const Home = ({ setHomePage }) => {
   return (
-    <Box h="100vh" w="100vw" className="descrPage">
-      <Box as={Container} display="flex" flexDirection="column">
-        <Box display="flex" justifyContent="space-between" pt="20px">
-          <Logo />
-          <Text color="whitesmoke">
-            with
-            <BsFillSuitHeartFill
-              fill="red"
-              style={{
-                display: 'inline-flex',
-                marginLeft: '5px',
-                marginRight: '5px',
-              }}
-            />
-            from DevDoodles
-          </Text>
-        </Box>
-        <Box display="flex" flexDirection="column" className="ContentBox">
+    <Curtain setHomePage={setHomePage}>
+      <Box h="100vh" w="100vw" position="relative" className="descrPage">
+        <Container>
+          <Box display="flex" justifyContent="space-between" py="20px">
+            <Logo />
+            <Text color="whitesmoke">
+              with
+              <BsFillSuitHeartFill
+                fill="red"
+                style={{
+                  display: 'inline-flex',
+                  marginLeft: '5px',
+                  marginRight: '5px',
+                }}
+              />
+              from DevDoodles
+            </Text>
+          </Box>
           <Box
             color="#ffd700"
             textAlign="center"
@@ -33,7 +40,8 @@ export const Home = ({ setHomePage, setSharedLay }) => {
             mx="auto"
           >
             <Title>Superhero Power App</Title>
-            <Text fontSize="20px">
+
+            <Text fontSize="20px" mb="20px">
               the ultimate tool for assessing the strength of your superhero
               team!
             </Text>
@@ -46,22 +54,16 @@ export const Home = ({ setHomePage, setSharedLay }) => {
             className="buttonContainer"
           >
             <WelcomeBtn
-              setHomePage={setHomePage}
               onClick={() => {
-                closeCurtains();
-
-                setTimeout(() => {
-                  setHomePage(false);
-                  setSharedLay(true);
-                  openCurtains();
-                }, 3000);
+                animateCurtains();
+                setTimeout(() => setHomePage(false), 3000);
               }}
             >
               Let's Play!
             </WelcomeBtn>
           </Box>
-        </Box>
+        </Container>
       </Box>
-    </Box>
+    </Curtain>
   );
 };
