@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import CardsList from 'components/CardsList/CardsList';
 import TeamSelect from 'components/TeamSelect/TeamSelect';
 import { Button } from '@chakra-ui/react';
@@ -7,25 +8,30 @@ import { getRandomTeam } from 'services/ramdomTeam';
 import heroes from 'db/heroes.json';
 import FightRing from 'components/FightRing/FightRing';
 import { calculateTotalPowerTeam } from 'services/calculatorService';
+import { addCardToTeam, deleteCardFromTeam } from 'redux/cards/slice';
+import { getUserTeam } from 'redux/cards/selectors';
 
 export const PlayGame = () => {
-  const [userTeam, setUserTeam] = useState([]);
+  const userTeam = useSelector(getUserTeam);
   const [isFight, setIsFight] = useState(false);
+
+  console.log('userTeam', userTeam);
+
+  const dispatch = useDispatch();
 
   const noTeam = !userTeam.length;
   const isTeam = userTeam.length === 3;
   const enemyTeam = getRandomTeam(heroes);
 
   const addToTeam = hero => {
-    setUserTeam(prev => [...prev, hero]);
+    dispatch(addCardToTeam(hero));
   };
 
-  const deleteFromTeam = hero => {
+  const deleteFromTeam = id => {
     if (noTeam) {
       return;
     }
-    const updatedTeam = userTeam.filter(elem => elem.id !== hero.id);
-    setUserTeam(updatedTeam);
+    dispatch(deleteCardFromTeam(id));
   };
 
   const onFight = () => {
@@ -45,7 +51,6 @@ export const PlayGame = () => {
 
   const onBack = () => {
     setIsFight(false);
-    setUserTeam([]);
   };
 
   return (
@@ -60,7 +65,8 @@ export const PlayGame = () => {
       ) : (
         <div>
           {noTeam ? (
-            <TeamSelect />
+            // <TeamSelect />
+            <p>choose smth</p>
           ) : (
             <>
               <TeamList team={userTeam} deleteFromTeam={deleteFromTeam} />

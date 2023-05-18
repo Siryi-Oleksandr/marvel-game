@@ -28,7 +28,7 @@ function TeamItem({ hero, deleteFromTeam }) {
     <CardItemWrapper>
       <Card flipped={flipped}>
         <CardFront imgUrl={hero.imgUrl}>
-          <DeleteButton onClick={() => deleteFromTeam(hero)}>
+          <DeleteButton onClick={() => deleteFromTeam(hero.id)}>
             <RiDeleteBin2Line color="white" size="2em" />
           </DeleteButton>
           <InfoButton onClick={handleFlip}>
