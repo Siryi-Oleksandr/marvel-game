@@ -3,36 +3,34 @@ export const colors = extendTheme({
   colors: {
     transparent: 'transparent',
     black: '#000000',
-    white: '#ffffff',
+    white: {
+      700: '#f5f5f5', //done - whitesmoke
+      900: '#ffffff', //done
+    },
+
     blue: {
       50: '#f7fafc',
       100: '#C6D1ED',
       400: '#5c81e1',
-      600: '#202F53',
-      700: '#1F4AB8',
-      900: '#111f42',
+      600: '#0a2c66', //done
+      700: '#002350', //done
+      900: '#010817', //done
     },
     gray: {
-      100: 'rgba(181, 194, 227, 0.15)',
+      100: '#cccccc', //done
       400: '#bcbcbc',
+      900: '#212121', //done
     },
     red: {
-      400: '#E0729B',
-      900: '#ff0000',
+      300: '#c27171', //done
+      400: '#ff0000', // done
+      900: '#c61818', // done
     },
-    green: {
-      100: '#CDD3CE',
-      400: '#3FAD47',
-      700: '#26992E',
-    },
-    pink: {
-      400: '#E0729B',
-      700: '#E0578A',
-    },
+
     yellow: {
       100: '#CDD3CE',
       400: '#E0B346',
-      700: '#EAAE1E',
+      700: '#ffd700', //done
     },
   },
   fonts: {

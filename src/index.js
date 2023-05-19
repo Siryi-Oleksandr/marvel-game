@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { store, persistor } from './redux/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { Curtain } from 'components';
 
 const theme = extendTheme({ colors });
 
@@ -22,5 +23,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </React.StrictMode>
       </PersistGate>
     </Provider>
+  </ChakraProvider>
+);
+ReactDOM.createRoot(document.getElementById('modal-root')).render(
+  <ChakraProvider theme={theme}>
+    <React.StrictMode>
+      <Curtain />
+    </React.StrictMode>
   </ChakraProvider>
 );
