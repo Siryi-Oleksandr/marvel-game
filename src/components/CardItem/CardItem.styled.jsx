@@ -205,3 +205,32 @@ export const HeroDescriptionTitle = styled.span`
   font-weight: bold;
   color: whitesmoke;
 `;
+
+export const MainSkillIcon = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 45px;
+  height: 45px;
+
+  /* padding: 16px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #002350;
+  /* background-image: url(${props => props.bgUrl}); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+
+  transform: translate(-50%, 50%);
+`;
+
+// export const AddButton = styled(CardButton)`
+//   top: 0;
+//   left: 0;
+//   transform: translate(-50%, -50%);
+// `;

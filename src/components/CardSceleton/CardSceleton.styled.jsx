@@ -9,11 +9,11 @@ export const Card = styled.li`
   height: 400px;
   background-image: linear-gradient(
       to bottom,
-      rgba(28, 38, 144, 0.7),
-      rgba(22, 31, 129, 0.7)
+      rgba(42, 43, 50, 0.804),
+      rgba(35, 36, 42, 0.7)
     ),
     url(${props => props.imgUrl});
-  background-color: ${colors.blue[700]};
+  background-color: ${colors.blue[400]};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

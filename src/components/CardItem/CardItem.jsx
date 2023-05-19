@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   CardItemWrapper,
   HeroName,
@@ -13,13 +13,35 @@ import {
   HeroDescriptionTitle,
   HeroNameBack,
   HeroMainSkill,
+  MainSkillIcon,
 } from './CardItem.styled';
 import { GoPlus } from 'react-icons/go';
 import { BsInfoLg } from 'react-icons/bs';
 import { TbArrowBackUp } from 'react-icons/tb';
+import power from '../../images/power-3.png';
+import intelligence from '../../images/intelligence-9.png';
+import fight from '../../images/speed.png';
 
 function CardItem({ hero, addToTeam }) {
   const [flipped, setFlipped] = useState(false);
+  const [skillIcon, setSkillIcon] = useState(null);
+
+  useEffect(() => {
+    switch (hero.type) {
+      case 'intelligence':
+        setSkillIcon(intelligence);
+        break;
+      case 'force':
+        setSkillIcon(power);
+        break;
+      case 'fightingSkills':
+        setSkillIcon(fight);
+        break;
+
+      default:
+        break;
+    }
+  }, [hero.type]);
 
   const handleFlip = () => {
     setFlipped(!flipped);
@@ -35,6 +57,7 @@ function CardItem({ hero, addToTeam }) {
           <InfoButton onClick={handleFlip}>
             <BsInfoLg color="white" size="2em" />
           </InfoButton>
+          <MainSkillIcon style={{ backgroundImage: `url(${skillIcon})` }} />
           <HeroMainSkill>{hero.type}</HeroMainSkill>
           <HeroName>{hero.name}</HeroName>
         </CardFront>

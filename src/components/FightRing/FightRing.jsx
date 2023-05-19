@@ -1,21 +1,21 @@
 import { Button } from '@chakra-ui/react';
+import FightBtn from 'components/Buttons/FightBtn';
+import SectionTitle from 'components/SectionTitle/SectionTitle';
 import TeamList from 'components/TeamList/TeamList';
 import React from 'react';
 
 function FightRing({ userTeam, enemyTeam, fight, back }) {
   return (
     <div>
-      Figth Ring
-      <br />
+      <SectionTitle>Figth Ring</SectionTitle>
+
       <Button colorScheme="blue" size="lg" onClick={back}>
         Back
       </Button>
-      <h2>User Team</h2>
+      <SectionTitle>User Team</SectionTitle>
       <TeamList team={userTeam} />
-      <Button colorScheme="red" size="lg" onClick={fight}>
-        Fight
-      </Button>
-      <h2>Enemy Team</h2>
+      <FightBtn fight={fight} />
+      <SectionTitle>Enemy Team</SectionTitle>
       <TeamList team={enemyTeam} />
     </div>
   );

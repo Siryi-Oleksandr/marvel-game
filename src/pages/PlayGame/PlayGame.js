@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import CardsList from 'components/CardsList/CardsList';
-import TeamList from 'components/TeamList/TeamList';
+import './PlayGame.scss';
 import { getRandomTeam } from 'services/ramdomTeam';
 import heroes from 'db/heroes.json';
 import FightRing from 'components/FightRing/FightRing';
@@ -55,7 +55,7 @@ export const PlayGame = () => {
   };
 
   return (
-    <>
+    <div className="playPage">
       {isFight ? (
         <FightRing
           userTeam={userTeam}
@@ -67,19 +67,14 @@ export const PlayGame = () => {
         <div>
           <TeamSceleton deleteFromTeam={deleteFromTeam} />
 
-          {/* <>
-              <TeamList team={userTeam} deleteFromTeam={deleteFromTeam} />
-            </> */}
-
           {!isTeam ? (
             <CardsList filteredHeroes={filteredHeroes} addToTeam={addToTeam} />
           ) : (
-            <GoToRingBtn openRing={() => setIsFight(true)}>
-              Go to ring
-            </GoToRingBtn>
+            <GoToRingBtn openRing={() => setIsFight(true)} />
           )}
         </div>
       )}
-    </>
+      {/* <div className="animated-background "></div> */}
+    </div>
   );
 };
