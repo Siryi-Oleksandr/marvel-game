@@ -1,16 +1,20 @@
 import React from 'react';
 import { CardListWrapper } from './CardsList.styled';
 
-import heroes from 'db/heroes.json';
+// import heroes from 'db/heroes.json';
 import CardItem from 'components/CardItem/CardItem';
+import SectionTitle from 'components/SectionTitle/SectionTitle';
 
-function CardsList({ addToTeam }) {
+function CardsList({ filteredHeroes, addToTeam }) {
   return (
-    <CardListWrapper>
-      {heroes.map(hero => (
-        <CardItem key={hero.id} hero={hero} addToTeam={addToTeam} />
-      ))}
-    </CardListWrapper>
+    <>
+      <SectionTitle>Choose from the following heroes</SectionTitle>
+      <CardListWrapper>
+        {filteredHeroes.map(hero => (
+          <CardItem key={hero.id} hero={hero} addToTeam={addToTeam} />
+        ))}
+      </CardListWrapper>
+    </>
   );
 }
 

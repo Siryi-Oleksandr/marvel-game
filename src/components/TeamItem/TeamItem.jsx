@@ -17,18 +17,23 @@ import { RiDeleteBin2Line } from 'react-icons/ri';
 import { BsInfoLg } from 'react-icons/bs';
 import { TbArrowBackUp } from 'react-icons/tb';
 
-function TeamItem({ hero, deleteFromTeam }) {
+function TeamItem({ hero, deleteFromTeam, removeFromSceleton }) {
   const [flipped, setFlipped] = useState(false);
 
   const handleFlip = () => {
     setFlipped(!flipped);
   };
 
+  const onDelete = () => {
+    deleteFromTeam(hero.id);
+    removeFromSceleton(hero.type);
+  };
+
   return (
     <CardItemWrapper>
       <Card flipped={flipped}>
         <CardFront imgUrl={hero.imgUrl}>
-          <DeleteButton onClick={() => deleteFromTeam(hero)}>
+          <DeleteButton onClick={onDelete}>
             <RiDeleteBin2Line color="white" size="2em" />
           </DeleteButton>
           <InfoButton onClick={handleFlip}>

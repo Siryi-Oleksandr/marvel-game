@@ -1,0 +1,45 @@
+.playPage {
+  background: #de6161; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2657eb,
+    #de6161
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2657eb,
+    #de6161
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-size: cover;
+  background-position: center;
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
+  background-size: cover;
+  animation-name: rotateBackground;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotateBackground {
+  0% {
+    transform: rotate(0deg);
+    background-position: 0% 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-position: 100% 50%;
+  }
+}

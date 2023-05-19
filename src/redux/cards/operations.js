@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://mocki.io';
-const API_KEY = '5c32f1e9-1ad6-47f0-a54e-57bfd711b362';
+const API_KEY = '2497b5ed-ec57-47d0-bb7e-c68f5c2e7c88';
 
 export const fetchCards = createAsyncThunk(
   'cards/fetchCards',

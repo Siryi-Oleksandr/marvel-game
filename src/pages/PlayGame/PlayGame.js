@@ -1,31 +1,38 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import CardsList from 'components/CardsList/CardsList';
-import TeamSelect from 'components/TeamSelect/TeamSelect';
-import { Button } from '@chakra-ui/react';
-import TeamList from 'components/TeamList/TeamList';
+import './PlayGame.scss';
 import { getRandomTeam } from 'services/ramdomTeam';
 import heroes from 'db/heroes.json';
 import FightRing from 'components/FightRing/FightRing';
 import { calculateTotalPowerTeam } from 'services/calculatorService';
+import { addCardToTeam, deleteCardFromTeam } from 'redux/cards/slice';
+import { filterHeroes } from 'services/filterHeroes';
+import GoToRingBtn from 'components/Buttons/GoToRingBtn';
+import { useCardsState } from 'hooks/useCardsState';
+import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
 
 export const PlayGame = () => {
-  const [userTeam, setUserTeam] = useState([]);
+  const { userTeam } = useCardsState();
   const [isFight, setIsFight] = useState(false);
+
+  const dispatch = useDispatch();
 
   const noTeam = !userTeam.length;
   const isTeam = userTeam.length === 3;
   const enemyTeam = getRandomTeam(heroes);
 
+  const filteredHeroes = filterHeroes(heroes, userTeam);
+
   const addToTeam = hero => {
-    setUserTeam(prev => [...prev, hero]);
+    dispatch(addCardToTeam(hero));
   };
 
-  const deleteFromTeam = hero => {
+  const deleteFromTeam = id => {
     if (noTeam) {
       return;
     }
-    const updatedTeam = userTeam.filter(elem => elem.id !== hero.id);
-    setUserTeam(updatedTeam);
+    dispatch(deleteCardFromTeam(id));
   };
 
   const onFight = () => {
@@ -45,11 +52,10 @@ export const PlayGame = () => {
 
   const onBack = () => {
     setIsFight(false);
-    setUserTeam([]);
   };
 
   return (
-    <>
+    <div className="playPage">
       {isFight ? (
         <FightRing
           userTeam={userTeam}
@@ -59,25 +65,16 @@ export const PlayGame = () => {
         />
       ) : (
         <div>
-          {noTeam ? (
-            <TeamSelect />
+          <TeamSceleton deleteFromTeam={deleteFromTeam} />
+
+          {!isTeam ? (
+            <CardsList filteredHeroes={filteredHeroes} addToTeam={addToTeam} />
           ) : (
-            <>
-              <TeamList team={userTeam} deleteFromTeam={deleteFromTeam} />
-              <Button
-                color="blue.400"
-                size="lg"
-                onClick={() => setIsFight(true)}
-                isDisabled={!isTeam} // todo
-              >
-                Go to ring
-              </Button>
-            </>
+            <GoToRingBtn openRing={() => setIsFight(true)} />
           )}
-          {/*  */}
-          <CardsList addToTeam={addToTeam} />
         </div>
       )}
-    </>
+      {/* <div className="animated-background "></div> */}
+    </div>
   );
 };
