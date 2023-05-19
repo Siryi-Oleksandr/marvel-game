@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import cardBgImg from '../../images/card-bg.png';
+import * as theme from '../../theme';
+const { colors } = theme.colors;
 
 export const Card = styled.li`
   position: relative;
@@ -7,12 +8,12 @@ export const Card = styled.li`
   width: 280px;
   height: 400px;
   background-image: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
+      to bottom,
+      rgba(28, 38, 144, 0.7),
+      rgba(22, 31, 129, 0.7)
     ),
     url(${props => props.imgUrl});
-  background-color: rgba(0, 0, 0, 0.74);
+  background-color: ${colors.blue[700]};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -23,4 +24,18 @@ export const Card = styled.li`
   justify-content: center;
 
   /* filter: blur(1px); */
+`;
+
+export const HeroSkill = styled.p`
+  color: whitesmoke;
+  text-align: center;
+  font-size: 36px;
+  font-family: 'PT Serif';
+  font-weight: bold;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0px -2px 0 #212121, 0px -2px 0 #212121, 0px 2px 0 #212121,
+    0px 2px 0 #212121, -2px 0px 0 #212121, 2px 0px 0 #212121, -2px 0px 0 #212121,
+    2px 0px 0 #212121, -2px -2px 0 #212121, 2px -2px 0 #212121;
 `;

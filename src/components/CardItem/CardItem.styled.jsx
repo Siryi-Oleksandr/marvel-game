@@ -33,8 +33,9 @@ export const CardFront = styled.div`
   height: 340px;
 
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
   background-image: url(${props => props.imgUrl});
   background-size: cover;
@@ -113,7 +114,6 @@ export const AddButton = styled(CardButton)`
   background-color: #002350;
 `;
 
-// TODO
 export const DeleteButton = styled(CardButton)`
   top: 0;
   left: 0;
@@ -139,6 +139,14 @@ export const HeroName = styled.h2`
   text-shadow: 0px -2px 0 #212121, 0px -2px 0 #212121, 0px 2px 0 #212121,
     0px 2px 0 #212121, -2px 0px 0 #212121, 2px 0px 0 #212121, -2px 0px 0 #212121,
     2px 0px 0 #212121, -2px -2px 0 #212121, 2px -2px 0 #212121;
+`;
+
+export const HeroMainSkill = styled.p`
+  text-align: center;
+  font-size: 20px;
+  font-family: 'PT Serif';
+  font-weight: bold;
+  color: blue;
 `;
 
 export const HeroNameBack = styled.h2`

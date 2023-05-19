@@ -12,6 +12,7 @@ import {
   BackButton,
   HeroDescriptionTitle,
   HeroNameBack,
+  HeroMainSkill,
 } from './CardItem.styled';
 import { GoPlus } from 'react-icons/go';
 import { BsInfoLg } from 'react-icons/bs';
@@ -19,7 +20,6 @@ import { TbArrowBackUp } from 'react-icons/tb';
 
 function CardItem({ hero, addToTeam }) {
   const [flipped, setFlipped] = useState(false);
-  // const [advantage, setAdvantage] = useState(() => findAdvantages(hero));
 
   const handleFlip = () => {
     setFlipped(!flipped);
@@ -35,6 +35,7 @@ function CardItem({ hero, addToTeam }) {
           <InfoButton onClick={handleFlip}>
             <BsInfoLg color="white" size="2em" />
           </InfoButton>
+          <HeroMainSkill>{hero.type}</HeroMainSkill>
           <HeroName>{hero.name}</HeroName>
         </CardFront>
 
