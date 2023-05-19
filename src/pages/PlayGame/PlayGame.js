@@ -3,26 +3,22 @@ import { useDispatch } from 'react-redux';
 import CardsList from 'components/CardsList/CardsList';
 import './PlayGame.scss';
 import { getRandomTeam } from 'services/ramdomTeam';
-import heroes from 'db/heroes.json';
 import FightRing from 'components/FightRing/FightRing';
 import { calculateTotalPowerTeam } from 'services/calculatorService';
 import { addCardToTeam, deleteCardFromTeam } from 'redux/cards/slice';
-import { filterHeroes } from 'services/filterHeroes';
 import GoToRingBtn from 'components/Buttons/GoToRingBtn';
 import { useCardsState } from 'hooks/useCardsState';
 import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
 
 export const PlayGame = () => {
-  const { userTeam } = useCardsState();
+  const { userTeam, cards, filteredCards } = useCardsState();
   const [isFight, setIsFight] = useState(false);
 
   const dispatch = useDispatch();
 
   const noTeam = !userTeam.length;
   const isTeam = userTeam.length === 3;
-  const enemyTeam = getRandomTeam(heroes);
-
-  const filteredHeroes = filterHeroes(heroes, userTeam);
+  const enemyTeam = getRandomTeam(cards);
 
   const addToTeam = hero => {
     dispatch(addCardToTeam(hero));
@@ -68,7 +64,7 @@ export const PlayGame = () => {
           <TeamSceleton deleteFromTeam={deleteFromTeam} />
 
           {!isTeam ? (
-            <CardsList filteredHeroes={filteredHeroes} addToTeam={addToTeam} />
+            <CardsList filteredHeroes={filteredCards} addToTeam={addToTeam} />
           ) : (
             <GoToRingBtn openRing={() => setIsFight(true)} />
           )}

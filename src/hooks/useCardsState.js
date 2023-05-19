@@ -2,17 +2,17 @@ import { useSelector } from 'react-redux';
 import {
   selectCards,
   selectUserTeam,
-  selectFilter,
+  getFilteredCards,
 } from 'redux/cards/selectors';
 
 export const useCardsState = () => {
   const cards = useSelector(selectCards);
   const userTeam = useSelector(selectUserTeam);
-  const filter = useSelector(selectFilter);
+  const filteredCards = useSelector(getFilteredCards);
 
   return {
     cards,
     userTeam,
-    filter,
+    filteredCards,
   };
 };

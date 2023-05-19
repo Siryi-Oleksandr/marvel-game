@@ -4,7 +4,6 @@ import { fetchCards } from './operations';
 const initialState = {
   cards: [],
   userTeam: [],
-  filter: [],
   isRefreshing: false,
 };
 export const cardsSlice = createSlice({
