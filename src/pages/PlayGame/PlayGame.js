@@ -65,13 +65,12 @@ export const PlayGame = () => {
         />
       ) : (
         <div>
-          {noTeam ? (
-            <TeamSceleton />
-          ) : (
-            <>
+          <TeamSceleton deleteFromTeam={deleteFromTeam} />
+
+          {/* <>
               <TeamList team={userTeam} deleteFromTeam={deleteFromTeam} />
-            </>
-          )}
+            </> */}
+
           {!isTeam ? (
             <CardsList filteredHeroes={filteredHeroes} addToTeam={addToTeam} />
           ) : (
