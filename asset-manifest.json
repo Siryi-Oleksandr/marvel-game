@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/itis-team-6/static/css/main.1584af60.css",
-    "main.js": "/itis-team-6/static/js/main.f7ae0ac6.js",
+    "main.js": "/itis-team-6/static/js/main.e2b531f5.js",
     "static/media/skeleton-2.png": "/itis-team-6/static/media/skeleton-2.8e54bb5fad6ef0c5555b.png",
     "static/media/skeleton-3.png": "/itis-team-6/static/media/skeleton-3.0bb9d73725195abe43a5.png",
     "static/media/skeleton-1.png": "/itis-team-6/static/media/skeleton-1.3db866b2301150efc0cd.png",
@@ -15,10 +15,10 @@
     "static/media/marvel.svg": "/itis-team-6/static/media/marvel.f64c057bbe349be7d601d4046d296c6c.svg",
     "static/media/shield.svg": "/itis-team-6/static/media/shield.ef53c0a1e4889cdbf1ecb6c697769963.svg",
     "main.1584af60.css.map": "/itis-team-6/static/css/main.1584af60.css.map",
-    "main.f7ae0ac6.js.map": "/itis-team-6/static/js/main.f7ae0ac6.js.map"
+    "main.e2b531f5.js.map": "/itis-team-6/static/js/main.e2b531f5.js.map"
   },
   "entrypoints": [
     "static/css/main.1584af60.css",
-    "static/js/main.f7ae0ac6.js"
+    "static/js/main.e2b531f5.js"
   ]
 }
