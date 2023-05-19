@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoImg from 'img/marvel.svg';
+import LogoImg from 'images/marvel.svg';
 
 export const Logo = () => {
   return (

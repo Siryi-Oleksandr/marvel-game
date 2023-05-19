@@ -33,5 +33,4 @@ export const cardsSlice = createSlice({
   },
 });
 
-export const selectCards = state => state.cards;
 export const { addCardToTeam, deleteCardFromTeam } = cardsSlice.actions;
