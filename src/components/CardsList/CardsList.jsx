@@ -3,14 +3,18 @@ import { CardListWrapper } from './CardsList.styled';
 
 // import heroes from 'db/heroes.json';
 import CardItem from 'components/CardItem/CardItem';
+import SectionTitle from 'components/SectionTitle/SectionTitle';
 
 function CardsList({ filteredHeroes, addToTeam }) {
   return (
-    <CardListWrapper>
-      {filteredHeroes.map(hero => (
-        <CardItem key={hero.id} hero={hero} addToTeam={addToTeam} />
-      ))}
-    </CardListWrapper>
+    <>
+      <SectionTitle>Choose from the following heroes</SectionTitle>
+      <CardListWrapper>
+        {filteredHeroes.map(hero => (
+          <CardItem key={hero.id} hero={hero} addToTeam={addToTeam} />
+        ))}
+      </CardListWrapper>
+    </>
   );
 }
 
