@@ -1,13 +1,7 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 
-export const GlobalStyle = createGlobalStyle`
-  :root {
-    //--card-height: 400px;
-    //--card-width: 250px;
-    --card-height: 255px;
-    --card-width: 180px;
-  }
-`;
+const cardHeight = "255px"
+const cardWidth = "180px"
 
 export const ListWrapper = styled.div`
   padding-left: 20px;
@@ -25,16 +19,16 @@ export const ListWrapper = styled.div`
 `;
 
 export const HeroItem = styled.div`
-  width: var(--card-width);
-  height: var(--card-height);
+  width: ${cardWidth};
+  height: ${cardHeight};
   background-color: gold;
 `;
 
 export const TeamItemCommand = styled.div`
   display: flex;
   flex-direction: column;
-  width: calc(var(--card-width) * 3 + 20) ;
-  height: calc(var(--card-height) + 15% + 60);
+  width: calc(${cardWidth} * 3 + 20) ;
+  height: calc(${cardHeight}+ 15% + 60);
   padding-bottom: 10px;
 
   //border: 1px solid blue;
@@ -42,7 +36,7 @@ export const TeamItemCommand = styled.div`
 
   & > div > :nth-child(1) {
     transition: 0.8s;
-    transform: translateX(calc(var(--card-width) * 3 - 230%)) translateY(-5%) rotateZ(-15deg);
+    transform: translateX(calc(${cardWidth} * 3 - 230%)) translateY(-5%) rotateZ(-15deg);
     transition-delay: 0s;
     background-color: red;
     color: white;
@@ -50,7 +44,7 @@ export const TeamItemCommand = styled.div`
   & > div >:nth-child(2) {
     transition: 0.8s;
     transition-delay: 0.02s;
-    transform: translateX(calc(var(--card-width) * 2 - 200%)) translateY(-5%) rotateZ(0deg);
+    transform: translateX(calc(${cardWidth} * 2 - 200%)) translateY(-5%) rotateZ(0deg);
     background-color: black;
     color: white;
   }
@@ -58,7 +52,7 @@ export const TeamItemCommand = styled.div`
   & > div > :nth-child(3) {
     transition: 0.8s;
     transition-delay: 0.04s;
-    transform: translateX(calc(var(--card-width) * 1 - 170%)) translateY(-5%) rotateZ(15deg);
+    transform: translateX(calc(${cardWidth} * 1 - 170%)) translateY(-5%) rotateZ(15deg);
     background-color: green;
     color: white;
   }

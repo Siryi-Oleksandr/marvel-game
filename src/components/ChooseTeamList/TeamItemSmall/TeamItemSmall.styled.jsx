@@ -1,9 +1,12 @@
 import styled from 'styled-components'
 import cardBgImg from '../../../images/card-bg.png';
+
+const cardHeight = "255px" // todo move to chakra
+const cardWidth = "180px"
 export const ItemWrapper = styled.div`
   position: relative;
-  width: var(--card-width);
-  height: var(--card-height);
+  width: ${cardWidth};
+  height: ${cardHeight};
   border-radius: 15px;
 
   display: flex;
