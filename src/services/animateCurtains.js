@@ -4,6 +4,7 @@ export const closeCurtains = () => {
   const leftCurtain = document.getElementById('leftCurtain');
   const rightCurtain = document.getElementById('rightCurtain');
   curtainBody.style.visibility = 'visible';
+  curtainBody.style.backgroundColor = 'rgba(27, 27, 27, 0.4)';
   shield.style.transform = 'rotate(360deg)';
   leftCurtain.style.transform = 'translatex(50vw)';
   rightCurtain.style.transform = 'translatex(-50vw)';

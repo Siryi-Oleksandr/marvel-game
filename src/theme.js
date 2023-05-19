@@ -3,13 +3,10 @@ export const colors = extendTheme({
   colors: {
     transparent: 'transparent',
     black: '#000000',
-    white: {
-      700: '#f5f5f5', //done - whitesmoke
-      900: '#ffffff', //done
-    },
+    white: '#ffffff', //done
 
     blue: {
-      50: '#f7fafc',
+      50: '#f5f5f5', //done - whitesmoke
       100: '#C6D1ED',
       400: '#5c81e1',
       600: '#0a2c66', //done
@@ -35,7 +32,6 @@ export const colors = extendTheme({
   },
   fonts: {
     body: 'PT Serif, serif',
-    heading: 'PT Serif, serif',
   },
   fontSizes: {
     xs: '0.75rem',

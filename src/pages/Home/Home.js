@@ -15,10 +15,11 @@ export const Home = ({ setHomePage, setSharedLay }) => {
       <Box as={Container} display="flex" flexDirection="column">
         <Box display="flex" justifyContent="space-between" pt="20px">
           <Logo />
-          <Text color="white.700">
+          <Text color="white">
             with
             <BsFillSuitHeartFill
-              fill="red.400"
+              color="red"
+              fill="currentColor"
               style={{
                 display: 'inline-flex',
                 marginLeft: '5px',
@@ -37,7 +38,7 @@ export const Home = ({ setHomePage, setSharedLay }) => {
             mx="auto"
           >
             <Title>Superhero Power App</Title>
-            <Text fontSize="20px">
+            <Text fontSize="20px" fontWeight="normal">
               the ultimate tool for assessing the strength of your superhero
               team!
             </Text>
