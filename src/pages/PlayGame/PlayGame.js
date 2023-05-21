@@ -9,16 +9,18 @@ import { addCardToTeam, deleteCardFromTeam } from 'redux/cards/slice';
 import GoToRingBtn from 'components/Buttons/GoToRingBtn';
 import { useCardsState } from 'hooks/useCardsState';
 import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
+import Loader from 'components/Loader2';
 
 export const PlayGame = () => {
   const { userTeam, cards, filteredCards } = useCardsState();
+  const [goToFight, setGoToFight] = useState(false);
   const [isFight, setIsFight] = useState(false);
+  const [enemyTeam, setEnemyTeam] = useState([]);
 
   const dispatch = useDispatch();
 
   const noTeam = !userTeam.length;
   const isTeam = userTeam.length === 3;
-  const enemyTeam = getRandomTeam(cards);
 
   const addToTeam = hero => {
     dispatch(addCardToTeam(hero));
@@ -32,6 +34,7 @@ export const PlayGame = () => {
   };
 
   const onFight = () => {
+    setIsFight(true);
     const powerUserTeam = calculateTotalPowerTeam(userTeam);
     const powerEnemyTeam = calculateTotalPowerTeam(enemyTeam);
     let winner = null;
@@ -40,19 +43,29 @@ export const PlayGame = () => {
     } else {
       winner = 'Enemy Team';
     }
-    console.log(
-      `Team "${winner}" won with the score  ${powerUserTeam} :  ${powerEnemyTeam}`
-    );
-    return alert(`Winer: "${winner}" 🎉`);
+
+    setTimeout(() => {
+      setIsFight(false);
+      console.log(
+        `Team "${winner}" won with the score  ${powerUserTeam} :  ${powerEnemyTeam}`
+      );
+      return alert(`Winer: "${winner}" 🎉`);
+    }, 2000);
   };
 
   const onBack = () => {
-    setIsFight(false);
+    setGoToFight(false);
+    setEnemyTeam([]);
+  };
+
+  const onGoToGing = () => {
+    setGoToFight(true);
+    setEnemyTeam(() => getRandomTeam(cards));
   };
 
   return (
     <div className="playPage">
-      {isFight ? (
+      {goToFight ? (
         <FightRing
           userTeam={userTeam}
           enemyTeam={enemyTeam}
@@ -66,10 +79,11 @@ export const PlayGame = () => {
           {!isTeam ? (
             <CardsList filteredHeroes={filteredCards} addToTeam={addToTeam} />
           ) : (
-            <GoToRingBtn openRing={() => setIsFight(true)} />
+            <GoToRingBtn openRing={onGoToGing} />
           )}
         </div>
       )}
+      {isFight && <Loader />}
       {/* <div className="animated-background "></div> */}
     </div>
   );
