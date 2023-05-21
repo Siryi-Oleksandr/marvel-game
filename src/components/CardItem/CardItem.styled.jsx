@@ -35,7 +35,7 @@ export const CardFront = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   background-image: url(${props => props.imgUrl});
   background-size: cover;
@@ -219,12 +219,12 @@ export const MainSkillIcon = styled.div`
   justify-content: center;
   align-items: center;
 
+  overflow: hidden;
   background-color: #002350;
-  /* background-image: url(${props => props.bgUrl}); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 20px;
+  border-radius: 50%;
 
   transform: translate(-50%, 50%);
 `;
