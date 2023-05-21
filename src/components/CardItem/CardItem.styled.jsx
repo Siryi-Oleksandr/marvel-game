@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import cardBgImg from '../../images/card-bg.png';
 
 export const CardItemWrapper = styled.div`
-  width: 280px;
-  height: 400px;
+  width: 200px;
+  height: 300px;
 
   perspective: 1000px;
 `;
@@ -11,8 +11,8 @@ export const CardItemWrapper = styled.div`
 export const Card = styled.li`
   position: relative;
   padding: 30px;
-  width: 280px;
-  height: 400px;
+  width: 200px;
+  height: 300px;
   background-image: url(${cardBgImg});
   background-size: cover;
   background-position: center;
@@ -29,8 +29,8 @@ export const Card = styled.li`
 
 export const CardFront = styled.div`
   position: absolute;
-  width: 220px;
-  height: 340px;
+  width: 170px;
+  height: 260px;
 
   display: flex;
   flex-direction: column;
@@ -95,7 +95,7 @@ export const CardButton = styled.button`
 export const BackButton = styled.button`
   position: absolute;
   top: -10px;
-  right: 0;
+  right: -5px;
   padding: 16px;
   display: flex;
   justify-content: center;
@@ -131,7 +131,7 @@ export const InfoButton = styled(CardButton)`
 export const HeroName = styled.h2`
   color: red;
   text-align: center;
-  font-size: 35px;
+  font-size: 32px;
   font-family: 'Luckiest Guy';
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
@@ -151,10 +151,10 @@ export const HeroMainSkill = styled.p`
 
 export const HeroNameBack = styled.h2`
   padding-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: whitesmoke;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   font-family: 'PT Serif';
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
@@ -167,19 +167,19 @@ export const HeroNameBack = styled.h2`
 export const HeroSkills = styled.h3`
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'PT Serif';
-  font-weight: bold;
+  font-weight: normal;
   color: whitesmoke;
 `;
 
 export const HeroDescription = styled.h4`
-  margin-top: 10px;
-  font-size: 14px;
+  margin-top: 8px;
+  font-size: 12px;
   font-family: 'PT Serif';
   font-weight: 400;
   color: whitesmoke;
-  max-height: 160px;
+  max-height: 88px;
   overflow-y: scroll;
 
   // scroll-bar styles
@@ -200,9 +200,9 @@ export const HeroDescription = styled.h4`
 `;
 
 export const HeroDescriptionTitle = styled.span`
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'PT Serif';
-  font-weight: bold;
+  font-weight: normal;
   color: whitesmoke;
 `;
 

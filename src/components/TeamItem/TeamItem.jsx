@@ -56,9 +56,12 @@ function TeamItem({ hero, deleteFromTeam, removeFromSceleton }) {
     <CardItemWrapper>
       <Card flipped={flipped}>
         <CardFront imgUrl={hero.imgUrl}>
-          <DeleteButton onClick={onDelete}>
-            <RiDeleteBin2Line color="white" size="2em" />
-          </DeleteButton>
+          {deleteFromTeam && (
+            <DeleteButton onClick={onDelete}>
+              <RiDeleteBin2Line color="white" size="2em" />
+            </DeleteButton>
+          )}
+
           <InfoButton onClick={handleFlip}>
             <BsInfoLg color="white" size="2em" />
           </InfoButton>

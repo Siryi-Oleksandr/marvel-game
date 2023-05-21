@@ -12,7 +12,6 @@ import {
   BackButton,
   HeroDescriptionTitle,
   HeroNameBack,
-  HeroMainSkill,
   MainSkillIcon,
 } from './CardItem.styled';
 import { GoPlus } from 'react-icons/go';
