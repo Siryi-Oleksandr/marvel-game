@@ -17,6 +17,9 @@ export const cardsSlice = createSlice({
       const index = state.userTeam.findIndex(card => card.id === action.id);
       state.userTeam.splice(index, 1);
     },
+    setAllTeam(state, action) {
+      state.userTeam = action.payload;
+    },
   },
   extraReducers: {
     [fetchCards.pending](state) {
@@ -32,4 +35,5 @@ export const cardsSlice = createSlice({
   },
 });
 
-export const { addCardToTeam, deleteCardFromTeam } = cardsSlice.actions;
+export const { addCardToTeam, deleteCardFromTeam, setAllTeam } =
+  cardsSlice.actions;

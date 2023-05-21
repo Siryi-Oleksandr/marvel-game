@@ -5,7 +5,11 @@ import './PlayGame.scss';
 import { getRandomTeam } from 'services/ramdomTeam';
 import FightRing from 'components/FightRing/FightRing';
 import { calculateTotalPowerTeam } from 'services/calculatorService';
-import { addCardToTeam, deleteCardFromTeam } from 'redux/cards/slice';
+import {
+  addCardToTeam,
+  deleteCardFromTeam,
+  setAllTeam,
+} from 'redux/cards/slice';
 import GoToRingBtn from 'components/Buttons/GoToRingBtn';
 import { useCardsState } from 'hooks/useCardsState';
 import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
@@ -56,6 +60,7 @@ export const PlayGame = () => {
   const onBack = () => {
     setGoToFight(false);
     setEnemyTeam([]);
+    dispatch(setAllTeam([]));
   };
 
   const onGoToGing = () => {
