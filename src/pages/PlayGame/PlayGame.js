@@ -51,8 +51,7 @@ export const PlayGame = () => {
     setTimeout(() => {
       setIsFight(false);
       console.log(
-        `Team "${winner}" won with the score  ${powerUserTeam} :  ${powerEnemyTeam}`
-      );
+        `Team "${winner}" won with the score  ${powerUserTeam} :  ${powerEnemyTeam}`);
       return alert(`Winer: "${winner}" 🎉`);
     }, 2000);
   };
@@ -64,8 +63,13 @@ export const PlayGame = () => {
   };
 
   const onGoToGing = () => {
-    setGoToFight(true);
+    setIsFight(true);
     setEnemyTeam(() => getRandomTeam(cards));
+
+    setTimeout(() => {
+      setIsFight(false);
+      setGoToFight(true);
+    }, 2000);
   };
 
   return (
