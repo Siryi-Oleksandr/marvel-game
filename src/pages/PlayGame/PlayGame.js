@@ -14,12 +14,15 @@ import GoToRingBtn from 'components/Buttons/GoToRingBtn';
 import { useCardsState } from 'hooks/useCardsState';
 import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
 import Loader from 'components/Loader2';
+import { VinnerModal } from 'components/Modal/Modal';
 
 export const PlayGame = () => {
   const { userTeam, cards, filteredCards } = useCardsState();
   const [goToFight, setGoToFight] = useState(false);
   const [isFight, setIsFight] = useState(false);
   const [enemyTeam, setEnemyTeam] = useState([]);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [messages, setMessages] = useState({});
 
   const dispatch = useDispatch();
 
@@ -42,17 +45,23 @@ export const PlayGame = () => {
     const powerUserTeam = calculateTotalPowerTeam(userTeam);
     const powerEnemyTeam = calculateTotalPowerTeam(enemyTeam);
     let winner = null;
-    if (powerUserTeam > powerEnemyTeam) {
+    if (powerUserTeam >= powerEnemyTeam) {
       winner = 'User Team';
+      setMessages({
+        messageTitle: `Congratulations 🎉`,
+        messageBody: `Team "${winner}" won with the score  ${powerUserTeam} :  ${powerEnemyTeam}`,
+      });
     } else {
       winner = 'Enemy Team';
+      setMessages({
+        messageTitle: `Unfortunately your team lost 😥`,
+        messageBody: `Team "${winner}" won with the score  ${powerUserTeam} :  ${powerEnemyTeam}`,
+      });
     }
 
     setTimeout(() => {
       setIsFight(false);
-      console.log(
-        `Team "${winner}" won with the score  ${powerUserTeam} :  ${powerEnemyTeam}`);
-      return alert(`Winer: "${winner}" 🎉`);
+      toggleModal();
     }, 2000);
   };
 
@@ -70,6 +79,10 @@ export const PlayGame = () => {
       setIsFight(false);
       setGoToFight(true);
     }, 2000);
+  };
+
+  const toggleModal = () => {
+    setIsOpenModal(prev => !prev);
   };
 
   return (
@@ -93,6 +106,11 @@ export const PlayGame = () => {
         </div>
       )}
       {isFight && <Loader />}
+      <VinnerModal
+        isOpen={isOpenModal}
+        onClose={toggleModal}
+        messages={messages}
+      />
       {/* <div className="animated-background "></div> */}
     </div>
   );
