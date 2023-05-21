@@ -10,6 +10,7 @@ export const PlayTeamGame = () => {
 
   }
   return <div>
+
     <TeamList team={userTeam} deleteFromTeam={deleteFromTeam} />
     <ChooseTeamList setTeam={setUserTeam}/>
   </div>
