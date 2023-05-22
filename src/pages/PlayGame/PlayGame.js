@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import CardsList from 'components/CardsList/CardsList';
 import './PlayGame.scss';
@@ -23,21 +23,7 @@ export const PlayGame = () => {
   const [enemyTeam, setEnemyTeam] = useState([]);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [messages, setMessages] = useState({});
-  // const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   const handleLoad = () => {
-  //     console.log('load 😂');
-  //     setIsLoading(false);
-  //   };
-
-  //   window.addEventListener('load', handleLoad);
-
-  //   return () => {
-  //     window.removeEventListener('load', handleLoad);
-  //   };
-  // }, []);
 
   const noTeam = !userTeam.length;
   const isTeam = userTeam.length === 3;
@@ -75,7 +61,7 @@ export const PlayGame = () => {
     setTimeout(() => {
       setIsFight(false);
       toggleModal();
-    }, 2000);
+    }, 1500);
   };
 
   const onBack = () => {
@@ -91,16 +77,12 @@ export const PlayGame = () => {
     setTimeout(() => {
       setIsFight(false);
       setGoToFight(true);
-    }, 2000);
+    }, 1000);
   };
 
   const toggleModal = () => {
     setIsOpenModal(prev => !prev);
   };
-
-  //  if (isLoading) {
-  //    return <Loader />;
-  //  }
 
   return (
     <div>
