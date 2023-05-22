@@ -6,11 +6,29 @@ import { BsFillSuitHeartFill } from 'react-icons/bs';
 import { closeCurtains, openCurtains } from 'services/animateCurtains';
 import { useDispatch } from 'react-redux';
 import { fetchCards } from 'redux/cards/operations';
+import { useNavigate } from 'react-router-dom';
 import Loader from 'components/Loader2';
 
-export const Home = ({ setHomePage, setSharedLay }) => {
+export const Home = ({ setSharedLay }) => {
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsLoading(false);
+    };
+
+    window.addEventListener('load', handleLoad);
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   useEffect(() => {
     const handleLoad = () => {
@@ -33,7 +51,7 @@ export const Home = ({ setHomePage, setSharedLay }) => {
       <Box as={Container} display="flex" flexDirection="column">
         <Box display="flex" justifyContent="space-between" pt="20px">
           <Logo />
-          <Text color="white">
+          <Text color="red.700">
             with
             <BsFillSuitHeartFill
               color="red"
@@ -49,7 +67,8 @@ export const Home = ({ setHomePage, setSharedLay }) => {
         </Box>
         <Box display="flex" flexDirection="column" className="ContentBox">
           <Box
-            color="yellow.700"
+            color="whitesmoke"
+            textShadow="#000 1px 0 5px"
             textAlign="center"
             fontWeight="bold"
             maxW="650px"
@@ -69,13 +88,14 @@ export const Home = ({ setHomePage, setSharedLay }) => {
             className="buttonContainer"
           >
             <WelcomeBtn
-              setHomePage={setHomePage}
               onClick={() => {
                 closeCurtains();
                 dispatch(fetchCards());
                 setTimeout(() => {
-                  setHomePage(false);
+                  navigate('/play');
                   setSharedLay(true);
+                }, 2000);
+                setTimeout(() => {
                   openCurtains();
                 }, 3000);
               }}
