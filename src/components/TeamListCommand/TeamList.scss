@@ -1,0 +1,29 @@
+
+//
+//.selected-hero {
+//  position: relative;
+//}
+//
+//.selected-hero::before,
+//.selected-hero::after {
+//  content: "";
+//  position: absolute;
+//  top: -20px;
+//  left: -20px;
+//  right: -20px;
+//  bottom: -20px;
+//  border: 20px solid transparent;
+//  border-radius: 40px; /* Задайте внутренний радиус обводки в пикселях */
+//}
+//
+//.selected-hero::before {
+//  z-index: -1;
+//  border-color: #ff0000; /* Замените #ff0000 на ваш цвет обводки */
+//}
+//
+//.selected-hero::after {
+//  z-index: -2;
+//  border-color: #ff0000; /* Замените #ff0000 на ваш цвет обводки */
+//  border-bottom-left-radius: 0;
+//  border-bottom-right-radius: 0;
+//}
