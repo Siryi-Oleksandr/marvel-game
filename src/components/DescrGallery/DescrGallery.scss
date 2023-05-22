@@ -1,6 +1,9 @@
 .GalleryItem {
-  width: calc((100% - 15px) / 5);
-  padding: 30px 50px;
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 15px) / 5);
+  }
+
+  padding: 30px 10px;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -9,7 +12,9 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
+
 .GearRight {
   margin-left: -15px;
   transform: rotate(12deg);

@@ -3,6 +3,7 @@ import FightBtn from 'components/Buttons/FightBtn';
 import SectionTitle from 'components/SectionTitle/SectionTitle';
 import TeamList from 'components/TeamList/TeamList';
 import React from 'react';
+import { RingWrapper } from './FightRing.styled';
 
 function FightRing({ userTeam, enemyTeam, fight, back }) {
   return (
@@ -12,11 +13,11 @@ function FightRing({ userTeam, enemyTeam, fight, back }) {
       <Button colorScheme="blue" size="lg" onClick={back}>
         Back
       </Button>
-      <SectionTitle>User Team</SectionTitle>
-      <TeamList team={userTeam} />
-      <FightBtn fight={fight} />
-      <SectionTitle>Enemy Team</SectionTitle>
-      <TeamList team={enemyTeam} />
+      <RingWrapper>
+        <TeamList team={userTeam} title="User team" />
+        <FightBtn fight={fight} />
+        <TeamList team={enemyTeam} title="Enemy Team" />
+      </RingWrapper>
     </div>
   );
 }

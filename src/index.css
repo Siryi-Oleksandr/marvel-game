@@ -77,14 +77,19 @@ nav,
 section {
   display: block;
 }
-body {
+body.chakra-ui-light {
   line-height: 1;
   margin: 0;
   height: 100%;
   overflow-x: hidden;
-  background-color: #3b4072;
-  background-image: linear-gradient(315deg, #3b4072 0%, #576574 74%);
+  font-family: 'PT Serif', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /*Linear gradient... */
+  background: radial-gradient(at center, #000000, #ffffff);
 }
+
 ol,
 ul {
   list-style: none;
@@ -103,14 +108,4 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-body {
-  font-family: 'PT Serif', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }

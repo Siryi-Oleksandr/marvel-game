@@ -5,8 +5,8 @@ const { colors } = theme.colors;
 export const Card = styled.li`
   position: relative;
   padding: 30px;
-  width: 280px;
-  height: 400px;
+  width: 200px;
+  height: 300px;
   background-image: linear-gradient(
       to bottom,
       rgba(42, 43, 50, 0.804),
@@ -29,7 +29,7 @@ export const Card = styled.li`
 export const HeroSkill = styled.p`
   color: whitesmoke;
   text-align: center;
-  font-size: 36px;
+  font-size: 32px;
   font-family: 'PT Serif';
   font-weight: bold;
   line-height: 1.2;
