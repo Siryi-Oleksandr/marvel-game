@@ -41,7 +41,6 @@ export function VinnerModal({ isOpen, onClose, infoVinner }) {
                 </Text>
               </Box>
             </Box>
-            {/* <Text>Try again!</Text> */}
           </ModalBody>
 
           <ModalFooter>
