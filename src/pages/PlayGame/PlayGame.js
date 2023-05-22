@@ -22,7 +22,6 @@ export const PlayGame = () => {
   const [isFight, setIsFight] = useState(false);
   const [enemyTeam, setEnemyTeam] = useState([]);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  // const [messages, setMessages] = useState({});
   const [infoVinner, setInfoVinner] = useState({});
   const dispatch = useDispatch();
 
