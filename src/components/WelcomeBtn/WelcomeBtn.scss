@@ -3,8 +3,8 @@
 .WelcomeButton {
   font-weight: 600;
   font-size: 1.5rem;
-  color: #0a2c66;
-  background: #ffd700;
+  color: #dd1a1a;
+  background: white;
   border: 0;
   padding: 0.75rem 2rem;
   transform: translateY(calc(var(--y, 0) * 1%)) scale(var(--scale));
@@ -28,7 +28,8 @@
   content: '';
   position: absolute;
   inset: calc(var(--size-3) * -1);
-  border: var(--size-2) solid #ffd700;
+
+  border: var(--size-2) solid #dd1a1a;
   transform: scale(var(--border-scale, 0));
   transition: transform 0.125s;
 

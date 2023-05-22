@@ -9,12 +9,7 @@ import './DescrGallery.scss';
 
 export const DescrGallery = () => {
   return (
-    <Box
-      display="flex"
-      justifyContent="space-between"
-      gap="15px"
-      color="#ffd700"
-    >
+    <Box display="flex" justifyContent="space-between" gap="15px" color="white">
       <Box className="GalleryItem">
         <Box className="ItemContainer">
           <GoGear size={50} className="GearLeft" />

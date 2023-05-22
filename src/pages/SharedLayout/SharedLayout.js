@@ -1,36 +1,31 @@
-import { Tabs, TabList, Tab, TabPanels, TabPanel, Box } from '@chakra-ui/react';
-import { PlayGame, PlayTeamGame, Home } from 'pages';
-import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { Box } from '@chakra-ui/react';
+import { Suspense } from 'react';
+import Loader2 from 'components/Loader2/Loader';
+import { NavLink, Outlet } from 'react-router-dom';
+import './SharedLayout.scss';
 
-export const SharedLayout = () => {
-  const [homePage, setHomePage] = useState(true);
-  const [sharedLay, setSharedLay] = useState(false);
+export const SharedLayout = ({ sharedLay }) => {
   return (
     <Box h="100vh" w="100vw" overflowX="hidden">
-      {homePage && (
-        <Home setHomePage={setHomePage} setSharedLay={setSharedLay} />
-      )}
-      {sharedLay && (
-        <Tabs>
-          <TabList display="flex" justifyContent="space-evenly">
-            <Tab w="50%">
-              <NavLink path="/play">Pick your own team</NavLink>
-            </Tab>
-            <Tab w="50%">
-              <NavLink path="/teamplay">Choose your team</NavLink>
-            </Tab>
-          </TabList>
-          <TabPanels>
-            <TabPanel>
-              <PlayGame />
-            </TabPanel>
-            <TabPanel>
-              <PlayTeamGame />
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
-      )}
+      <>
+        {sharedLay && (
+          <Box display="flex" justifyContent="space-evenly" w="100vw" gap="0px">
+            <Box w="100%" as={NavLink} to="/play" className="nav-link">
+              Create your own team
+            </Box>
+
+            <Box as={NavLink} w="100%" to="/teamplay" className="nav-link">
+              Choose your team
+            </Box>
+            <Box as={NavLink} w="100%" to="/statistics" className="nav-link">
+              Statistics
+            </Box>
+          </Box>
+        )}
+        <Suspense fallback={<Loader2 />}>
+          <Outlet />
+        </Suspense>
+      </>
     </Box>
   );
 };

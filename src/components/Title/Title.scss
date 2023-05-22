@@ -4,9 +4,15 @@
 }
 .Hero_Title {
   font-size: 40px;
-  color: #ffd700;
+  color: #dd1a1a;
+  margin-bottom: 10%;
   font-family: 'Avengeance', 'serif';
-  text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  text-shadow: rgba(255, 255, 255, 0.425) 0px 54px 55px,
+    rgba(255, 255, 255, 0.329) 0px -8px 30px,
+    rgba(255, 255, 255, 0.411) 0px 4px 6px,
+    rgba(255, 255, 255, 0.336) 0px 12px 13px,
+    rgba(255, 255, 255, 0.281) 0px -3px 5px;
+  box-shadow: rgba(221, 26, 26, 0.4) -5px 5px, rgba(221, 26, 26, 0.3) -10px 10px,
+    rgba(221, 26, 26, 0.2) -15px 15px, rgba(221, 26, 26, 0.1) -20px 20px,
+    rgba(221, 26, 26, 0.05) -25px 25px;
 }
