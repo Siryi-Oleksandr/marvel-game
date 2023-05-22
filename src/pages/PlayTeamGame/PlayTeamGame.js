@@ -3,6 +3,7 @@ import ChooseTeamList from '../../components/ChooseTeamList/ChooseTeamList'
 
 import './PlayTeamGame.scss'
 import SelectedTeam from '../../components/SelectedTeam/SelectedTeam'
+import { Container, useBreakpointValue } from '@chakra-ui/react'
 
 
 
@@ -24,9 +25,10 @@ export const PlayTeamGame = () => {
     //   dispatch(deleteAllHeroes())
     // }
   })
-
-  return <>
+  const containerSize = useBreakpointValue({ base: "100%", sm: "768px", xl: "1280px" });
+  console.log(containerSize)
+  return <Container maxW={containerSize}>
     <SelectedTeam />
     <ChooseTeamList />
-  </>
+  </Container>
 }

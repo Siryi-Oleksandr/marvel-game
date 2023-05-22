@@ -17,9 +17,10 @@ export const TabList = styled.ul`
 
 export const TabItem = styled.li`
   cursor: pointer;
-  padding: 10px;
-  border: 1px solid #ccc;
-
+  //border: 1px solid #ccc;
+  padding: 10px 15px;
+  background-color: #3b4072;
+  color: black;
   ${({ active }) =>
   active &&
   `
@@ -40,8 +41,12 @@ export const TabContent = styled.div`
 
 export const Header = styled.div`
   font-size: 24px;
-  width: 900px;
+  width: 100%;
+  color: red;
+  font-weight: 600;
   margin: 30px auto 15px;
+  display: flex;
+  justify-content: center;
 
 
 `;

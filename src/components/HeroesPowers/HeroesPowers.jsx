@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { TabContent, TabItem, TabWrapper, TabList, Header } from './HeroesPowers.styled'
+import { TabContent, TabItem, TabWrapper, Header } from './HeroesPowers.styled'
 import { useCardsState } from '../../hooks/useCardsState'
+import { TabPanel, TabPanels, Tabs, TabList, Tab } from '@chakra-ui/react'
 
 
 
-const Tab = ({ header, text }) => (
-  <div>
-    <h3>{header}</h3>
-    <p>{text}</p>
-  </div>
-);
+// const Tab = ({ header, text }) => (
+//   <div>
+//     <h3>{header}</h3>
+//     <p>{text}</p>
+//   </div>
+// );
 
 function HeroesPowers({heroIndex}) {
   const { userTeam } = useCardsState()
@@ -24,41 +25,55 @@ function HeroesPowers({heroIndex}) {
   useEffect(() => {
     console.log('powers team')
     setActiveTab(userTeam[heroIndex].powersAndAbilities[0])
-  }, [heroIndex])
+  }, [heroIndex, userTeam])
 
   const handleTabClick = (tab) => {
     console.log(tab)
     setActiveTab(tab);
   };
-
+  console.log(activeTab)
   return (
     <>
-      <Header>
-        {userTeam[heroIndex].name}
-      </Header>
-      <TabWrapper>
+      <Tabs>
         <TabList>
           {userTeam[heroIndex].powersAndAbilities.map((tab, index) => (
-            <TabItem
-              key={index}
-              active={tab === activeTab}
-              onClick={() => handleTabClick(tab)}
-            >
-              {tab.header}
-            </TabItem>
+            <Tab key={index}>{tab.header}</Tab>
           ))}
         </TabList>
-        <TabContent>
+        <TabPanels>
           {userTeam[heroIndex].powersAndAbilities.map((tab, index) => (
-            <div
-              key={index}
-              className={`tab-item ${tab === activeTab ? 'active' : ''}`}
-            >
-              <Tab header={tab.header} text={tab.text} />
-            </div>
+            <TabPanel p={4} key={index}>
+              {tab.text}
+            </TabPanel>
           ))}
-        </TabContent>
-      </TabWrapper>
+        </TabPanels>
+      </Tabs>
+      {/*<Header>*/}
+      {/*  <span>{userTeam[heroIndex].name}</span>*/}
+      {/*</Header>*/}
+      {/*<TabWrapper>*/}
+      {/*  <TabList>*/}
+      {/*    {userTeam[heroIndex].powersAndAbilities.map((tab, index) => (*/}
+      {/*      <TabItem*/}
+      {/*        key={index}*/}
+      {/*        active={tab === activeTab}*/}
+      {/*        onClick={() => handleTabClick(tab)}*/}
+      {/*      >*/}
+      {/*        {tab.header}*/}
+      {/*      </TabItem>*/}
+      {/*    ))}*/}
+      {/*  </TabList>*/}
+      {/*  <TabContent>*/}
+      {/*    {userTeam[heroIndex].powersAndAbilities.map((tab, index) => (*/}
+      {/*      <div*/}
+      {/*        key={index}*/}
+      {/*        className={`tab-item ${tab === activeTab ? 'active' : ''}`}*/}
+      {/*      >*/}
+      {/*        <Tab header={tab.header} text={tab.text} />*/}
+      {/*      </div>*/}
+      {/*    ))}*/}
+      {/*  </TabContent>*/}
+      {/*</TabWrapper>*/}
     </>
 
 

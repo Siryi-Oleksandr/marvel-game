@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 
-import './SelectedTeam.scss'
+
 import TeamItem from 'components/TeamItem/TeamItem'
 import SectionTitle from '../SectionTitle/SectionTitle'
-import { TeamSceletonWrapper } from '../TeamSceleton/TeamSceleton.styled'
-import CardSceleton from '../CardSceleton/CardSceleton'
+
 import intelligence from '../../images/skeleton-3.png'
 import force from '../../images/skeleton-2.png'
 import fight from '../../images/skeleton-1.png'
@@ -12,6 +11,13 @@ import { useCardsState } from '../../hooks/useCardsState'
 import { setAllTeam } from '../../redux/cards/slice'
 import { useDispatch } from 'react-redux'
 import HeroesPowers from '../HeroesPowers/HeroesPowers'
+import {
+  ButtonWrapper, CardWrapper,
+  ClearTeamButton,
+  SceletonWrapper,
+  SelectedTeamWrapper
+} from './SelectedTeam.styled'
+import CardTeamPlaySceleton from '../CardTeamPlaySceleton/CardTeamPlaySceleton'
 
 
 
@@ -34,26 +40,29 @@ function SelectedTeam({ deleteFromTeam }) {
   return (
     <>
       <SectionTitle>Choose your team</SectionTitle>
-      <button className="clear-team-button" onClick={onClearTeam}>Clear team</button>
+      <ButtonWrapper>
+        <ClearTeamButton  onClick={onClearTeam}>Clear team</ClearTeamButton>
+      </ButtonWrapper>
+
       {
         !userTeam.length ? (
           <>
-            <TeamSceletonWrapper>
-              <CardSceleton name="Intelligence" bgImg={intelligence}/>
-              <CardSceleton name="Force" bgImg={force}/>
-              <CardSceleton name="Fighting" bgImg={fight}/>
-            </TeamSceletonWrapper>
+            <SceletonWrapper>
+              <CardTeamPlaySceleton name="Intelligence" bgImg={intelligence} color="yellow"/>
+              <CardTeamPlaySceleton name="Force" bgImg={force} color="green"/>
+              <CardTeamPlaySceleton name="Fighting" bgImg={fight} color="red"/>
+            </SceletonWrapper>
           </>
         ) : (
-          <TeamSceletonWrapper>
+          <SelectedTeamWrapper>
             {userTeam.map((hero, index) => (
-                <div className={selectedHeroIndex === index ? 'selected-hero' : ''} key={hero.id}
+                <CardWrapper className={selectedHeroIndex === index ? 'selected-hero' : ''} key={hero.id}
                      onClick={() => showSelectedPowers(index)}>
                   <TeamItem hero={hero} deleteFromTeam={deleteFromTeam}/>
-                </div>
+                </CardWrapper>
               )
             )}
-          </TeamSceletonWrapper>
+          </SelectedTeamWrapper>
         )
       }
       {

@@ -7,15 +7,21 @@ export const ListWrapper = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
-  width: 1200px;
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 50px;
-  column-gap: 10px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 10px;
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 1280px) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
 
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
 `;
 
 export const HeroItem = styled.div`
@@ -72,7 +78,7 @@ export const TeamBox = styled.div`
   transition: 0.5s;
   gap:10px;
   transform-origin: bottom;
-
+  justify-content: center;
 `;
 export const TeamHeader = styled.div`
   padding-top: 10px;
