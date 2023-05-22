@@ -6,8 +6,8 @@ import { useCardsState } from '../../hooks/useCardsState'
 import { addCardToTeam, deleteAllHeroes } from '../../redux/cards/slice'
 import { useDispatch } from 'react-redux'
 
-function ChooseTeamList({}) {
-  const {  cards } = useCardsState();
+function ChooseTeamList() {
+  const { cards } = useCardsState();
 
   const dispatch = useDispatch()
   function mergeHeroesIntoTeams(heroes) {

@@ -27,14 +27,9 @@ export const PlayTeamGame = () => {
     //   dispatch(deleteAllHeroes())
     // }
   })
-  function setUserTeam(team) {
-    dispatch(deleteAllHeroes())
-    team.forEach((hero) => {
-      dispatch(addCardToTeam(hero))
-    })
-  }
+
   return <div className="wrapper">
     <SelectedTeam />
-    <ChooseTeamList setTeam={setUserTeam}/>
+    <ChooseTeamList />
   </div>
 }
