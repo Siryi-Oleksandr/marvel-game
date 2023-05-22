@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { TabContent, TabItem, TabWrapper, Header } from './HeroesPowers.styled'
+
 import { useCardsState } from '../../hooks/useCardsState'
 import { TabPanel, TabPanels, Tabs, TabList, Tab } from '@chakra-ui/react'
 
@@ -27,10 +27,10 @@ function HeroesPowers({heroIndex}) {
     setActiveTab(userTeam[heroIndex].powersAndAbilities[0])
   }, [heroIndex, userTeam])
 
-  const handleTabClick = (tab) => {
-    console.log(tab)
-    setActiveTab(tab);
-  };
+  // const handleTabClick = (tab) => {
+  //   console.log(tab)
+  //   setActiveTab(tab);
+  // };
   console.log(activeTab)
   return (
     <>
