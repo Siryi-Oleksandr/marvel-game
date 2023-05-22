@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   CardItemWrapper,
   HeroName,
@@ -12,13 +12,36 @@ import {
   BackButton,
   HeroDescriptionTitle,
   HeroNameBack,
+  MainSkillIcon,
 } from 'components/CardItem/CardItem.styled';
 import { RiDeleteBin2Line } from 'react-icons/ri';
 import { BsInfoLg } from 'react-icons/bs';
 import { TbArrowBackUp } from 'react-icons/tb';
 
+import power from '../../images/power-2.png';
+import intelligence from '../../images/intelligence-3.png';
+import fight from '../../images/fight-2.png';
+
 function TeamItem({ hero, deleteFromTeam, removeFromSceleton }) {
   const [flipped, setFlipped] = useState(false);
+  const [skillIcon, setSkillIcon] = useState(null);
+
+  useEffect(() => {
+    switch (hero.type) {
+      case 'intelligence':
+        setSkillIcon(intelligence);
+        break;
+      case 'force':
+        setSkillIcon(power);
+        break;
+      case 'fightingSkills':
+        setSkillIcon(fight);
+        break;
+
+      default:
+        break;
+    }
+  }, [hero.type]);
 
   const handleFlip = () => {
     setFlipped(!flipped);
@@ -33,12 +56,16 @@ function TeamItem({ hero, deleteFromTeam, removeFromSceleton }) {
     <CardItemWrapper>
       <Card flipped={flipped}>
         <CardFront imgUrl={hero.imgUrl}>
-          <DeleteButton onClick={onDelete}>
-            <RiDeleteBin2Line color="white" size="2em" />
-          </DeleteButton>
+          {deleteFromTeam && (
+            <DeleteButton onClick={onDelete}>
+              <RiDeleteBin2Line color="white" size="2em" />
+            </DeleteButton>
+          )}
+
           <InfoButton onClick={handleFlip}>
             <BsInfoLg color="white" size="2em" />
           </InfoButton>
+          <MainSkillIcon style={{ backgroundImage: `url(${skillIcon})` }} />
           <HeroName>{hero.name}</HeroName>
         </CardFront>
 

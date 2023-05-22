@@ -61,7 +61,11 @@ function TeamSceleton({ deleteFromTeam }) {
             deleteFromTeam={deleteFromTeam}
           />
         ) : (
-          <CardSceleton name="Intelligence" bgImg={intelligence} />
+          <CardSceleton
+            name="Intelligence"
+            bgImg={intelligence}
+            color="yellow"
+          />
         )}
 
         {isForce ? (
@@ -71,7 +75,7 @@ function TeamSceleton({ deleteFromTeam }) {
             deleteFromTeam={deleteFromTeam}
           />
         ) : (
-          <CardSceleton name="Force" bgImg={force} />
+          <CardSceleton name="Force" bgImg={force} color="green" />
         )}
 
         {isFighting ? (
@@ -81,7 +85,7 @@ function TeamSceleton({ deleteFromTeam }) {
             deleteFromTeam={deleteFromTeam}
           />
         ) : (
-          <CardSceleton name="Fighting" bgImg={fight} />
+          <CardSceleton name="Fighting" bgImg={fight} color="red" />
         )}
       </TeamSceletonWrapper>
     </>
