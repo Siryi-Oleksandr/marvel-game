@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
 import ChooseTeamList from '../../components/ChooseTeamList/ChooseTeamList'
-import SelectedTeam from '../../components/TeamList/TeamList'
+
 import './PlayTeamGame.scss'
+import SelectedTeam from '../../components/SelectedTeam/SelectedTeam'
+
 
 
 export const PlayTeamGame = () => {
@@ -23,8 +25,8 @@ export const PlayTeamGame = () => {
     // }
   })
 
-  return <div className="wrapper">
+  return <>
     <SelectedTeam />
     <ChooseTeamList />
-  </div>
+  </>
 }

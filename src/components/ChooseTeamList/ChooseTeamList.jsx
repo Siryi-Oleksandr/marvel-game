@@ -3,7 +3,7 @@ import { ListWrapper, TeamBox, TeamHeader, TeamItemCommand } from './ChooseTeamL
 
 import TeamItemSmall from './TeamItemSmall/TeamItemSmall'
 import { useCardsState } from '../../hooks/useCardsState'
-import { addCardToTeam, deleteAllHeroes } from '../../redux/cards/slice'
+import { setAllTeam } from '../../redux/cards/slice'
 import { useDispatch } from 'react-redux'
 
 function ChooseTeamList() {
@@ -25,10 +25,8 @@ function ChooseTeamList() {
 
 
   function onSetTeam(team) {
-    dispatch(deleteAllHeroes())
-    team.forEach((hero) => {
-      dispatch(addCardToTeam(hero))
-    })
+    dispatch(setAllTeam([]))
+    dispatch(setAllTeam(team))
   }
 
   return (
