@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import ChooseTeamList from '../../components/ChooseTeamList/ChooseTeamList'
-import { useDispatch } from 'react-redux'
 import SelectedTeam from '../../components/TeamList/TeamList'
 import './PlayTeamGame.scss'
 
