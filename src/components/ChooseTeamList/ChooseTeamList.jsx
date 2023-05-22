@@ -1,14 +1,13 @@
 import React from 'react'
 import { ListWrapper, TeamBox, TeamHeader, TeamItemCommand } from './ChooseTeamList.styled'
-import heroes from 'db/heroes.json';
 
 import TeamItemSmall from './TeamItemSmall/TeamItemSmall'
 import { useCardsState } from '../../hooks/useCardsState'
 import { addCardToTeam, deleteAllHeroes } from '../../redux/cards/slice'
 import { useDispatch } from 'react-redux'
 
-function ChooseTeamList({setTeam}) {
-  const { userTeam, cards, filteredCards } = useCardsState();
+function ChooseTeamList({}) {
+  const {  cards } = useCardsState();
 
   const dispatch = useDispatch()
   function mergeHeroesIntoTeams(heroes) {
