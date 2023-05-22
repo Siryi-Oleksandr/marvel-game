@@ -86,7 +86,7 @@ export const PlayGame = () => {
   };
 
   return (
-    <div className="playPage">
+    <div>
       {goToFight ? (
         <FightRing
           userTeam={userTeam}
