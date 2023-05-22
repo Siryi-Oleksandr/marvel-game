@@ -30,22 +30,6 @@ export const Home = ({ setSharedLay }) => {
     return <Loader />;
   }
 
-  useEffect(() => {
-    const handleLoad = () => {
-      setIsLoading(false);
-    };
-
-    window.addEventListener('load', handleLoad);
-
-    return () => {
-      window.removeEventListener('load', handleLoad);
-    };
-  }, []);
-
-  if (isLoading) {
-    return <Loader />;
-  }
-
   return (
     <Box h="100vh" w="100vw" className="descrPage">
       <Box as={Container} display="flex" flexDirection="column">
