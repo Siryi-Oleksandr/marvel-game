@@ -1,4 +1,4 @@
-$midnight: #2c3e50;
+$midnight: #c61818;
 $clouds: #ecf0f1;
 // General
 
@@ -11,9 +11,16 @@ $clouds: #ecf0f1;
 /* Accordion styles */
 .AccordeonContainer {
   border-radius: 8px;
-  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
+//
 .AccordeonTab {
   width: 100%;
   color: white;
@@ -23,13 +30,10 @@ $clouds: #ecf0f1;
   display: flex;
   justify-content: space-between;
   padding: 1em;
-  background: $midnight;
   font-weight: bold;
   cursor: pointer;
   /* Icon */
-  &:hover {
-    background: darken($midnight, 10%);
-  }
+
   &::after {
     content: '\276F';
     width: 1em;
@@ -42,10 +46,9 @@ $clouds: #ecf0f1;
   max-height: 0;
   padding: 0 1em;
   color: $midnight;
-  background: white;
   transition: all 0.35s;
 }
-.TabcClose {
+.TabClose {
   display: flex;
   justify-content: flex-end;
   padding: 1em;
@@ -69,4 +72,24 @@ $clouds: #ecf0f1;
     max-height: 100vh;
     padding: 1em;
   }
+}
+.FightResult {
+  text-align: center;
+  font-family: 'PT Serif', 'serif';
+  text-shadow: rgba(255, 255, 255, 0.425) 0px 54px 55px,
+    rgba(255, 255, 255, 0.329) 0px -8px 30px,
+    rgba(255, 255, 255, 0.411) 0px 4px 6px,
+    rgba(255, 255, 255, 0.336) 0px 12px 13px,
+    rgba(255, 255, 255, 0.281) 0px -3px 5px;
+}
+.TeamScoreFigure {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+  text-shadow: rgba(255, 255, 255, 0.425) 0px 54px 55px,
+    rgba(255, 255, 255, 0.329) 0px -8px 30px,
+    rgba(255, 255, 255, 0.411) 0px 4px 6px,
+    rgba(255, 255, 255, 0.336) 0px 12px 13px,
+    rgba(255, 255, 255, 0.281) 0px -3px 5px;
 }

@@ -1,27 +1,93 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Accordeon.scss';
-import { Box } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import { useCardsState } from 'hooks/useCardsState';
+import TeamItemSmall from 'components/ChooseTeamList/TeamItemSmall/TeamItemSmall';
+import {
+  TeamBox,
+  TeamHeader,
+  TeamItemCommand,
+} from 'components/ChooseTeamList/ChooseTeamList.styled';
 
 export const Accordeon = () => {
   const { statistics } = useCardsState();
-  const [fights, setFights] = useState(statistics);
-  console.log(statistics);
+
   return (
-    <Box className="AccordeonContainer" setFights={setFights}>
-      {fights.length > 0
-        ? fights.map(item => (
-            <Box className="AccordeonTab">
-              <input type="checkbox" id="chck1" className="AccordeonInput" />
-              <label className="TabLabel" htmlFor="chck1">
-                Item 1
-              </label>
-              <Box className="TabContent">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
-                reiciendis!
+    <Box className="AccordeonContainer">
+      {statistics.length > 0
+        ? statistics
+            .map((item, idx) => (
+              <Box className="AccordeonTab" key={item.id}>
+                <input
+                  type="checkbox"
+                  id={item.id}
+                  className="AccordeonInput"
+                />
+                <label
+                  style={
+                    item.winner.includes('Enemy')
+                      ? { background: '#c61818' }
+                      : { background: 'green' }
+                  }
+                  className="TabLabel"
+                  htmlFor={item.id}
+                >
+                  {item.winner.includes('Enemy') ? (
+                    <Text textAlign="left"> Fight #{idx + 1} - Defeat</Text>
+                  ) : (
+                    <Text textAlign="left">Fight #{idx + 1} - Victory</Text>
+                  )}
+                </label>
+                <Box className="TabContent">
+                  {item.winner.includes('Enemy') ? (
+                    <Heading className="FightResult" color="#dd1a1a" mx="auto">
+                      Defeat
+                    </Heading>
+                  ) : (
+                    <Heading className="FightResult" color="green" mx="auto">
+                      Victory
+                    </Heading>
+                  )}
+                  <Box display="flex">
+                    <Box
+                      name="user-team"
+                      transform="scale(0.7)"
+                      w="calc((100%-10px)/2)"
+                    >
+                      <TeamItemCommand key={item.id}>
+                        <TeamHeader>Your Team</TeamHeader>
+                        <TeamBox>
+                          {item.userTeam.map(hero => {
+                            return <TeamItemSmall key={hero.id} hero={hero} />;
+                          })}
+                        </TeamBox>
+                      </TeamItemCommand>
+                      <Box className="TeamScoreFigure">
+                        <p>{item.powerUserTeam} points</p>
+                      </Box>
+                    </Box>
+                    <Box
+                      name="enemy-team"
+                      transform="scale(0.7)"
+                      w="calc((100%-10px)/2)"
+                    >
+                      <TeamItemCommand key={item.id}>
+                        <TeamHeader>Enemy Team</TeamHeader>
+                        <TeamBox>
+                          {item.enemyTeam.map(hero => {
+                            return <TeamItemSmall key={hero.id} hero={hero} />;
+                          })}
+                        </TeamBox>
+                      </TeamItemCommand>
+                      <Box className="TeamScoreFigure">
+                        <p>{item.powerEnemyTeam} points</p>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
               </Box>
-            </Box>
-          ))
+            ))
+            .reverse()
         : null}
     </Box>
   );
