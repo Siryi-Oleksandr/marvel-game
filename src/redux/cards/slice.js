@@ -4,6 +4,7 @@ import { fetchCards } from './operations';
 const initialState = {
   cards: [],
   userTeam: [],
+  statistics: [],
   isRefreshing: false,
 };
 export const cardsSlice = createSlice({
@@ -20,6 +21,9 @@ export const cardsSlice = createSlice({
     setAllTeam(state, action) {
       state.userTeam = action.payload;
     },
+    setFightStatistics(state, action) {
+      state.statistics.push(action.payload);
+    },
   },
   extraReducers: {
     [fetchCards.pending](state) {
@@ -35,5 +39,9 @@ export const cardsSlice = createSlice({
   },
 });
 
-export const { addCardToTeam, deleteCardFromTeam, setAllTeam } =
-  cardsSlice.actions;
+export const {
+  addCardToTeam,
+  deleteCardFromTeam,
+  setAllTeam,
+  setFightStatistics,
+} = cardsSlice.actions;
