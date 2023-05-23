@@ -18,9 +18,15 @@ const cardsPersistConfig = {
   storage,
   whitelist: 'cards',
 };
+const statisticsPersistConfig = {
+  key: 'statistics',
+  storage,
+  whitelist: 'statistics',
+};
 export const store = configureStore({
   reducer: {
     cards: persistReducer(cardsPersistConfig, cardsSlice.reducer),
+    statistics: persistReducer(statisticsPersistConfig, cardsSlice.reducer),
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
