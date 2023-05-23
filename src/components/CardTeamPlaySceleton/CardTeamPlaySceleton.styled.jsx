@@ -23,10 +23,6 @@ export const Card = styled.li`
   align-items: center;
   justify-content: center;
 
-  @media (min-width: 1280px) {
-    width: 250px;
-    height: 375px;
-  }
   /* filter: blur(1px); */
 `;
 
