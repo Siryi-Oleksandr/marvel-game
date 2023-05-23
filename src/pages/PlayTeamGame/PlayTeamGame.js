@@ -22,11 +22,9 @@ export const PlayTeamGame = () => {
     let teamName
     if(userTeam.length === 3) {
       teamName = userTeam[0].team
-      console.log(userTeam.every((hero) => hero.team === teamName))
       return !userTeam.every((hero) => hero.team === teamName)
     }
   }
-  console.log('mount')
 
   useEffect(() => {
     if(isAllHeroesFromSameTeam()) {
