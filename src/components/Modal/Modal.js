@@ -7,20 +7,40 @@ import {
   ModalBody,
   ModalCloseButton,
   Button,
+  Text,
+  Box,
 } from '@chakra-ui/react';
+import './Modal.scss';
 
-export function VinnerModal({ isOpen, onClose, messages }) {
-  const { messageTitle, messageBody } = messages;
+export function VinnerModal({ isOpen, onClose, infoVinner }) {
+  const { messageTitle, messageBody, powerUserTeam, powerEnemyTeam } =
+    infoVinner;
+  const isUserVinner = powerUserTeam >= powerEnemyTeam;
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
+        <ModalOverlay
+          backgroundColor={isUserVinner ? '#5c82e18c' : '#ff000048'}
+        />
         <ModalContent>
-          <ModalHeader>{messageTitle}</ModalHeader>
+          <ModalHeader textAlign="center">{messageTitle}</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            <p>{messageBody}</p>
-            <p>Try again!</p>
+          <ModalBody className="modalBody">
+            <Text>{messageBody}</Text>
+            <Box display="flex" gap={2} alignItems="center">
+              <Box className="score">
+                <Text color={isUserVinner ? 'red' : 'gray'}>
+                  {' '}
+                  {powerUserTeam}{' '}
+                </Text>
+              </Box>
+              <Text> : </Text>
+              <Box className="score">
+                <Text color={!isUserVinner ? 'red' : 'gray'}>
+                  {powerEnemyTeam}{' '}
+                </Text>
+              </Box>
+            </Box>
           </ModalBody>
 
           <ModalFooter>
