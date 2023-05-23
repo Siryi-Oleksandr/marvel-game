@@ -15,12 +15,18 @@ import { useCardsState } from 'hooks/useCardsState';
 import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
 import Loader from 'components/Loader2';
 import { VinnerModal } from 'components/Modal/Modal';
+import { nanoid } from 'nanoid';
 
 export const PlayGame = () => {
-  const { userTeam, cards, filteredCards } = useCardsState();
+  const {
+    userTeam,
+    cards,
+    filteredCards,
+    userTeamTitle = null,
+  } = useCardsState();
+  const [enemyTeam, setEnemyTeam] = useState([]);
   const [goToFight, setGoToFight] = useState(false);
   const [isFight, setIsFight] = useState(false);
-  const [enemyTeam, setEnemyTeam] = useState([]);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [infoVinner, setInfoVinner] = useState({});
   const dispatch = useDispatch();
@@ -39,31 +45,38 @@ export const PlayGame = () => {
     dispatch(deleteCardFromTeam(id));
   };
 
-  const onFight = (userTeamTitle, enemyTeamTitle) => {
+  const onFight = () => {
     setIsFight(true);
     const powerUserTeam = calculateTotalPowerTeam(userTeam);
     const powerEnemyTeam = calculateTotalPowerTeam(enemyTeam);
+
+    let vinnerObj = {
+      powerUserTeam,
+      powerEnemyTeam,
+      userTeam,
+      enemyTeam,
+      id: nanoid(),
+    };
     if (powerUserTeam >= powerEnemyTeam) {
+      vinnerObj.winner = userTeamTitle ?? 'User Team';
       setInfoVinner({
-        winner: userTeamTitle ?? 'User Team',
+        ...vinnerObj,
         messageTitle: `Congratulations 🎉`,
-        messageBody: `"User Team" won with the score:`,
-        powerUserTeam,
-        powerEnemyTeam,
+        messageBody: `${vinnerObj.winner} won with the score:`,
       });
     } else {
+      vinnerObj.winner = 'Enemy Team';
       setInfoVinner({
-        winner: enemyTeamTitle ?? 'Enemy Team',
+        ...vinnerObj,
         messageTitle: `Unfortunately your team lost 😥`,
         messageBody: `"Enemy Team" won with the score:`,
-        powerUserTeam,
-        powerEnemyTeam,
       });
     }
 
     setTimeout(() => {
       setIsFight(false);
       toggleModal();
+      // console.log('vinnerObj to set in localStorage ==>', vinnerObj); // TODO SET INFO TO LOCALSTORAGE
     }, 1500);
   };
 

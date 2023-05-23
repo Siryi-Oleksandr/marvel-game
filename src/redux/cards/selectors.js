@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 export const selectCards = state => state.cards.cards;
 export const selectUserTeam = state => state.cards.userTeam;
+export const selectUserTeamTitle = state => state.cards.userTeamTitle;
 
 export const getFilteredCards = createSelector(
   [selectCards, selectUserTeam],
