@@ -10,6 +10,7 @@ import {
   deleteCardFromTeam,
   setAllTeam,
 } from 'redux/cards/slice';
+import { setFightStatistics } from 'redux/statistics/slice';
 import GoToRingBtn from 'components/Buttons/GoToRingBtn';
 import { useCardsState } from 'hooks/useCardsState';
 import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
@@ -76,7 +77,7 @@ export const PlayGame = () => {
     setTimeout(() => {
       setIsFight(false);
       toggleModal();
-      // console.log('vinnerObj to set in localStorage ==>', vinnerObj); // TODO SET INFO TO LOCALSTORAGE
+      dispatch(setFightStatistics(vinnerObj));
     }, 1500);
   };
 

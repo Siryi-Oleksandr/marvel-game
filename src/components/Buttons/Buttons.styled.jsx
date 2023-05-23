@@ -8,8 +8,8 @@ export const GoBtn = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: 200px;
-  height: 67px;
+  width: 160px;
+  height: 60px;
 
   font-size: 24px;
   font-family: 'PT Serif';
