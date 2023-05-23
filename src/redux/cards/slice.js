@@ -5,6 +5,7 @@ const initialState = {
   cards: [],
   userTeam: [],
   statistics: [],
+  userTeamTitle: null,
   isRefreshing: false,
 };
 export const cardsSlice = createSlice({
@@ -23,6 +24,9 @@ export const cardsSlice = createSlice({
     },
     setFightStatistics(state, action) {
       state.statistics.push(action.payload);
+    },
+    setUserTeamTitle(state, action) {
+      state.userTeamTitle = action.payload;
     },
   },
   extraReducers: {
@@ -43,5 +47,6 @@ export const {
   addCardToTeam,
   deleteCardFromTeam,
   setAllTeam,
+  setUserTeamTitle,
   setFightStatistics,
 } = cardsSlice.actions;
