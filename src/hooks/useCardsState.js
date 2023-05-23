@@ -4,6 +4,7 @@ import {
   selectUserTeam,
   selectUserTeamTitle,
   getFilteredCards,
+  selectStatistics,
 } from 'redux/cards/selectors';
 
 export const useCardsState = () => {
@@ -11,11 +12,13 @@ export const useCardsState = () => {
   const userTeam = useSelector(selectUserTeam);
   const userTeamTitle = useSelector(selectUserTeamTitle);
   const filteredCards = useSelector(getFilteredCards);
+  const statistics = useSelector(selectStatistics);
 
   return {
     cards,
     userTeam,
     userTeamTitle,
     filteredCards,
+    statistics,
   };
 };
