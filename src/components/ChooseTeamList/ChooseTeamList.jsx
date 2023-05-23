@@ -1,10 +1,13 @@
 import React from 'react'
-import { ListWrapper, TeamBox, TeamHeader, TeamItemCommand } from './ChooseTeamList.styled'
 
 import TeamItemSmall from './TeamItemSmall/TeamItemSmall'
+import { ListWrapper, TeamBox, TeamHeader, TeamItemCommand } from './ChooseTeamList.styled'
+
 import { useCardsState } from '../../hooks/useCardsState'
 import { setAllTeam } from '../../redux/cards/slice'
 import { useDispatch } from 'react-redux'
+
+
 
 function ChooseTeamList() {
   const { cards } = useCardsState();

@@ -1,24 +1,5 @@
 import styled from 'styled-components';
 
-export const TeamListWrapper = styled.ul`
-  margin-left: auto;
-  margin-right: auto;
-  width: 900px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-
-  background-color: #c27171;
-`;
-
-export const ButtonClearTeam = styled.button`
-  display: flex;
-  justify-content: flex-end;
-  margin: auto auto 40px;
-
-`;
 
 export const SceletonWrapper = styled.div`
   display: flex;
@@ -46,7 +27,7 @@ export const ButtonWrapper = styled.div`
 export const SelectedTeamWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;

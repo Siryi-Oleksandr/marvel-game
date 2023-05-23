@@ -4,29 +4,36 @@ import ChooseTeamList from '../../components/ChooseTeamList/ChooseTeamList'
 import './PlayTeamGame.scss'
 import SelectedTeam from '../../components/SelectedTeam/SelectedTeam'
 import { Container, useBreakpointValue } from '@chakra-ui/react'
+import { useCardsState } from '../../hooks/useCardsState'
+import { useDispatch } from 'react-redux'
+import { setAllTeam } from '../../redux/cards/slice'
 
 
 
 export const PlayTeamGame = () => {
+  const containerSize = useBreakpointValue({ base: "100%", sm: "768px", xl: "1280px" });
+  const { userTeam } = useCardsState();
 
-  // function isAllHeroesFromSameTeam() {
-  //   if(userTeam.length === 0) return false
-  //   if(userTeam.length < 3 ) return false
-  //   let teamName
-  //   if(userTeam.length === 3) {
-  //     teamName = userTeam[0].team
-  //     return userTeam.every((hero) => hero.team === teamName)
-  //   }
-  // }
+  const dispatch = useDispatch();
+
+  function isAllHeroesFromSameTeam() {
+    if(userTeam.length === 0) return false
+    if(userTeam.length < 3 ) return true
+    let teamName
+    if(userTeam.length === 3) {
+      teamName = userTeam[0].team
+      console.log(userTeam.every((hero) => hero.team === teamName))
+      return !userTeam.every((hero) => hero.team === teamName)
+    }
+  }
   console.log('mount')
 
   useEffect(() => {
-    // if(isAllHeroesFromSameTeam()) {
-    //   dispatch(deleteAllHeroes())
-    // }
+    if(isAllHeroesFromSameTeam()) {
+      dispatch(setAllTeam([]))
+    }
   })
-  const containerSize = useBreakpointValue({ base: "100%", sm: "768px", xl: "1280px" });
-  console.log(containerSize)
+
   return <Container maxW={containerSize}>
     <SelectedTeam />
     <ChooseTeamList />

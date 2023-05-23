@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 
-
 import TeamItem from 'components/TeamItem/TeamItem'
 import SectionTitle from '../SectionTitle/SectionTitle'
+import HeroesPowers from '../HeroesPowers/HeroesPowers'
 
 import intelligence from '../../images/skeleton-3.png'
 import force from '../../images/skeleton-2.png'
 import fight from '../../images/skeleton-1.png'
+
 import { useCardsState } from '../../hooks/useCardsState'
-import { setAllTeam } from '../../redux/cards/slice'
 import { useDispatch } from 'react-redux'
-import HeroesPowers from '../HeroesPowers/HeroesPowers'
+import { setAllTeam } from '../../redux/cards/slice'
+
+
 import {
   ButtonWrapper, CardWrapper,
   ClearTeamButton,
