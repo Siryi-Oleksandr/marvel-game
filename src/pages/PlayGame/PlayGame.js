@@ -126,8 +126,8 @@ export const PlayGame = () => {
         isOpen={isOpenModal}
         onClose={toggleModal}
         infoVinner={infoVinner}
+        back={onBack}
       />
-      {/* <div className="animated-background "></div> */}
     </div>
   );
 };

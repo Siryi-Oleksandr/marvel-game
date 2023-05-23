@@ -1,11 +1,33 @@
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: 600;
+  color: blue;
+}
+
+.modalHeader {
+  font-family: 'Avengeance';
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: rgb(0, 0, 255);
+}
+
 .score {
   padding: 8px;
-  border: 1px solid skyblue;
+  border: 1px solid blue;
   border-radius: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 0.1em;
   color: #ff000048;
 }
 
-.modalBody {
+.scoreWrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
