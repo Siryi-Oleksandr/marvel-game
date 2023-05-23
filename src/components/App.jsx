@@ -5,7 +5,8 @@ import { Statistics } from 'pages/Statistics/Statistics';
 
 export const App = () => {
   const [sharedLay, setSharedLay] = useState(
-    document.location.pathname.includes('play' || 'teamplay' || 'statistics')
+    document.location.pathname.includes('play' || 'teamplay') ||
+      document.location.pathname.includes('statistics')
   );
 
   return (

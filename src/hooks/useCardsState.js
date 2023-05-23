@@ -4,8 +4,8 @@ import {
   selectUserTeam,
   selectUserTeamTitle,
   getFilteredCards,
-  selectStatistics,
 } from 'redux/cards/selectors';
+import { selectStatistics } from 'redux/statistics/selectors';
 
 export const useCardsState = () => {
   const cards = useSelector(selectCards);
