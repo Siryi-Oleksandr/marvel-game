@@ -22,8 +22,7 @@ export const PlayGame = () => {
   const [isFight, setIsFight] = useState(false);
   const [enemyTeam, setEnemyTeam] = useState([]);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [messages, setMessages] = useState({});
-
+  const [infoVinner, setInfoVinner] = useState({});
   const dispatch = useDispatch();
 
   const noTeam = !userTeam.length;
@@ -40,29 +39,32 @@ export const PlayGame = () => {
     dispatch(deleteCardFromTeam(id));
   };
 
-  const onFight = () => {
+  const onFight = (userTeamTitle, enemyTeamTitle) => {
     setIsFight(true);
     const powerUserTeam = calculateTotalPowerTeam(userTeam);
     const powerEnemyTeam = calculateTotalPowerTeam(enemyTeam);
-    let winner = null;
     if (powerUserTeam >= powerEnemyTeam) {
-      winner = 'User Team';
-      setMessages({
+      setInfoVinner({
+        winner: userTeamTitle ?? 'User Team',
         messageTitle: `Congratulations 🎉`,
-        messageBody: `Team "${winner}" won with the score  ${powerUserTeam} :  ${powerEnemyTeam}`,
+        messageBody: `"User Team" won with the score:`,
+        powerUserTeam,
+        powerEnemyTeam,
       });
     } else {
-      winner = 'Enemy Team';
-      setMessages({
+      setInfoVinner({
+        winner: enemyTeamTitle ?? 'Enemy Team',
         messageTitle: `Unfortunately your team lost 😥`,
-        messageBody: `Team "${winner}" won with the score  ${powerUserTeam} :  ${powerEnemyTeam}`,
+        messageBody: `"Enemy Team" won with the score:`,
+        powerUserTeam,
+        powerEnemyTeam,
       });
     }
 
     setTimeout(() => {
       setIsFight(false);
       toggleModal();
-    }, 2000);
+    }, 1500);
   };
 
   const onBack = () => {
@@ -78,7 +80,7 @@ export const PlayGame = () => {
     setTimeout(() => {
       setIsFight(false);
       setGoToFight(true);
-    }, 2000);
+    }, 1000);
   };
 
   const toggleModal = () => {
@@ -109,7 +111,7 @@ export const PlayGame = () => {
       <VinnerModal
         isOpen={isOpenModal}
         onClose={toggleModal}
-        messages={messages}
+        infoVinner={infoVinner}
       />
       {/* <div className="animated-background "></div> */}
     </div>

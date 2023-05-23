@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const TeamListWrapper = styled.ul`
   margin-left: auto;
   margin-right: auto;
-  width: 300px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   gap: 10px;

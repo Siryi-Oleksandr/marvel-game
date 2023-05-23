@@ -1,5 +1,5 @@
 import './Home.scss';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { WelcomeBtn, Logo, Container, Title, DescrGallery } from 'components';
 import { Box, Text } from '@chakra-ui/react';
 import { BsFillSuitHeartFill } from 'react-icons/bs';
@@ -7,10 +7,28 @@ import { closeCurtains, openCurtains } from 'services/animateCurtains';
 import { useDispatch } from 'react-redux';
 import { fetchCards } from 'redux/cards/operations';
 import { useNavigate } from 'react-router-dom';
+import Loader from 'components/Loader2';
 
 export const Home = ({ setSharedLay }) => {
+  const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsLoading(false);
+    };
+
+    window.addEventListener('load', handleLoad);
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <Box h="100vh" w="100vw" className="descrPage">
