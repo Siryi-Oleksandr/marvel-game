@@ -6,16 +6,24 @@ const cardWidth = "180px"
 export const ListWrapper = styled.div`
   padding-left: 20px;
   padding-right: 20px;
-  margin: 0 auto;
-  width: 1200px;
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 50px;
-  column-gap: 10px;
+  margin: 20px auto 0;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 30px;
   align-items: center;
   justify-content: center;
 
+  cursor:pointer;
 
+  @media (max-width: 1280px) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
 `;
 
 export const HeroItem = styled.div`
@@ -65,6 +73,27 @@ export const TeamItemCommand = styled.div`
     transform: translateY(20%);
   }
 
+  &:hover > div  > div {
+    transform: translateX(0) translateY(0) rotateZ(0);
+  }
+
+  @media (max-width: 1280px) {
+    & > div > :nth-child(1),
+    & > div > :nth-child(2),
+    & > div > :nth-child(3) {
+      transform: translateX(0) translateY(0) rotateZ(0);
+      transition: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    & > div > :nth-child(1),
+    & > div > :nth-child(2),
+    & > div > :nth-child(3) {
+      transform: translateX(0) translateY(0) rotateZ(0);
+      transition: none;
+    }
+  }
 `;
 
 export const TeamBox = styled.div`
@@ -72,7 +101,7 @@ export const TeamBox = styled.div`
   transition: 0.5s;
   gap:10px;
   transform-origin: bottom;
-
+  justify-content: center;
 `;
 export const TeamHeader = styled.div`
   padding-top: 10px;

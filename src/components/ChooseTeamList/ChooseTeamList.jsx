@@ -1,11 +1,18 @@
 import React from 'react'
-import { ListWrapper, TeamBox, TeamHeader, TeamItemCommand } from './ChooseTeamList.styled'
-import heroes from 'db/heroes.json';
 
 import TeamItemSmall from './TeamItemSmall/TeamItemSmall'
+import { ListWrapper, TeamBox, TeamHeader, TeamItemCommand } from './ChooseTeamList.styled'
 
-function ChooseTeamList({setTeam}) {
+import { useCardsState } from '../../hooks/useCardsState'
+import { setAllTeam } from '../../redux/cards/slice'
+import { useDispatch } from 'react-redux'
 
+
+
+function ChooseTeamList() {
+  const { cards } = useCardsState();
+
+  const dispatch = useDispatch()
   function mergeHeroesIntoTeams(heroes) {
     const mergedHeroes = {}
     heroes.forEach(hero => {
@@ -17,11 +24,12 @@ function ChooseTeamList({setTeam}) {
 
     return Object.values(mergedHeroes)
   }
-  const mergedHeroes = mergeHeroesIntoTeams(heroes)
-  console.log(mergedHeroes)
+  const mergedHeroes = mergeHeroesIntoTeams(cards)
+
 
   function onSetTeam(team) {
-    setTeam(team)
+    dispatch(setAllTeam([]))
+    dispatch(setAllTeam(team))
   }
 
   return (
