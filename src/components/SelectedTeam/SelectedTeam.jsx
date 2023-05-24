@@ -45,7 +45,7 @@ function SelectedTeam({ deleteFromTeam }) {
     <>
       <SectionTitle>Choose your team</SectionTitle>
       <ButtonWrapper>
-        <ClearTeamButton  onClick={onClearTeam}>Clear team</ClearTeamButton>
+        <ClearTeamButton  onClick={onClearTeam} disabled={!userTeam.length} >Clear team</ClearTeamButton>
       </ButtonWrapper>
 
       {

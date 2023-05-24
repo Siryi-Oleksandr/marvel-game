@@ -27,11 +27,15 @@ export const ClearTeamButton = styled.button`
 
   transition: transform 250ms ease-in-out;
 
-  &:hover,
+  &:hover:not(:disabled),
   &:focus {
     transform: scale(1.05);
   }
 
+  &:disabled {
+    opacity: 0.5; /* Пример стиля для дизейблед состояния */
+    cursor: not-allowed; /* Пример стиля для дизейблед состояния */
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -56,5 +60,13 @@ export const CardWrapper = styled.div`
   cursor: pointer;
 `;
 
-
+export const PowersWrapper = styled.div`
+  background: rgba(203, 219, 245, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.8px);
+  -webkit-backdrop-filter: blur(10.8px);
+  border: 1px solid rgba(203, 219, 245, 0.18);
+  padding-top: 15px;
+`;
 
