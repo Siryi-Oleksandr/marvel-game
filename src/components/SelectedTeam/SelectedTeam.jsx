@@ -28,7 +28,10 @@ function SelectedTeam({ deleteFromTeam }) {
   const dispatch = useDispatch();
 
   function onClearTeam() {
-    dispatch(setAllTeam([]));
+    if(userTeam.length === 0) {
+      return
+    }
+    dispatch(setAllTeam([]))
   }
 
   function showSelectedPowers(index) {
@@ -42,7 +45,7 @@ function SelectedTeam({ deleteFromTeam }) {
         <Title>Choose your team</Title>
       </div>
       <ButtonWrapper>
-        <ClearTeamButton onClick={onClearTeam}>Clear team</ClearTeamButton>
+        <ClearTeamButton  onClick={onClearTeam} disabled={!userTeam.length} >Clear team</ClearTeamButton>
       </ButtonWrapper>
 
       {!userTeam.length ? (
