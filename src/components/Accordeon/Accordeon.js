@@ -27,7 +27,7 @@ export const Accordeon = () => {
                   style={
                     item.winner.includes('Enemy')
                       ? { background: '#c61818' }
-                      : { background: 'green' }
+                      : { background: '#030250' }
                   }
                   className="TabLabel"
                   htmlFor={item.id}
