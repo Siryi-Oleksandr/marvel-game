@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import TeamItem from 'components/TeamItem/TeamItem';
-import SectionTitle from '../SectionTitle/SectionTitle';
 import HeroesPowers from '../HeroesPowers/HeroesPowers';
 
 import intelligence from '../../images/skeleton-3.png';
