@@ -31,8 +31,10 @@ function SelectedTeam({ deleteFromTeam }) {
   const dispatch = useDispatch()
 
   function onClearTeam() {
+    if(userTeam.length === 0) {
+      return
+    }
     dispatch(setAllTeam([]))
-
   }
 
   function showSelectedPowers(index) {

@@ -9,12 +9,29 @@ export const SceletonWrapper = styled.div`
 `;
 
 export const ClearTeamButton = styled.button`
-  font-weight: 600;
-  font-size: 1rem;
-  color: #dd1a1a;
-  background: white;
-  border: 0;
-  padding: 0.5rem 1.5rem;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  font-size: 17px;
+  font-family: 'PT Serif';
+  line-height: 1.2;
+  color: whitesmoke;
+
+  background: #ff0000;
+  box-shadow: 0px 0px 15px #ff0000;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: transform 250ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+
 `;
 
 export const ButtonWrapper = styled.div`

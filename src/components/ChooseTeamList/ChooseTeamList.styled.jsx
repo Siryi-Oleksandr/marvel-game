@@ -104,6 +104,12 @@ export const TeamBox = styled.div`
   justify-content: center;
 `;
 export const TeamHeader = styled.div`
+  margin-top: 15px;
+  font-family: 'PT Serif';
+  font-weight: bold;
+  color: red;
+  text-align: center;
+
   padding-top: 10px;
   width: 100%;
   margin-bottom: 40px;
