@@ -11,16 +11,21 @@
 
 .modalHeader {
   font-family: 'Avengeance';
+  font-size: 40px;
   letter-spacing: 0.1em;
   text-align: center;
   color: rgb(0, 0, 255);
+
+  text-shadow: rgba(22, 22, 22, 0.425) 0px 54px 55px,
+    rgba(35, 35, 35, 0.329) 0px -8px 30px, rgba(36, 35, 35, 0.411) 0px 4px 6px,
+    rgba(35, 34, 34, 0.336) 0px 12px 13px, rgba(29, 28, 28, 0.281) 0px -3px 5px;
 }
 
 .score {
   padding: 8px;
   border: 1px solid blue;
   border-radius: 8px;
-  font-size: 24px;
+  font-size: 40px;
   font-weight: 600;
   font-family: 'Abril Fatface', cursive;
   letter-spacing: 0.1em;

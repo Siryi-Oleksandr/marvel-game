@@ -36,15 +36,18 @@ export function VinnerModal({ isOpen, onClose, infoVinner, back }) {
         >
           <ModalHeader
             className="modalHeader"
+            fontSize={40}
             color={isUserVinner ? 'blue' : 'red'}
           >
             {isUserVinner ? 'Victory' : 'Defeat'}
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody className="modalBody">
-            <Text>{messageTitle}</Text>
-            <Text>{messageBody}</Text>
-            <Box display="flex" gap={5} alignItems="center">
+            <Text fontSize={22}>{messageTitle}</Text>
+            <Text fontSize={18} mb={5}>
+              {messageBody}
+            </Text>
+            <Box mb={5} display="flex" gap={5} alignItems="center">
               <Box className="scoreWrapper">
                 <Text>User Team</Text>
                 <Box className="score">
@@ -71,8 +74,8 @@ export function VinnerModal({ isOpen, onClose, infoVinner, back }) {
           <ModalFooter justifyContent="center">
             <Button
               colorScheme="red"
+              backgroundColor="red.400"
               alignItems="center"
-              mr={3}
               onClick={onPlayAgain}
             >
               Play again
