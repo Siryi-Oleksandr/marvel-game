@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { cardsSlice } from './cards/slice';
-
 import {
   persistStore,
   persistReducer,
@@ -12,15 +11,25 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { statisticsSlice } from './statistics/slice';
 
 const cardsPersistConfig = {
   key: 'cards',
   storage,
   whitelist: 'cards',
 };
+const statisticsPersistConfig = {
+  key: 'statistics',
+  storage,
+  whitelist: 'statistics',
+};
 export const store = configureStore({
   reducer: {
     cards: persistReducer(cardsPersistConfig, cardsSlice.reducer),
+    statistics: persistReducer(
+      statisticsPersistConfig,
+      statisticsSlice.reducer
+    ),
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({

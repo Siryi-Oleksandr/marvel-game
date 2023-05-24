@@ -1,0 +1,95 @@
+$midnight: #c61818;
+$clouds: #ecf0f1;
+// General
+
+.AccordeonInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* Accordion styles */
+.AccordeonContainer {
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+//
+.AccordeonTab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+.TabLabel {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  /* Icon */
+
+  &::after {
+    content: '\276F';
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all 0.35s;
+  }
+}
+.TabContent {
+  max-height: 0;
+  padding: 0 1em;
+  color: $midnight;
+  transition: all 0.35s;
+}
+.TabClose {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  background: $midnight;
+  cursor: pointer;
+  &:hover {
+    background: darken($midnight, 10%);
+  }
+}
+
+// :checked
+.AccordeonInput:checked {
+  + .TabLabel {
+    background: darken($midnight, 10%);
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .TabContent {
+    max-height: 100vh;
+    padding: 1em;
+  }
+}
+.FightResult {
+  text-align: center;
+  font-family: 'PT Serif', 'serif';
+  text-shadow: rgba(255, 255, 255, 0.425) 0px 54px 55px,
+    rgba(255, 255, 255, 0.329) 0px -8px 30px,
+    rgba(255, 255, 255, 0.411) 0px 4px 6px,
+    rgba(255, 255, 255, 0.336) 0px 12px 13px,
+    rgba(255, 255, 255, 0.281) 0px -3px 5px;
+}
+.TeamScoreFigure {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+  text-shadow: rgba(255, 255, 255, 0.425) 0px 54px 55px,
+    rgba(255, 255, 255, 0.329) 0px -8px 30px,
+    rgba(255, 255, 255, 0.411) 0px 4px 6px,
+    rgba(255, 255, 255, 0.336) 0px 12px 13px,
+    rgba(255, 255, 255, 0.281) 0px -3px 5px;
+}

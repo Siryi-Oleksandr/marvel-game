@@ -4,8 +4,11 @@ import { fetchCards } from './operations';
 const initialState = {
   cards: [],
   userTeam: [],
+
+  userTeamTitle: null,
   isRefreshing: false,
 };
+
 export const cardsSlice = createSlice({
   name: 'cards',
   initialState,
@@ -19,6 +22,10 @@ export const cardsSlice = createSlice({
     },
     setAllTeam(state, action) {
       state.userTeam = action.payload;
+    },
+
+    setUserTeamTitle(state, action) {
+      state.userTeamTitle = action.payload;
     },
   },
   extraReducers: {
@@ -35,5 +42,9 @@ export const cardsSlice = createSlice({
   },
 });
 
-export const { addCardToTeam, deleteCardFromTeam, setAllTeam } =
-  cardsSlice.actions;
+export const {
+  addCardToTeam,
+  deleteCardFromTeam,
+  setAllTeam,
+  setUserTeamTitle,
+} = cardsSlice.actions;

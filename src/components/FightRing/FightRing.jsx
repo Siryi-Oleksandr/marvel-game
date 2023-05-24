@@ -8,9 +8,9 @@ import { RingWrapper } from './FightRing.styled';
 function FightRing({ userTeam, enemyTeam, fight, back }) {
   return (
     <div>
-      <SectionTitle>Figth Ring</SectionTitle>
+      <SectionTitle>Fight Ring</SectionTitle>
 
-      <Button colorScheme="blue" size="lg" onClick={back}>
+      <Button colorScheme="red" size="lg" onClick={back}>
         Back
       </Button>
       <RingWrapper>

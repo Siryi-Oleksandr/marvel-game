@@ -20,7 +20,7 @@ export function VinnerModal({ isOpen, onClose, infoVinner }) {
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay
-          backgroundColor={isUserVinner ? '#5c82e18c' : '#ff000048'}
+        // backgroundColor={isUserVinner ? '#5c82e18c' : '#ff000048'}
         />
         <ModalContent>
           <ModalHeader textAlign="center">{messageTitle}</ModalHeader>
@@ -44,7 +44,7 @@ export function VinnerModal({ isOpen, onClose, infoVinner }) {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+            <Button colorScheme="red" mr={3} onClick={onClose}>
               Close
             </Button>
           </ModalFooter>

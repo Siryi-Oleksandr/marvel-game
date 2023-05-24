@@ -6,3 +6,4 @@ export * from './Loader/Loader';
 export * from './Title/Title';
 export * from './DescrGallery/DescrGallery';
 export * from './Tab/Tab';
+export * from './Accordeon/Accordeon';
