@@ -87,7 +87,7 @@ body.chakra-ui-light {
   -moz-osx-font-smoothing: grayscale;
 
   /*Linear gradient... */
-  background: radial-gradient(at center, #000000, #ffffff);
+  background: radial-gradient(at center, #0004ff, #ffffff);
 }
 
 ol,

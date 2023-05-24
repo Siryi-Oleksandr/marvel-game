@@ -9,8 +9,8 @@ export const Card = styled.li`
   height: 300px;
   background-image: linear-gradient(
       to bottom,
-      rgba(42, 43, 50, 0.804),
-      rgba(35, 36, 42, 0.7)
+      rgba(84, 87, 110, 0.804),
+      rgba(106, 111, 144, 0.7)
     ),
     url(${props => props.imgUrl});
   background-color: ${colors.blue[400]};
