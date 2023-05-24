@@ -10,7 +10,12 @@ function FightRing({ userTeam, enemyTeam, fight, back }) {
     <div>
       <SectionTitle>Fight Ring</SectionTitle>
 
-      <Button colorScheme="red" size="lg" onClick={back}>
+      <Button
+        colorScheme="red"
+        backgroundColor="red.400"
+        size="lg"
+        onClick={back}
+      >
         Back
       </Button>
       <RingWrapper>
