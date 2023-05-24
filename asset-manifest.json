@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/itis-team-6/static/css/main.f38dedc4.css",
-    "main.js": "/itis-team-6/static/js/main.26cf333d.js",
+    "main.css": "/itis-team-6/static/css/main.f6c4a31a.css",
+    "main.js": "/itis-team-6/static/js/main.e5361efe.js",
     "static/media/skeleton-2.png": "/itis-team-6/static/media/skeleton-2.8e54bb5fad6ef0c5555b.png",
     "static/media/skeleton-3.png": "/itis-team-6/static/media/skeleton-3.0bb9d73725195abe43a5.png",
     "static/media/skeleton-1.png": "/itis-team-6/static/media/skeleton-1.3db866b2301150efc0cd.png",
@@ -11,11 +11,11 @@
     "index.html": "/itis-team-6/index.html",
     "static/media/marvel.svg": "/itis-team-6/static/media/marvel.f64c057bbe349be7d601d4046d296c6c.svg",
     "static/media/shield.svg": "/itis-team-6/static/media/shield.ef53c0a1e4889cdbf1ecb6c697769963.svg",
-    "main.f38dedc4.css.map": "/itis-team-6/static/css/main.f38dedc4.css.map",
-    "main.26cf333d.js.map": "/itis-team-6/static/js/main.26cf333d.js.map"
+    "main.f6c4a31a.css.map": "/itis-team-6/static/css/main.f6c4a31a.css.map",
+    "main.e5361efe.js.map": "/itis-team-6/static/js/main.e5361efe.js.map"
   },
   "entrypoints": [
-    "static/css/main.f38dedc4.css",
-    "static/js/main.26cf333d.js"
+    "static/css/main.f6c4a31a.css",
+    "static/js/main.e5361efe.js"
   ]
 }
