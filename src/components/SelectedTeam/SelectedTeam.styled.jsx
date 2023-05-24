@@ -33,8 +33,7 @@ export const ClearTeamButton = styled.button`
   }
 
   &:disabled {
-    opacity: 0.5; /* Пример стиля для дизейблед состояния */
-    cursor: not-allowed; /* Пример стиля для дизейблед состояния */
+    opacity: 0.5;
   }
 `;
 

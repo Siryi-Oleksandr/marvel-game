@@ -73,7 +73,7 @@ function SelectedTeam({ deleteFromTeam }) {
           ))}
         </SelectedTeamWrapper>
       )}
-      {userTeam.length ? <HeroesPowers heroIndex={selectedHeroIndex} /> : <></>}
+      {!!userTeam.length && <HeroesPowers heroIndex={selectedHeroIndex} /> }
     </>
   );
 }
