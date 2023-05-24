@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import ChooseTeamList from '../../components/ChooseTeamList/ChooseTeamList'
 
 import './PlayTeamGame.scss'
@@ -10,8 +10,10 @@ import { setAllTeam } from '../../redux/cards/slice'
 
 
 
+
 export const PlayTeamGame = () => {
   const containerSize = useBreakpointValue({ base: "100%", sm: "768px", xl: "1280px" });
+  // const [goToFight, setGoToFight] = useState(false)
   const { userTeam } = useCardsState();
 
   const dispatch = useDispatch();
@@ -25,15 +27,29 @@ export const PlayTeamGame = () => {
       return !userTeam.every((hero) => hero.team === teamName)
     }
   }
-
+  const refUp = useRef()
   useEffect(() => {
     if(isAllHeroesFromSameTeam()) {
       dispatch(setAllTeam([]))
     }
   })
 
-  return <Container maxW={containerSize}>
-    <SelectedTeam />
-    <ChooseTeamList />
+  return <Container ref={refUp} maxW={containerSize}>
+    {
+      // goToFight ?
+      //   <FightRing
+      //     userTeam={userTeam}
+          // enemyTeam={enemyTeam}
+          // fight={onFight}
+          // back={onBack}
+        //>  :
+        <>
+          <SelectedTeam />
+          <ChooseTeamList refUp={refUp} />
+        </>
+
+    }
+
+
   </Container>
 }

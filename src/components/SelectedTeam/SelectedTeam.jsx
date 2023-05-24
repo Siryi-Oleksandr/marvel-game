@@ -50,7 +50,7 @@ function SelectedTeam({ deleteFromTeam }) {
 
       {!userTeam.length ? (
         <>
-          <SceletonWrapper>
+          <SceletonWrapper id="selectedTeam">
             <CardTeamPlaySceleton
               name="Intelligence"
               bgImg={intelligence}
