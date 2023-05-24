@@ -58,7 +58,7 @@ export function VinnerModal({ isOpen, onClose, infoVinner, back }) {
                 </Box>
               </Box>
 
-              <Text> : </Text>
+              <Text fontSize={24}> : </Text>
 
               <Box className="scoreWrapper">
                 <Text>Enemy Team</Text>
