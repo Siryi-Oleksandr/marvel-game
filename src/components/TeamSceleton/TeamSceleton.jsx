@@ -53,7 +53,7 @@ function TeamSceleton({ deleteFromTeam }) {
   return (
     <>
       <div className="titleWrapper">
-        <Title>Gather your team here</Title>
+        <Title>Create your team here</Title>
       </div>
 
       <TeamSceletonWrapper>
