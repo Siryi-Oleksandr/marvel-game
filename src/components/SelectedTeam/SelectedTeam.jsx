@@ -20,6 +20,7 @@ import {
 } from './SelectedTeam.styled';
 import CardTeamPlaySceleton from '../CardTeamPlaySceleton/CardTeamPlaySceleton';
 import { Title } from 'components/Title/Title';
+import ButtonGoToPlayPage from '../ButtonGoToPlayPage/ButtonGoToPlayPage'
 
 function SelectedTeam({ deleteFromTeam }) {
   const { userTeam } = useCardsState();
@@ -74,6 +75,8 @@ function SelectedTeam({ deleteFromTeam }) {
         </SelectedTeamWrapper>
       )}
       {!!userTeam.length && <HeroesPowers heroIndex={selectedHeroIndex} /> }
+      {!!userTeam.length && <ButtonGoToPlayPage/>}
+
     </>
   );
 }

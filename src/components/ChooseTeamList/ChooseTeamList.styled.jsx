@@ -26,11 +26,6 @@ export const ListWrapper = styled.div`
   }
 `;
 
-export const HeroItem = styled.div`
-  width: ${cardWidth};
-  height: ${cardHeight};
-  background-color: gold;
-`;
 
 export const TeamItemCommand = styled.div`
   display: flex;
@@ -107,7 +102,7 @@ export const TeamHeader = styled.div`
   margin-top: 15px;
   font-family: 'PT Serif';
   font-weight: bold;
-  color: red;
+  color: #dd1a1a;
   text-align: center;
 
   padding-top: 10px;

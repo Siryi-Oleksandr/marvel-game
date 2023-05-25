@@ -67,5 +67,6 @@ export const PowersWrapper = styled.div`
   -webkit-backdrop-filter: blur(10.8px);
   border: 1px solid rgba(203, 219, 245, 0.18);
   padding-top: 15px;
+  margin-bottom: 20px;
 `;
 

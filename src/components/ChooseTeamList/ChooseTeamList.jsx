@@ -1,11 +1,12 @@
 import React from 'react'
 
-import TeamItemSmall from './TeamItemSmall/TeamItemSmall'
-import { ListWrapper, TeamBox, TeamHeader, TeamItemCommand } from './ChooseTeamList.styled'
+
+import { ListWrapper} from './ChooseTeamList.styled'
 
 import { useCardsState } from '../../hooks/useCardsState'
 import { setAllTeam } from '../../redux/cards/slice'
 import { useDispatch } from 'react-redux'
+import TeamItemContent from '../TeamItemContent/TeamItemContent'
 
 
 
@@ -41,10 +42,6 @@ function ChooseTeamList({ refUp }) {
           block: 'start'
         });
       }
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: "smooth"
-    // });
   }
 
   return (
@@ -52,18 +49,9 @@ function ChooseTeamList({ refUp }) {
       {
         mergedHeroes.map((team) => {
           return (
-              <TeamItemCommand onClick={() => onSetTeam(team)} key={team[0].team}>
-                <TeamHeader>
-                  {team[0].team}
-                </TeamHeader>
-                <TeamBox>
-                  {
-                    team.map((hero) => {
-                      return <TeamItemSmall key={hero.id} hero={hero}/>
-                    })
-                  }
-                </TeamBox>
-              </TeamItemCommand>
+            <div onClick={() => onSetTeam(team)} key={team[0].team}>
+              <TeamItemContent teamName={team[0].team} team={team}/>
+            </div>
           )
         })
       }
