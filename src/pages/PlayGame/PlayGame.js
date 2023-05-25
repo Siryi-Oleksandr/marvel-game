@@ -19,23 +19,6 @@ import { VinnerModal } from 'components/Modal/Modal';
 import { nanoid } from 'nanoid';
 import FightAnimation from 'components/FightAnimation/FightAnimation';
 
-const smth = {
-  id: 1009220,
-  name: 'Captain America',
-  description:
-    "Vowing to serve his country any way he could, young Steve Rogers took the super soldier serum to become America's one-man army. Fighting for the red, white and blue for over 60 years, Captain America is the living, breathing symbol of freedom and liberty.",
-  imgUrl: 'https://cdn.marvel.com/content/1x/003cap_com_crd_01.jpg',
-  type: 'fightingSkills',
-  team: 'Avengers',
-  characteristics: {
-    intelligence: 201,
-    force: 213,
-    speedAndAgility: 141,
-    specialSkills: 168,
-    fightingSkills: 499,
-  },
-};
-
 export const PlayGame = () => {
   const {
     userTeam,
@@ -46,6 +29,7 @@ export const PlayGame = () => {
   const [enemyTeam, setEnemyTeam] = useState([]);
   const [goToFight, setGoToFight] = useState(false);
   const [isFight, setIsFight] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [infoVinner, setInfoVinner] = useState({});
   const dispatch = useDispatch();
@@ -106,11 +90,11 @@ export const PlayGame = () => {
   };
 
   const onGoToGing = () => {
-    setIsFight(true);
+    setIsLoading(true);
     setEnemyTeam(() => getRandomTeam(cards, userTeam));
 
     setTimeout(() => {
-      setIsFight(false);
+      setIsLoading(false);
       setGoToFight(true);
     }, 1000);
   };
@@ -149,6 +133,7 @@ export const PlayGame = () => {
         infoVinner={infoVinner}
         back={onBack}
       />
+      {isLoading && <Loader />}
     </div>
   );
 };
