@@ -1,7 +1,5 @@
 import React from 'react';
 import { CardListWrapper } from './CardsList.styled';
-
-// import heroes from 'db/heroes.json';
 import CardItem from 'components/CardItem/CardItem';
 import SectionTitle from 'components/SectionTitle/SectionTitle';
 

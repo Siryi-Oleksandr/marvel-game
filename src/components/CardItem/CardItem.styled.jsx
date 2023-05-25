@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import cardBgImg from '../../images/card-bg.png';
+import cardBgImg from 'images/card-bg.png';
+import { pallete, animation } from 'helpers/variables';
 
 export const CardItemWrapper = styled.div`
   width: 200px;
@@ -61,7 +62,7 @@ export const CardBack = styled.div`
   line-height: calc(28 / 18);
   letter-spacing: 0.03em;
 
-  color: red;
+  color: ${pallete.primaryRed};
   background: linear-gradient(-45deg, #0a2c66 0%, #010817 100%);
 
   backface-visibility: hidden;
@@ -82,7 +83,7 @@ export const CardButton = styled.button`
   border: none;
   cursor: pointer;
 
-  transition: all 250ms ease-in-out;
+  transition: all ${animation};
 
   &:hover,
   &:focus {
@@ -111,25 +112,25 @@ export const AddButton = styled(CardButton)`
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
-  background-color: #002350;
+  background-color: ${pallete.primaryBlue};
 `;
 
 export const DeleteButton = styled(CardButton)`
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
-  background-color: #002350;
+  background-color: ${pallete.primaryBlue};
 `;
 
 export const InfoButton = styled(CardButton)`
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
-  background-color: #c61818;
+  background-color: ${pallete.primaryRed};
 `;
 
 export const HeroName = styled.h2`
-  color: red;
+  color: ${pallete.primaryRed};
   text-align: center;
   font-size: 32px;
   font-family: 'Luckiest Guy';
@@ -146,13 +147,13 @@ export const HeroMainSkill = styled.p`
   font-size: 20px;
   font-family: 'PT Serif';
   font-weight: bold;
-  color: blue;
+  color: ${pallete.primaryBlue};
 `;
 
 export const HeroNameBack = styled.h2`
   padding-top: 10px;
   margin-bottom: 10px;
-  color: whitesmoke;
+  color: ${pallete.whitesmoke};
   text-align: center;
   font-size: 18px;
   font-family: 'PT Serif';
@@ -170,7 +171,7 @@ export const HeroSkills = styled.h3`
   font-size: 14px;
   font-family: 'PT Serif';
   font-weight: normal;
-  color: whitesmoke;
+  color: ${pallete.whitesmoke};
 `;
 
 export const HeroDescription = styled.h4`
@@ -178,7 +179,7 @@ export const HeroDescription = styled.h4`
   font-size: 12px;
   font-family: 'PT Serif';
   font-weight: 400;
-  color: whitesmoke;
+  color: ${pallete.whitesmoke};
   max-height: 88px;
   overflow-y: scroll;
 
@@ -188,14 +189,14 @@ export const HeroDescription = styled.h4`
   }
 
   &::-webkit-scrollbar-track {
-    background: whitesmoke;
+    background: ${pallete.whitesmoke};
     border-radius: 20px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: blue;
+    background-color: ${pallete.primaryBlue};
     border-radius: 20px;
-    border: 3px solid whitesmoke;
+    border: 3px solid ${pallete.whitesmoke};
   }
 `;
 
@@ -203,7 +204,7 @@ export const HeroDescriptionTitle = styled.span`
   font-size: 14px;
   font-family: 'PT Serif';
   font-weight: normal;
-  color: whitesmoke;
+  color: ${pallete.whitesmoke};
 `;
 
 export const MainSkillIcon = styled.div`
@@ -220,7 +221,7 @@ export const MainSkillIcon = styled.div`
   align-items: center;
 
   overflow: hidden;
-  background-color: #002350;
+  background-color: ${pallete.primaryBlue};
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -228,9 +229,3 @@ export const MainSkillIcon = styled.div`
 
   transform: translate(-50%, 50%);
 `;
-
-// export const AddButton = styled(CardButton)`
-//   top: 0;
-//   left: 0;
-//   transform: translate(-50%, -50%);
-// `;

@@ -4,6 +4,7 @@ import SectionTitle from 'components/SectionTitle/SectionTitle';
 import TeamList from 'components/TeamList/TeamList';
 import React from 'react';
 import { RingWrapper } from './FightRing.styled';
+import { pallete } from 'helpers/variables';
 
 function FightRing({ userTeam, enemyTeam, fight, back }) {
   return (
@@ -12,9 +13,9 @@ function FightRing({ userTeam, enemyTeam, fight, back }) {
 
       <Button
         colorScheme="red"
-        backgroundColor="red.400"
-        ml={8}
+        backgroundColor={pallete.primaryRed}
         size="lg"
+        ml={8}
         onClick={back}
       >
         Back

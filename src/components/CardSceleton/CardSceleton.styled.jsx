@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import * as theme from '../../theme';
+import { pallete } from 'helpers/variables';
+import * as theme from 'theme';
 const { colors } = theme.colors;
 
 export const Card = styled.li`
@@ -22,12 +23,10 @@ export const Card = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* filter: blur(1px); */
 `;
 
 export const HeroSkill = styled.p`
-  color: whitesmoke;
+  color: ${pallete.whitesmoke};
   text-align: center;
   font-size: 32px;
   font-family: 'PT Serif';
