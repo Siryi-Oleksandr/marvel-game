@@ -17,8 +17,9 @@ export const cardsSlice = createSlice({
       state.userTeam.push(action.payload);
     },
     deleteCardFromTeam(state, action) {
-      const index = state.userTeam.findIndex(card => card.id === action.id);
-      state.userTeam.splice(index, 1);
+      state.userTeam = state.userTeam.filter(card => card.id !== action.payload)
+      // const index = state.userTeam.findIndex(card => card.id === action.id);
+      // state.userTeam.splice(index, 1);
     },
     setAllTeam(state, action) {
       state.userTeam = action.payload;
