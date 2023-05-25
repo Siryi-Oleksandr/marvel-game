@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { pallete } from 'helpers/variables';
 
 export const SceletonTitle = styled.p`
   margin-top: 15px;
@@ -6,7 +7,7 @@ export const SceletonTitle = styled.p`
   font-size: 26px;
   font-family: 'PT Serif';
   font-weight: bold;
-  color: red;
+  color: ${pallete.primaryRed};
   text-align: center;
 
   text-shadow: rgba(255, 255, 255, 0.425) 0px 54px 55px,

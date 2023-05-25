@@ -34,7 +34,7 @@ export const PlayGame = () => {
 
   const noTeam = !userTeam.length;
   const isTeam = userTeam.length === 3;
-  console.log(userTeam)
+
   const addToTeam = hero => {
     dispatch(addCardToTeam(hero));
   };

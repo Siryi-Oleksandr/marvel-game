@@ -18,9 +18,9 @@ import { RiDeleteBin2Line } from 'react-icons/ri';
 import { BsInfoLg } from 'react-icons/bs';
 import { TbArrowBackUp } from 'react-icons/tb';
 
-import power from '../../images/power-2.png';
-import intelligence from '../../images/intelligence-3.png';
-import fight from '../../images/fight-2.png';
+import power from 'images/power-2.png';
+import intelligence from 'images/intelligence-3.png';
+import fight from 'images/fight-2.png';
 
 function TeamItem({ hero, deleteFromTeam, removeFromSceleton }) {
   const [flipped, setFlipped] = useState(false);
