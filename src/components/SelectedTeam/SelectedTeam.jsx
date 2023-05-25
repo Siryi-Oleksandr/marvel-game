@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 
-import TeamItem from 'components/TeamItem/TeamItem';
-import HeroesPowers from '../HeroesPowers/HeroesPowers';
-
-import intelligence from '../../images/skeleton-3.png';
-import force from '../../images/skeleton-2.png';
-import fight from '../../images/skeleton-1.png';
-
 import { useCardsState } from '../../hooks/useCardsState';
 import { useDispatch } from 'react-redux';
 import { setAllTeam } from '../../redux/cards/slice';
+
+import TeamItem from 'components/TeamItem/TeamItem';
+import HeroesPowers from '../HeroesPowers/HeroesPowers';
+import ButtonGoToPlayPage from '../ButtonGoToPlayPage/ButtonGoToPlayPage'
+import CardSceleton from '../CardSceleton/CardSceleton'
+import { Title } from 'components/Title/Title';
 
 import {
   ButtonWrapper,
@@ -19,9 +18,11 @@ import {
   SelectedTeamWrapper,
 } from './SelectedTeam.styled';
 
-import { Title } from 'components/Title/Title';
-import ButtonGoToPlayPage from '../ButtonGoToPlayPage/ButtonGoToPlayPage'
-import CardSceleton from '../CardSceleton/CardSceleton'
+import intelligence from '../../images/skeleton-3.png';
+import force from '../../images/skeleton-2.png';
+import fight from '../../images/skeleton-1.png';
+
+
 
 function SelectedTeam({ deleteFromTeam }) {
   const { userTeam } = useCardsState();
@@ -52,11 +53,7 @@ function SelectedTeam({ deleteFromTeam }) {
       {!userTeam.length ? (
         <>
           <SceletonWrapper id="selectedTeam">
-            <CardSceleton
-              name="Intelligence"
-              bgImg={intelligence}
-              color="yellow"
-            />
+            <CardSceleton name="Intelligence" bgImg={intelligence} color="yellow"/>
             <CardSceleton name="Force" bgImg={force} color="green" />
             <CardSceleton name="Fighting" bgImg={fight} color="red" />
           </SceletonWrapper>

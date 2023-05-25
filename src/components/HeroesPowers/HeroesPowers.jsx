@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { TabPanel, TabPanels, Tabs, TabList, Tab } from '@chakra-ui/react'
-
 import { useCardsState } from '../../hooks/useCardsState'
+
+import { TabPanel, TabPanels, Tabs, TabList, Tab } from '@chakra-ui/react'
 import { PowersWrapper } from '../SelectedTeam/SelectedTeam.styled'
 
 
