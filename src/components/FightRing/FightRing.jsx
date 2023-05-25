@@ -13,6 +13,7 @@ function FightRing({ userTeam, enemyTeam, fight, back }) {
       <Button
         colorScheme="red"
         backgroundColor="red.400"
+        ml={8}
         size="lg"
         onClick={back}
       >
