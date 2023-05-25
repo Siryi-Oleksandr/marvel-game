@@ -17,6 +17,24 @@ import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
 import Loader from 'components/Loader2';
 import { VinnerModal } from 'components/Modal/Modal';
 import { nanoid } from 'nanoid';
+import FightAnimation from 'components/FightAnimation/FightAnimation';
+
+const smth = {
+  id: 1009220,
+  name: 'Captain America',
+  description:
+    "Vowing to serve his country any way he could, young Steve Rogers took the super soldier serum to become America's one-man army. Fighting for the red, white and blue for over 60 years, Captain America is the living, breathing symbol of freedom and liberty.",
+  imgUrl: 'https://cdn.marvel.com/content/1x/003cap_com_crd_01.jpg',
+  type: 'fightingSkills',
+  team: 'Avengers',
+  characteristics: {
+    intelligence: 201,
+    force: 213,
+    speedAndAgility: 141,
+    specialSkills: 168,
+    fightingSkills: 499,
+  },
+};
 
 export const PlayGame = () => {
   const {
@@ -78,7 +96,7 @@ export const PlayGame = () => {
       setIsFight(false);
       toggleModal();
       dispatch(setFightStatistics(vinnerObj));
-    }, 1500);
+    }, 5000);
   };
 
   const onBack = () => {
@@ -101,6 +119,10 @@ export const PlayGame = () => {
     setIsOpenModal(prev => !prev);
   };
 
+  if (isFight) {
+    return <FightAnimation userTeam={userTeam} enemyTeam={enemyTeam} />;
+  }
+
   return (
     <div>
       {goToFight ? (
@@ -113,7 +135,6 @@ export const PlayGame = () => {
       ) : (
         <div>
           <TeamSceleton deleteFromTeam={deleteFromTeam} />
-
           {!isTeam ? (
             <CardsList filteredHeroes={filteredCards} addToTeam={addToTeam} />
           ) : (
@@ -121,7 +142,7 @@ export const PlayGame = () => {
           )}
         </div>
       )}
-      {isFight && <Loader />}
+
       <VinnerModal
         isOpen={isOpenModal}
         onClose={toggleModal}
