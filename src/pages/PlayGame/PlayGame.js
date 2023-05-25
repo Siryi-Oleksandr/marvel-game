@@ -96,7 +96,7 @@ export const PlayGame = () => {
       setIsFight(false);
       toggleModal();
       dispatch(setFightStatistics(vinnerObj));
-    }, 5000);
+    }, 4000);
   };
 
   const onBack = () => {
