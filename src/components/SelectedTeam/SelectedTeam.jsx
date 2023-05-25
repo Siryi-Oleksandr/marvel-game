@@ -20,6 +20,7 @@ import {
 } from './SelectedTeam.styled';
 import CardTeamPlaySceleton from '../CardTeamPlaySceleton/CardTeamPlaySceleton';
 import { Title } from 'components/Title/Title';
+import ButtonGoToPlayPage from '../ButtonGoToPlayPage/ButtonGoToPlayPage'
 
 function SelectedTeam({ deleteFromTeam }) {
   const { userTeam } = useCardsState();
@@ -28,7 +29,10 @@ function SelectedTeam({ deleteFromTeam }) {
   const dispatch = useDispatch();
 
   function onClearTeam() {
-    dispatch(setAllTeam([]));
+    if(userTeam.length === 0) {
+      return
+    }
+    dispatch(setAllTeam([]))
   }
 
   function showSelectedPowers(index) {
@@ -42,12 +46,12 @@ function SelectedTeam({ deleteFromTeam }) {
         <Title>Choose your team</Title>
       </div>
       <ButtonWrapper>
-        <ClearTeamButton onClick={onClearTeam}>Clear team</ClearTeamButton>
+        <ClearTeamButton  onClick={onClearTeam} disabled={!userTeam.length} >Clear team</ClearTeamButton>
       </ButtonWrapper>
 
       {!userTeam.length ? (
         <>
-          <SceletonWrapper>
+          <SceletonWrapper id="selectedTeam">
             <CardTeamPlaySceleton
               name="Intelligence"
               bgImg={intelligence}
@@ -70,7 +74,9 @@ function SelectedTeam({ deleteFromTeam }) {
           ))}
         </SelectedTeamWrapper>
       )}
-      {userTeam.length ? <HeroesPowers heroIndex={selectedHeroIndex} /> : <></>}
+      {!!userTeam.length && <HeroesPowers heroIndex={selectedHeroIndex} /> }
+      {!!userTeam.length && <ButtonGoToPlayPage/>}
+
     </>
   );
 }
