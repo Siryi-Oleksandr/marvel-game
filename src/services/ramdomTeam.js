@@ -1,22 +1,20 @@
-export function getRandomTeam(heroes) {
-  // Перевіряємо, чи масив має більше трьох елементів
-  if (heroes.length <= 3) {
-    return heroes; // Повертаємо весь масив, якщо його довжина менша або рівна 3
+export function getRandomTeam(heroes, userTeam = []) {
+  // Check if there are at least 3 available heroes
+  if (heroes.length < 3) {
+    return console.error('Not enough available heroes to form a team.');
   }
 
-  const result = [];
-  const indices = new Set(); // використовуємо Set для збереження тільки унікальних індексів
+  const filters = userTeam.map(hero => hero.name);
+  const filteredHeroes = heroes.filter(hero => !filters.includes(hero.name));
 
-  // Генеруємо три випадкових індекси
-  while (indices.size < 3) {
-    const randomIndex = Math.floor(Math.random() * heroes.length);
-    indices.add(randomIndex);
+  // Randomly select 3 heroes from the filteredHeroes array
+  const randomTeam = [];
+  while (randomTeam.length < 3) {
+    const randomIndex = Math.floor(Math.random() * filteredHeroes.length);
+    const randomHero = filteredHeroes[randomIndex];
+    randomTeam.push(randomHero);
+    filteredHeroes.splice(randomIndex, 1);
   }
 
-  // Додаємо об'єкти з випадковими індексами в результат
-  indices.forEach(index => {
-    result.push(heroes[index]);
-  });
-
-  return result;
+  return randomTeam;
 }

@@ -89,7 +89,7 @@ export const PlayGame = () => {
 
   const onGoToGing = () => {
     setIsFight(true);
-    setEnemyTeam(() => getRandomTeam(cards));
+    setEnemyTeam(() => getRandomTeam(cards, userTeam));
 
     setTimeout(() => {
       setIsFight(false);
