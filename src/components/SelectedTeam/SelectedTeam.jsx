@@ -18,9 +18,10 @@ import {
   SceletonWrapper,
   SelectedTeamWrapper,
 } from './SelectedTeam.styled';
-import CardTeamPlaySceleton from '../CardTeamPlaySceleton/CardTeamPlaySceleton';
+
 import { Title } from 'components/Title/Title';
 import ButtonGoToPlayPage from '../ButtonGoToPlayPage/ButtonGoToPlayPage'
+import CardSceleton from '../CardSceleton/CardSceleton'
 
 function SelectedTeam({ deleteFromTeam }) {
   const { userTeam } = useCardsState();
@@ -41,7 +42,6 @@ function SelectedTeam({ deleteFromTeam }) {
 
   return (
     <>
-      {/* <SectionTitle>Choose your team</SectionTitle> */}
       <div className="titleWrapper">
         <Title>Choose your team</Title>
       </div>
@@ -52,13 +52,13 @@ function SelectedTeam({ deleteFromTeam }) {
       {!userTeam.length ? (
         <>
           <SceletonWrapper id="selectedTeam">
-            <CardTeamPlaySceleton
+            <CardSceleton
               name="Intelligence"
               bgImg={intelligence}
               color="yellow"
             />
-            <CardTeamPlaySceleton name="Force" bgImg={force} color="green" />
-            <CardTeamPlaySceleton name="Fighting" bgImg={fight} color="red" />
+            <CardSceleton name="Force" bgImg={force} color="green" />
+            <CardSceleton name="Fighting" bgImg={fight} color="red" />
           </SceletonWrapper>
         </>
       ) : (
