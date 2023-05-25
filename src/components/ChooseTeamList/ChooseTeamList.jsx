@@ -1,14 +1,11 @@
 import React from 'react'
 
-
-import { ListWrapper} from './ChooseTeamList.styled'
-
 import { useCardsState } from '../../hooks/useCardsState'
 import { setAllTeam } from '../../redux/cards/slice'
 import { useDispatch } from 'react-redux'
+
+import { ListWrapper } from './ChooseTeamList.styled'
 import TeamItemContent from '../TeamItemContent/TeamItemContent'
-
-
 
 function ChooseTeamList({ refUp }) {
   const { cards } = useCardsState()
@@ -28,7 +25,6 @@ function ChooseTeamList({ refUp }) {
   }
 
   const mergedHeroes = mergeHeroesIntoTeams(cards)
-
 
   function onSetTeam(team) {
     dispatch(setAllTeam([]))
