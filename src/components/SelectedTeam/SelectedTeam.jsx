@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './SelectedTeam.scss'
+
 import { useCardsState } from '../../hooks/useCardsState';
 import { useDispatch } from 'react-redux';
 import { setAllTeam } from '../../redux/cards/slice';
