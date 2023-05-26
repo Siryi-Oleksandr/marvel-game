@@ -1,0 +1,19 @@
+
+.selected-hero {
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(240, 20, 30, 0.8);
+  animation: glowing 1.8s infinite;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 25px rgba(240, 229, 20, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(246, 246, 250, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(240, 229, 20, 0.8);
+  }
+}
+
