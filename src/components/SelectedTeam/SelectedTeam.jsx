@@ -5,8 +5,7 @@ import { useDispatch } from 'react-redux';
 import { setAllTeam } from '../../redux/cards/slice';
 
 import TeamItem from 'components/TeamItem/TeamItem';
-import HeroesPowers from '../HeroesPowers/HeroesPowers';
-import ButtonGoToPlayPage from '../ButtonGoToPlayPage/ButtonGoToPlayPage'
+import { ButtonGoToPlayPage, HeroesPowers } from 'components'
 import CardSceleton from '../CardSceleton/CardSceleton'
 import { Title } from 'components/Title/Title';
 
@@ -24,7 +23,7 @@ import fight from '../../images/skeleton-1.png';
 
 
 
-function SelectedTeam({ deleteFromTeam }) {
+export const SelectedTeam =({ deleteFromTeam }) => {
   const { userTeam } = useCardsState();
   const [selectedHeroIndex, setSelectedHeroIndex] = useState(0);
 
@@ -78,4 +77,3 @@ function SelectedTeam({ deleteFromTeam }) {
   );
 }
 
-export default SelectedTeam;

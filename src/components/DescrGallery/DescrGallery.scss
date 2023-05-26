@@ -147,3 +147,60 @@
     transform: skew(20deg);
   }
 }
+
+
+.swordContainer {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.sword {
+  width: 20px;
+  height: 80px;
+  background: url("../../images/mec.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 37%;
+  transition: all 0.5s ease;
+}
+
+.sword-1 {
+  transform: translateX(-5px) rotateZ(45deg)
+}
+
+.sword-2 {
+  transform: translateX(5px) rotateZ(-45deg)
+}
+
+.swordContainer:hover .sword-1 {
+  animation: sword-animation-1 2s infinite;
+}
+
+.swordContainer:hover .sword-2 {
+  animation: sword-animation-2 2s infinite;
+}
+
+@keyframes sword-animation-1 {
+  0% {
+    transform: translateX(-5px) rotate(45deg);
+  }
+  50% {
+    transform: translateX(-5px) rotate(10deg);
+  }
+  100% {
+    transform: translateX(-5px) rotate(45deg);
+  }
+}
+
+@keyframes sword-animation-2 {
+  0% {
+    transform: translateX(5px) rotate(-45deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(-10deg);
+  }
+  100% {
+    transform: translateX(5px)rotate(-45deg);
+  }
+}

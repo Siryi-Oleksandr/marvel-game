@@ -3,7 +3,6 @@ import { Box, Text } from '@chakra-ui/react';
 import { ImPower } from 'react-icons/im';
 import { GoGear } from 'react-icons/go';
 import { FaHandPointUp } from 'react-icons/fa';
-import { GiAxeSword } from 'react-icons/gi';
 import { TbMoodHappy } from 'react-icons/tb';
 import './DescrGallery.scss';
 
@@ -31,7 +30,10 @@ export const DescrGallery = () => {
       </Box>
       <Box className="GalleryItem">
         <Box className="ItemContainer">
-          <GiAxeSword size={80} className="Swords" />
+          <Box className="swordContainer">
+            <Box className="sword sword-1"></Box>
+            <Box className="sword sword-2"></Box>
+          </Box>
         </Box>
         <Text mt="20px">Win marvelous battles</Text>
       </Box>

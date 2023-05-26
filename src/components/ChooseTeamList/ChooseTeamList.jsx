@@ -5,9 +5,9 @@ import { setAllTeam } from '../../redux/cards/slice'
 import { useDispatch } from 'react-redux'
 
 import { ListWrapper } from './ChooseTeamList.styled'
-import TeamItemContent from '../TeamItemContent/TeamItemContent'
+import { TeamItemContent } from 'components'
 
-function ChooseTeamList({ refUp }) {
+export const ChooseTeamList = ({ refUp }) =>  {
   const { cards } = useCardsState()
 
   const dispatch = useDispatch()
@@ -55,4 +55,3 @@ function ChooseTeamList({ refUp }) {
   )
 }
 
-export default ChooseTeamList
