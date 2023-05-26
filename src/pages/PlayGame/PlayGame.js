@@ -17,6 +17,7 @@ import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
 import Loader from 'components/Loader2';
 import { VinnerModal } from 'components/Modal/Modal';
 import { nanoid } from 'nanoid';
+import FightAnimation from 'components/FightAnimation/FightAnimation';
 
 export const PlayGame = () => {
   const {
@@ -28,6 +29,7 @@ export const PlayGame = () => {
   const [enemyTeam, setEnemyTeam] = useState([]);
   const [goToFight, setGoToFight] = useState(false);
   const [isFight, setIsFight] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [infoVinner, setInfoVinner] = useState({});
   const dispatch = useDispatch();
@@ -78,7 +80,7 @@ export const PlayGame = () => {
       setIsFight(false);
       toggleModal();
       dispatch(setFightStatistics(vinnerObj));
-    }, 1500);
+    }, 4000);
   };
 
   const onBack = () => {
@@ -88,11 +90,11 @@ export const PlayGame = () => {
   };
 
   const onGoToGing = () => {
-    setIsFight(true);
+    setIsLoading(true);
     setEnemyTeam(() => getRandomTeam(cards, userTeam));
 
     setTimeout(() => {
-      setIsFight(false);
+      setIsLoading(false);
       setGoToFight(true);
     }, 1000);
   };
@@ -100,6 +102,10 @@ export const PlayGame = () => {
   const toggleModal = () => {
     setIsOpenModal(prev => !prev);
   };
+
+  if (isFight) {
+    return <FightAnimation userTeam={userTeam} enemyTeam={enemyTeam} />;
+  }
 
   return (
     <div>
@@ -113,7 +119,6 @@ export const PlayGame = () => {
       ) : (
         <div>
           <TeamSceleton deleteFromTeam={deleteFromTeam} />
-
           {!isTeam ? (
             <CardsList filteredHeroes={filteredCards} addToTeam={addToTeam} />
           ) : (
@@ -121,13 +126,14 @@ export const PlayGame = () => {
           )}
         </div>
       )}
-      {isFight && <Loader />}
+
       <VinnerModal
         isOpen={isOpenModal}
         onClose={toggleModal}
         infoVinner={infoVinner}
         back={onBack}
       />
+      {isLoading && <Loader />}
     </div>
   );
 };

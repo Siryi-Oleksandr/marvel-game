@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const RingWrapper = styled.ul`
+export const RingWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: 768px;
