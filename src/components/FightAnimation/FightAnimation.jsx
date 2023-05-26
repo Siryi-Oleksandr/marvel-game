@@ -8,7 +8,7 @@ import {
   Card6,
   RingWrapper,
 } from './FightAnimation.styled';
-import TeamItemSmall from 'components/ChooseTeamList/TeamItemSmall/TeamItemSmall';
+import { TeamItemSmall } from 'components';
 
 const FightAnimation = ({ userTeam, enemyTeam }) => {
   const [hero1, hero2, hero3] = userTeam;
