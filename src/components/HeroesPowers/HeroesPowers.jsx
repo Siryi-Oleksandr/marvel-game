@@ -6,7 +6,7 @@ import { TabPanel, TabPanels, Tabs, TabList, Tab } from '@chakra-ui/react'
 import { PowersWrapper } from '../SelectedTeam/SelectedTeam.styled'
 
 
-function HeroesPowers({ heroIndex }) {
+export const HeroesPowers = ({ heroIndex }) => {
   const { userTeam } = useCardsState()
 
   return (
@@ -37,7 +37,7 @@ function HeroesPowers({ heroIndex }) {
   )
 }
 
-export default HeroesPowers
+
 
 
 

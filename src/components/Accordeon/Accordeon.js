@@ -2,7 +2,7 @@ import React from 'react';
 import './Accordeon.scss';
 import { Box, Heading, Text } from '@chakra-ui/react';
 import { useCardsState } from 'hooks/useCardsState';
-import TeamItemContent from '../TeamItemContent/TeamItemContent';
+import { TeamItemContent } from 'components';
 
 export const Accordeon = () => {
   const { statistics } = useCardsState();

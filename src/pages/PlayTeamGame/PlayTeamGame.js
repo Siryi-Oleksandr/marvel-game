@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from 'react'
 
+import './PlayTeamGame.scss'
+
 import { useCardsState } from '../../hooks/useCardsState'
 import { useDispatch } from 'react-redux'
 import { setAllTeam } from '../../redux/cards/slice'
 
-import './PlayTeamGame.scss'
-
-import ChooseTeamList from '../../components/ChooseTeamList/ChooseTeamList'
-import SelectedTeam from '../../components/SelectedTeam/SelectedTeam'
+import { ChooseTeamList, SelectedTeam } from 'components'
 
 import { Container, useBreakpointValue } from '@chakra-ui/react'
 

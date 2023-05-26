@@ -8,3 +8,10 @@ export * from './DescrGallery/DescrGallery';
 export * from './Tab/Tab';
 export * from './Accordeon/Accordeon';
 export * from './MobileVersion/MobileVersion';
+
+export * from './Buttons/ButtonGoToPlayPage'
+export * from './ChooseTeamList/TeamItemSmall/TeamItemSmall'
+export * from './ChooseTeamList/ChooseTeamList'
+export * from './TeamItemContent/TeamItemContent'
+export * from './HeroesPowers/HeroesPowers'
+export * from './SelectedTeam/SelectedTeam'

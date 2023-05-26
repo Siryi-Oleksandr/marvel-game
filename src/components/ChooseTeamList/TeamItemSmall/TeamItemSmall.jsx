@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, HeroNameSmall, ItemWrapper } from './TeamItemSmall.styled'
 import { useBreakpointValue } from '@chakra-ui/react'
 
-function TeamItemSmall({statisticPage, hero}) {
+export const TeamItemSmall = ({statisticPage, hero}) => {
   const containerSize = useBreakpointValue({ base: "100%", sm: "768px", xl: "1280px" });
 
   return (
@@ -14,4 +14,4 @@ function TeamItemSmall({statisticPage, hero}) {
   )
 }
 
-export default TeamItemSmall
+

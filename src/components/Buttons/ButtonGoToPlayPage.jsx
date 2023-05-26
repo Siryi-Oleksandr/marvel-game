@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GoBtn } from '../Buttons/Buttons.styled';
+import { GoBtn } from './Buttons.styled';
 
-function ButtonGoToPlayPage(props) {
+export const ButtonGoToPlayPage = (props) => {
   return (
     <GoBtn>
       <Link to="/play">Let's play</Link>
@@ -10,4 +10,3 @@ function ButtonGoToPlayPage(props) {
   );
 };
 
-export default ButtonGoToPlayPage;
