@@ -10,7 +10,7 @@ import {
 } from './FightAnimation.styled';
 import { TeamItemSmall } from 'components';
 
-const FightAnimation = ({ userTeam, enemyTeam }) => {
+export const FightAnimation = ({ userTeam, enemyTeam }) => {
   const [hero1, hero2, hero3] = userTeam;
   const [hero4, hero5, hero6] = enemyTeam;
   return (
@@ -36,5 +36,3 @@ const FightAnimation = ({ userTeam, enemyTeam }) => {
     </RingWrapper>
   );
 };
-
-export default FightAnimation;

@@ -4,10 +4,13 @@ import { useCardsState } from '../../hooks/useCardsState';
 import { useDispatch } from 'react-redux';
 import { setAllTeam } from '../../redux/cards/slice';
 
-import TeamItem from 'components/TeamItem/TeamItem';
-import { ButtonGoToPlayPage, HeroesPowers } from 'components'
-import CardSceleton from '../CardSceleton/CardSceleton'
-import { Title } from 'components/Title/Title';
+import {
+  ButtonGoToPlayPage,
+  HeroesPowers,
+  TeamItem,
+  Title,
+  CardSceleton,
+} from 'components';
 
 import {
   ButtonWrapper,
@@ -21,19 +24,17 @@ import intelligence from '../../images/skeleton-3.png';
 import force from '../../images/skeleton-2.png';
 import fight from '../../images/skeleton-1.png';
 
-
-
-export const SelectedTeam =({ deleteFromTeam }) => {
+export const SelectedTeam = ({ deleteFromTeam }) => {
   const { userTeam } = useCardsState();
   const [selectedHeroIndex, setSelectedHeroIndex] = useState(0);
 
   const dispatch = useDispatch();
 
   function onClearTeam() {
-    if(userTeam.length === 0) {
-      return
+    if (userTeam.length === 0) {
+      return;
     }
-    dispatch(setAllTeam([]))
+    dispatch(setAllTeam([]));
   }
 
   function showSelectedPowers(index) {
@@ -46,13 +47,19 @@ export const SelectedTeam =({ deleteFromTeam }) => {
         <Title>Choose your team</Title>
       </div>
       <ButtonWrapper>
-        <ClearTeamButton  onClick={onClearTeam} disabled={!userTeam.length} >Clear team</ClearTeamButton>
+        <ClearTeamButton onClick={onClearTeam} disabled={!userTeam.length}>
+          Clear team
+        </ClearTeamButton>
       </ButtonWrapper>
 
       {!userTeam.length ? (
         <>
           <SceletonWrapper id="selectedTeam">
-            <CardSceleton name="Intelligence" bgImg={intelligence} color="yellow"/>
+            <CardSceleton
+              name="Intelligence"
+              bgImg={intelligence}
+              color="yellow"
+            />
             <CardSceleton name="Force" bgImg={force} color="green" />
             <CardSceleton name="Fighting" bgImg={fight} color="red" />
           </SceletonWrapper>
@@ -70,10 +77,8 @@ export const SelectedTeam =({ deleteFromTeam }) => {
           ))}
         </SelectedTeamWrapper>
       )}
-      {!!userTeam.length && <HeroesPowers heroIndex={selectedHeroIndex} /> }
-      {!!userTeam.length && <ButtonGoToPlayPage/>}
-
+      {!!userTeam.length && <HeroesPowers heroIndex={selectedHeroIndex} />}
+      {!!userTeam.length && <ButtonGoToPlayPage />}
     </>
   );
-}
-
+};

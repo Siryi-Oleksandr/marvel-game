@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import CardsList from 'components/CardsList/CardsList';
 import './PlayGame.scss';
-import { getRandomTeam } from 'services/ramdomTeam';
-import FightRing from 'components/FightRing/FightRing';
-import { calculateTotalPowerTeam } from 'services/calculatorService';
 import {
   addCardToTeam,
   deleteCardFromTeam,
   setAllTeam,
 } from 'redux/cards/slice';
 import { setFightStatistics } from 'redux/statistics/slice';
-import GoToRingBtn from 'components/Buttons/GoToRingBtn';
+import { getRandomTeam, calculateTotalPowerTeam } from 'services';
 import { useCardsState } from 'hooks/useCardsState';
-import TeamSceleton from 'components/TeamSceleton/TeamSceleton';
-import Loader from 'components/Loader2';
-import { VinnerModal } from 'components/Modal/Modal';
+
+import {
+  CardsList,
+  FightRing,
+  TeamSceleton,
+  Loader,
+  GoToRingBtn,
+  VinnerModal,
+  FightAnimation,
+} from 'components';
+
 import { nanoid } from 'nanoid';
-import FightAnimation from 'components/FightAnimation/FightAnimation';
 
 export const PlayGame = () => {
   const {

@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react';
-import SectionTitle from 'components/SectionTitle/SectionTitle';
+import { SectionTitle } from 'components';
 import React from 'react';
 
 export const MobileVersion = () => {

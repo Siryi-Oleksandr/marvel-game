@@ -1,7 +1,7 @@
 import { ThreeCircles } from 'react-loader-spinner';
 import { LoaderStyled } from './Loader.styled';
 
-const Loader = () => {
+export const Loader = () => {
   return (
     <LoaderStyled>
       <ThreeCircles
@@ -19,5 +19,3 @@ const Loader = () => {
     </LoaderStyled>
   );
 };
-
-export default Loader;

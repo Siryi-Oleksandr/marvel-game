@@ -22,7 +22,7 @@ import power from 'images/power-2.png';
 import intelligence from 'images/intelligence-3.png';
 import fight from 'images/fight-2.png';
 
-function TeamItem({ hero, deleteFromTeam, removeFromSceleton }) {
+export function TeamItem({ hero, deleteFromTeam, removeFromSceleton }) {
   const [flipped, setFlipped] = useState(false);
   const [skillIcon, setSkillIcon] = useState(null);
 
@@ -105,5 +105,3 @@ function TeamItem({ hero, deleteFromTeam, removeFromSceleton }) {
     </CardItemWrapper>
   );
 }
-
-export default TeamItem;

@@ -1,9 +1,8 @@
 import React from 'react';
 import { CardListWrapper } from './CardsList.styled';
-import CardItem from 'components/CardItem/CardItem';
-import SectionTitle from 'components/SectionTitle/SectionTitle';
+import { CardItem, SectionTitle } from 'components';
 
-function CardsList({ filteredHeroes, addToTeam }) {
+export function CardsList({ filteredHeroes, addToTeam }) {
   return (
     <>
       <SectionTitle>Choose from the following heroes</SectionTitle>
@@ -15,5 +14,3 @@ function CardsList({ filteredHeroes, addToTeam }) {
     </>
   );
 }
-
-export default CardsList;

@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import { Suspense } from 'react';
-import Loader2 from 'components/Loader2/Loader';
+import { Loader } from 'components';
 import { Outlet } from 'react-router-dom';
 import { Tab } from 'components';
 
@@ -15,7 +15,7 @@ export const SharedLayout = ({ sharedLay }) => {
             <Tab to="/statistics">Statistics</Tab>
           </Box>
         )}
-        <Suspense fallback={<Loader2 />}>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </>

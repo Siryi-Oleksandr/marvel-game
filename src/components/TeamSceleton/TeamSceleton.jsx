@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { TeamSceletonWrapper } from './TeamSceleton.styled';
-import CardSceleton from 'components/CardSceleton/CardSceleton';
 import intelligence from 'images/skeleton-3.png';
 import force from 'images/skeleton-2.png';
 import fight from 'images/skeleton-1.png';
 import { useCardsState } from 'hooks/useCardsState';
-import TeamItem from 'components/TeamItem/TeamItem';
-import { Title } from 'components/Title/Title';
+import { TeamItem, CardSceleton, Title } from 'components';
 
-function TeamSceleton({ deleteFromTeam }) {
+export function TeamSceleton({ deleteFromTeam }) {
   const { userTeam } = useCardsState();
   const [isIntelligence, setIsIntelligence] = useState(null);
   const [isForce, setIsForce] = useState(null);
@@ -94,5 +92,3 @@ function TeamSceleton({ deleteFromTeam }) {
     </>
   );
 }
-
-export default TeamSceleton;

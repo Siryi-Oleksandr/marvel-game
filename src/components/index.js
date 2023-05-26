@@ -9,9 +9,22 @@ export * from './Tab/Tab';
 export * from './Accordeon/Accordeon';
 export * from './MobileVersion/MobileVersion';
 
-export * from './Buttons/ButtonGoToPlayPage'
-export * from './ChooseTeamList/TeamItemSmall/TeamItemSmall'
-export * from './ChooseTeamList/ChooseTeamList'
-export * from './TeamItemContent/TeamItemContent'
-export * from './HeroesPowers/HeroesPowers'
-export * from './SelectedTeam/SelectedTeam'
+export * from './Buttons/ButtonGoToPlayPage';
+export * from './Buttons/GoToRingBtn';
+export * from './Buttons/FightBtn';
+export * from './ChooseTeamList/TeamItemSmall/TeamItemSmall';
+export * from './ChooseTeamList/ChooseTeamList';
+export * from './TeamItemContent/TeamItemContent';
+export * from './HeroesPowers/HeroesPowers';
+export * from './SelectedTeam/SelectedTeam';
+
+export * from './TeamSceleton/TeamSceleton';
+export * from './FightRing/FightRing';
+export * from './CardsList/CardsList';
+export * from './Modal/Modal';
+export * from './FightAnimation/FightAnimation';
+export * from './CardItem/CardItem';
+export * from './SectionTitle/SectionTitle';
+export * from './TeamList/TeamList';
+export * from './TeamItem/TeamItem';
+export * from './CardSceleton/CardSceleton';
