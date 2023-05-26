@@ -1,12 +1,10 @@
-import { Button } from '@chakra-ui/react';
-import FightBtn from 'components/Buttons/FightBtn';
-import SectionTitle from 'components/SectionTitle/SectionTitle';
-import TeamList from 'components/TeamList/TeamList';
 import React from 'react';
+import { Button } from '@chakra-ui/react';
+import { TeamList, SectionTitle, FightBtn } from 'components';
 import { RingWrapper } from './FightRing.styled';
 import { pallete } from 'helpers/variables';
 
-function FightRing({ userTeam, enemyTeam, fight, back }) {
+export function FightRing({ userTeam, enemyTeam, fight, back }) {
   return (
     <div>
       <SectionTitle>Fight Ring</SectionTitle>
@@ -28,5 +26,3 @@ function FightRing({ userTeam, enemyTeam, fight, back }) {
     </div>
   );
 }
-
-export default FightRing;

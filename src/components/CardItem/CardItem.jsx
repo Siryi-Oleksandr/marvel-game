@@ -21,7 +21,7 @@ import power from 'images/power-2.png';
 import intelligence from 'images/intelligence-3.png';
 import fight from 'images/fight-2.png';
 
-function CardItem({ hero, addToTeam }) {
+export function CardItem({ hero, addToTeam }) {
   const [flipped, setFlipped] = useState(false);
   const [skillIcon, setSkillIcon] = useState(null);
 
@@ -96,5 +96,3 @@ function CardItem({ hero, addToTeam }) {
     </CardItemWrapper>
   );
 }
-
-export default CardItem;

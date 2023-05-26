@@ -14,7 +14,7 @@ import { closeCurtains, openCurtains } from 'services/animateCurtains';
 import { useDispatch } from 'react-redux';
 import { fetchCards } from 'redux/cards/operations';
 import { useNavigate } from 'react-router-dom';
-import Loader from 'components/Loader2';
+import { Loader } from 'components';
 
 export const Home = ({ setSharedLay }) => {
   const [isLoading, setIsLoading] = useState(true);

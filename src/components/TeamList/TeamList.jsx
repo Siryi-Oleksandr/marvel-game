@@ -1,10 +1,8 @@
 import React from 'react';
 import { TeamListWrapper } from './TeamList.styled';
+import { TeamItem, SectionTitle } from 'components';
 
-import TeamItem from 'components/TeamItem/TeamItem';
-import SectionTitle from 'components/SectionTitle/SectionTitle';
-
-function TeamList({ team, deleteFromTeam, title }) {
+export function TeamList({ team, deleteFromTeam, title }) {
   if (team.length === 0) {
     return <p>you haven't team yet</p>;
   }
@@ -18,5 +16,3 @@ function TeamList({ team, deleteFromTeam, title }) {
     </TeamListWrapper>
   );
 }
-
-export default TeamList;
