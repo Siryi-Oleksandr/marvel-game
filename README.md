@@ -47,8 +47,8 @@ well-known team from Marvel comics._
 
 ## Technologies Used <a id="technologies"></a>
 
-- JavaScript
 - React
+- JavaScript
 - React Router
 - Redux Toolkit
 - Axios
