@@ -15,21 +15,23 @@ well-known team from Marvel comics._
 
 ## Table of Contents
 
+- [Features](#features)
 - [Technologies Used](#technologies)
 - [Installation](#installation)
 - [Usage](#usage)
 - [API](#api)
+- [Compatibility](#compatibility)
 - [Routes](#routes)
+- [Contacts](#contacts)
 
 ---
 
-## Features
+## Features <a id="features"></a>
 
 - User-friendly interface with a Marvel-themed design.
-- Integration with a free API source, such as the Marvel API, to retrieve
-  information about Marvel characters.
+- Integration with a MockApi source created created using available sources.
 - Display of detailed information about each character, including their name,
-  height, weight, superpowers, and more.
+  description, skills, possibilities, history and more.
 - Ability to add selected characters to the user's team.
 - Real-time calculation of the overall power of the team based on the
   characteristics of the chosen characters.
@@ -45,18 +47,22 @@ well-known team from Marvel comics._
 
 ## Technologies Used <a id="technologies"></a>
 
+- JavaScript
 - React
 - React Router
+- Redux Toolkit
 - Axios
 - MockAPI
-- Styled-components
+- Styled-components, SASS
+- Chakra UI
+- Framer-motion
 
 ---
 
 ## Installation <a id="installation"></a>
 
 ```
-$ git clone https://github.com/Siryi-Oleksandr/tweet-card-test.git
+$ git clone https://github.com/Iryna-Gry/itis-team-6.git
 $ cd your-project
 $ npm install
 $ npm start
@@ -67,25 +73,49 @@ $ npm start
 
 ## Usage <a id="usage"></a>
 
-You can freely move between pages. On Tweets page choose any interesting user
-and subscribe and follow it. Or conversely, you can unsubscribe from anyone.
-Also you can filter users by name or status of the subscription. You have many
-variants to quickly find some user using filters by name and status of the
-users.
+- On the home page, you will find information about the project and a link to
+  the game page.
+- Navigate to the game page by clicking the provided link. - Browse the list of
+  Marvel characters and select the ones you want to add to your own team.
+- View detailed information about each character and use the provided interface
+  to add them to your team.
+- As you add characters, the team's overall power will be calculated and
+  displayed in real time.
+- Choose from already existing teams of Marvel heroes and try to play
+- Read and discover more information about teams and heroes
+- Save, view and analyze the history of all battles and team compositions in
+  which the user played.
 
 ---
 
 ## API <a id="api"></a>
 
-The app uses the MockAPI service to simulate a backend. The users resource has
-been created and the user object has the following fields: id, user, tweets,
-followers, avatar. Pagination, filtering implemented through the backend.
+The app uses the MockAPI service as a backend. Information collected
+independently from open sources.
 
 ---
+
+## Compatibility <a id="compatibility"></a>
+
+The application is designed to be compatible with a wide range of devices and
+screen sizes more then 768px. The app is optimized for desktop and laptop
+computers.
 
 ## Routes <a id="routes"></a>
 
-- '/' - Home page
-- '/tweets' - Tweets page
+- '/' - Home page (Welcome and Introduction to the application)
+- '/play' - Play page (Сreat own team and play)
+- '/teamplay' - Teamplay page (choose from already existing teams)
+- '/statistics' - Statistics page (Save, view and analyze the history of all
+  battles)
 
 ---
+
+## Contacts <a id="contacts"></a>
+
+- Irina [Linkedin](https://www.linkedin.com/in/iryna-grytsaenko/),
+  [GitHub](https://github.com/Iryna-Gry)
+- Sergiy [Linkedin](https://www.linkedin.com/in/sergey-androsov-8b8964253/),
+  [GitHub](https://www.linkedin.com/in/sergey-androsov-8b8964253/)
+- Oleksandr [Linkedin](https://www.linkedin.com/in/oleksandr-siryi/),
+  [GitHub](https://github.com/Siryi-Oleksandr)
