@@ -29,9 +29,9 @@ well-known team from Marvel comics._
 ## Features <a id="features"></a>
 
 - User-friendly interface with a Marvel-themed design.
-- Integration with a MockApi source created created using available sources.
+- Integration with a MockApi source created using available sources.
 - Display of detailed information about each character, including their name,
-  description, skills, possibilities, history and more.
+  description, skills, abilities, history and more.
 - Ability to add selected characters to the user's team.
 - Real-time calculation of the overall power of the team based on the
   characteristics of the chosen characters.
@@ -83,8 +83,8 @@ $ npm start
   displayed in real time.
 - Choose from already existing teams of Marvel heroes and try to play
 - Read and discover more information about teams and heroes
-- Save, view and analyze the history of all battles and team compositions in
-  which the user played.
+- Save, view and analyze the history of all battles and team compositions
+  which you played.
 
 ---
 
@@ -104,8 +104,8 @@ computers.
 ## Routes <a id="routes"></a>
 
 - '/' - Home page (Welcome and Introduction to the application)
-- '/play' - Play page (Сreat own team and play)
-- '/teamplay' - Teamplay page (choose from already existing teams)
+- '/play' - Play page (Сreate own team and play)
+- '/teamplay' - Teamplay page (Choose from already existing teams)
 - '/statistics' - Statistics page (Save, view and analyze the history of all
   battles)
 
@@ -113,7 +113,7 @@ computers.
 
 ## Contacts <a id="contacts"></a>
 
-- Irina [Linkedin](https://www.linkedin.com/in/iryna-grytsaenko/),
+- Iryna [Linkedin](https://www.linkedin.com/in/iryna-grytsaenko/),
   [GitHub](https://github.com/Iryna-Gry)
 - Sergiy [Linkedin](https://www.linkedin.com/in/sergey-androsov-8b8964253/),
   [GitHub](https://www.linkedin.com/in/sergey-androsov-8b8964253/)
