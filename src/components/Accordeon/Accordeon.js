@@ -3,6 +3,7 @@ import './Accordeon.scss';
 import { Box, Heading, Text } from '@chakra-ui/react';
 import { useCardsState } from 'hooks/useCardsState';
 import { TeamItemContent } from 'components';
+import { pallete } from 'helpers/variables';
 
 export const Accordeon = () => {
   const { statistics } = useCardsState();
@@ -21,8 +22,8 @@ export const Accordeon = () => {
                 <label
                   style={
                     item.winner.includes('Enemy')
-                      ? { background: '#c61818' }
-                      : { background: '#030250' }
+                      ? { background: pallete.primaryRed }
+                      : { background: pallete.primaryBlue }
                   }
                   className="TabLabel"
                   htmlFor={item.id}
@@ -39,7 +40,11 @@ export const Accordeon = () => {
                       Defeat
                     </Heading>
                   ) : (
-                    <Heading className="FightResult" color="green" mx="auto">
+                    <Heading
+                      className="FightResult"
+                      color={pallete.primaryBlue}
+                      mx="auto"
+                    >
                       Victory
                     </Heading>
                   )}
@@ -50,7 +55,7 @@ export const Accordeon = () => {
                       w="calc((100%-10px)/2)"
                     >
                       <TeamItemContent
-                        teamName={'Your Team'}
+                        teamName='Your Team'
                         statisticPage={true}
                         team={item.userTeam}
                       />
@@ -64,7 +69,7 @@ export const Accordeon = () => {
                       w="calc((100%-10px)/2)"
                     >
                       <TeamItemContent
-                        teamName={'Enemy Team'}
+                        teamName='Enemy Team'
                         statisticPage={true}
                         team={item.enemyTeam}
                       />

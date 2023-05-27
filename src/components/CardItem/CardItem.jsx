@@ -20,6 +20,7 @@ import { TbArrowBackUp } from 'react-icons/tb';
 import power from 'images/power-2.png';
 import intelligence from 'images/intelligence-3.png';
 import fight from 'images/fight-2.png';
+import { pallete } from 'helpers/variables';
 
 export function CardItem({ hero, addToTeam }) {
   const [flipped, setFlipped] = useState(false);
@@ -51,10 +52,10 @@ export function CardItem({ hero, addToTeam }) {
       <Card flipped={flipped}>
         <CardFront imgUrl={hero.imgUrl}>
           <AddButton onClick={() => addToTeam(hero)}>
-            <GoPlus color="white" size="2em" />
+            <GoPlus color={pallete.white} size="2em" />
           </AddButton>
           <InfoButton onClick={handleFlip}>
-            <BsInfoLg color="white" size="2em" />
+            <BsInfoLg color={pallete.white} size="2em" />
           </InfoButton>
           <MainSkillIcon style={{ backgroundImage: `url(${skillIcon})` }} />
           <HeroName>{hero.name}</HeroName>
@@ -62,7 +63,7 @@ export function CardItem({ hero, addToTeam }) {
 
         <CardBack className="overley">
           <BackButton onClick={handleFlip}>
-            <TbArrowBackUp color="white" size="2em" />
+            <TbArrowBackUp color={pallete.white} size="2em" />
           </BackButton>
           <HeroNameBack>{hero.name}</HeroNameBack>
           <HeroSkills>

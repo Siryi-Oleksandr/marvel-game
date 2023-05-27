@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-
-import './SelectedTeam.scss'
-
-import { useCardsState } from '../../hooks/useCardsState';
+import './SelectedTeam.scss';
+import { useCardsState } from 'hooks/useCardsState';
 import { useDispatch } from 'react-redux';
-import { setAllTeam } from '../../redux/cards/slice';
+import { setAllTeam } from 'redux/cards/slice';
 
 import {
   ButtonGoToPlayPage,
@@ -22,9 +20,9 @@ import {
   SelectedTeamWrapper,
 } from './SelectedTeam.styled';
 
-import intelligence from '../../images/skeleton-3.png';
-import force from '../../images/skeleton-2.png';
-import fight from '../../images/skeleton-1.png';
+import intelligence from 'images/skeleton-3.png';
+import force from 'images/skeleton-2.png';
+import fight from 'images/skeleton-1.png';
 
 export const SelectedTeam = ({ deleteFromTeam }) => {
   const { userTeam } = useCardsState();

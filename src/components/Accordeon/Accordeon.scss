@@ -1,6 +1,4 @@
-$midnight: #c61818;
-$clouds: #ecf0f1;
-// General
+@use '../../helpers/variables';
 
 .AccordeonInput {
   position: absolute;
@@ -8,7 +6,6 @@ $clouds: #ecf0f1;
   z-index: -1;
 }
 
-/* Accordion styles */
 .AccordeonContainer {
   border-radius: 8px;
   margin-left: auto;
@@ -23,7 +20,7 @@ $clouds: #ecf0f1;
 //
 .AccordeonTab {
   width: 100%;
-  color: white;
+  color: variables.$white;
   overflow: hidden;
 }
 .TabLabel {
@@ -46,16 +43,11 @@ $clouds: #ecf0f1;
 .TabContent {
   max-height: 0;
   padding: 0 1em;
-  color: $midnight;
+  color: variables.$primaryRed;
   transition: all 0.35s;
-  text-shadow: rgba(255, 255, 255, 0.425) 0px 54px 55px,
-    rgba(255, 255, 255, 0.329) 0px -8px 30px,
-    rgba(255, 255, 255, 0.411) 0px 4px 6px,
-    rgba(255, 255, 255, 0.336) 0px 12px 13px,
-    rgba(255, 255, 255, 0.281) 0px -3px 5px;
+  text-shadow: variables.$main_shadow;
 }
 
-// :checked
 .AccordeonInput:checked {
   + .TabLabel {
     &::after {
@@ -70,20 +62,12 @@ $clouds: #ecf0f1;
 .FightResult {
   text-align: center;
   font-family: 'PT Serif', 'serif';
-  text-shadow: rgba(255, 255, 255, 0.425) 0px 54px 55px,
-    rgba(255, 255, 255, 0.329) 0px -8px 30px,
-    rgba(255, 255, 255, 0.411) 0px 4px 6px,
-    rgba(255, 255, 255, 0.336) 0px 12px 13px,
-    rgba(255, 255, 255, 0.281) 0px -3px 5px;
+  text-shadow: variables.$main_shadow;
 }
 .TeamScoreFigure {
   font-size: 40px;
   font-weight: 700;
   text-align: center;
   margin-top: 10px;
-  text-shadow: rgba(255, 255, 255, 0.425) 0px 54px 55px,
-    rgba(255, 255, 255, 0.329) 0px -8px 30px,
-    rgba(255, 255, 255, 0.411) 0px 4px 6px,
-    rgba(255, 255, 255, 0.336) 0px 12px 13px,
-    rgba(255, 255, 255, 0.281) 0px -3px 5px;
+  text-shadow: variables.$main_shadow;
 }

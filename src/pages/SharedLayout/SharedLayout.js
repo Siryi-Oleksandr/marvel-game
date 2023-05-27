@@ -1,8 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { Suspense } from 'react';
-import { Loader } from 'components';
+import { Loader, Tab } from 'components';
 import { Outlet } from 'react-router-dom';
-import { Tab } from 'components';
 
 export const SharedLayout = ({ sharedLay }) => {
   return (
