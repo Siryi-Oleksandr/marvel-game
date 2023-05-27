@@ -7,6 +7,7 @@ import {
   Title,
   DescrGallery,
   MobileVersion,
+  Loader,
 } from 'components';
 import { Box, Text } from '@chakra-ui/react';
 import { BsFillSuitHeartFill } from 'react-icons/bs';
@@ -14,7 +15,6 @@ import { closeCurtains, openCurtains } from 'services/animateCurtains';
 import { useDispatch } from 'react-redux';
 import { fetchCards } from 'redux/cards/operations';
 import { useNavigate } from 'react-router-dom';
-import { Loader } from 'components';
 
 export const Home = ({ setSharedLay }) => {
   const [isLoading, setIsLoading] = useState(true);

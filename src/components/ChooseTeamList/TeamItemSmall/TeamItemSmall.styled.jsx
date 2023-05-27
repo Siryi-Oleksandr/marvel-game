@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import cardBgImg from '../../../images/card-bg.png';
+import cardBgImg from 'images/card-bg.png';
 
 const cardHeight = "255px"
 const cardWidth = "180px"

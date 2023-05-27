@@ -14,9 +14,11 @@ export * from './Buttons/GoToRingBtn';
 export * from './Buttons/FightBtn';
 export * from './ChooseTeamList/TeamItemSmall/TeamItemSmall';
 export * from './ChooseTeamList/ChooseTeamList';
+export * from './ChooseTeamList/ChooseTeamList.styled';
 export * from './TeamItemContent/TeamItemContent';
 export * from './HeroesPowers/HeroesPowers';
 export * from './SelectedTeam/SelectedTeam';
+export * from './SelectedTeam/SelectedTeam.styled';
 
 export * from './TeamSceleton/TeamSceleton';
 export * from './FightRing/FightRing';

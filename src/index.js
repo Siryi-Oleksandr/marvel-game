@@ -5,7 +5,7 @@ import './index.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import { colors } from './theme';
 import { BrowserRouter } from 'react-router-dom';
-import { store, persistor } from './redux/store';
+import { store, persistor } from 'redux/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Curtain } from 'components';

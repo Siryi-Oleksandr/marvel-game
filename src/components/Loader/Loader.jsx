@@ -1,5 +1,6 @@
 import { ThreeCircles } from 'react-loader-spinner';
 import { LoaderStyled } from './Loader.styled';
+import { pallete } from 'helpers/variables';
 
 export const Loader = () => {
   return (
@@ -7,7 +8,7 @@ export const Loader = () => {
       <ThreeCircles
         height="100"
         width="100"
-        color="#002350"
+        color={pallete.primaryBlue}
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}

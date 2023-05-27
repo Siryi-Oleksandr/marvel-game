@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import { SharedLayout, Home, PlayGame, PlayTeamGame } from 'pages';
+import { SharedLayout, Home, PlayGame, PlayTeamGame, Statistics } from 'pages';
 import { useState } from 'react';
-import { Statistics } from 'pages/Statistics/Statistics';
 
 export const App = () => {
   const [sharedLay, setSharedLay] = useState(

@@ -5,10 +5,16 @@ import { GoGear } from 'react-icons/go';
 import { FaHandPointUp } from 'react-icons/fa';
 import { TbMoodHappy } from 'react-icons/tb';
 import './DescrGallery.scss';
+import { pallete } from 'helpers/variables';
 
 export const DescrGallery = () => {
   return (
-    <Box display="flex" justifyContent="space-between" gap="15px" color="white">
+    <Box
+      display="flex"
+      justifyContent="space-between"
+      gap="15px"
+      color={pallete.white}
+    >
       <Box className="GalleryItem">
         <Box className="ItemContainer">
           <GoGear size={50} className="GearLeft" />
