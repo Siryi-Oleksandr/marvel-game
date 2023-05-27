@@ -11,13 +11,6 @@ export const TeamListWrapper = styled.ul`
   justify-content: center;
 `;
 
-export const ButtonClearTeam = styled.button`
-  display: flex;
-  justify-content: flex-end;
-  width: 900px;
-  margin: auto auto 40px;
-
-`;
 
 
 

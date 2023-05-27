@@ -27,8 +27,6 @@ export const ItemWrapper = styled.div`
 
 export const Card = styled.div`
   position: absolute;
-  //width: 140px;
-  //height: 215px;
 
   width: ${props => (props.statisticPage && props.containerSize === '768px') ? "80px" : "140px" } ;
   height: ${props => (props.statisticPage && props.containerSize === '768px') ? "125px" : "215px" } ;
