@@ -20,9 +20,9 @@ import {
   SelectedTeamWrapper,
 } from './SelectedTeam.styled';
 
-import intelligence from 'images/skeleton-3.png';
-import force from 'images/skeleton-2.png';
-import fight from 'images/skeleton-1.png';
+import intelligence from 'images/skeleton-3.webp';
+import force from 'images/skeleton-2.webp';
+import fight from 'images/skeleton-1.webp';
 
 export const SelectedTeam = ({ deleteFromTeam }) => {
   const { userTeam } = useCardsState();

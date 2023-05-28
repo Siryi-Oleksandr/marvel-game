@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { TeamSceletonWrapper } from './TeamSceleton.styled';
-import intelligence from 'images/skeleton-3.png';
-import force from 'images/skeleton-2.png';
-import fight from 'images/skeleton-1.png';
+
 import { useCardsState } from 'hooks/useCardsState';
 import { TeamItem, CardSceleton, Title } from 'components';
+
+import intelligence from 'images/skeleton-3.webp';
+import force from 'images/skeleton-2.webp';
+import fight from 'images/skeleton-1.webp';
 
 export function TeamSceleton({ deleteFromTeam }) {
   const { userTeam } = useCardsState();
