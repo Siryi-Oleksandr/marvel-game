@@ -13,31 +13,34 @@ export const cardsSlice = createSlice({
   name: 'cards',
   initialState,
   reducers: {
-    addCardToTeam(state, action) {
+    addCardToTeam: (state, action) => {
       state.userTeam.push(action.payload);
     },
-    deleteCardFromTeam(state, action) {
-      state.userTeam = state.userTeam.filter(card => card.id !== action.payload)
+    deleteCardFromTeam: (state, action) => {
+      state.userTeam = state.userTeam.filter(
+        card => card.id !== action.payload
+      );
     },
-    setAllTeam(state, action) {
+    setAllTeam: (state, action) => {
       state.userTeam = action.payload;
     },
-
-    setUserTeamTitle(state, action) {
+    setUserTeamTitle: (state, action) => {
       state.userTeamTitle = action.payload;
     },
   },
-  extraReducers: {
-    [fetchCards.pending](state) {
-      state.isRefreshing = true;
-    },
-    [fetchCards.fulfilled](state, action) {
-      state.cards = action.payload;
-      state.isRefreshing = false;
-    },
-    [fetchCards.rejected](state) {
-      state.isRefreshing = false;
-    },
+
+  extraReducers: builder => {
+    builder
+      .addCase(fetchCards.pending, state => {
+        state.isRefreshing = true;
+      })
+      .addCase(fetchCards.fulfilled, (state, action) => {
+        state.cards = action.payload;
+        state.isRefreshing = false;
+      })
+      .addCase(fetchCards.rejected, state => {
+        state.isRefreshing = false;
+      });
   },
 });
 

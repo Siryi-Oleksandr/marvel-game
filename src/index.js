@@ -12,7 +12,7 @@ import { Curtain } from 'components';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Siryi-Oleksandr/marvel-game">
+    <BrowserRouter basename="/marvel-game">
       <ChakraProvider theme={colors}>
         <Provider store={store}>
           <PersistGate persistor={persistor}>
